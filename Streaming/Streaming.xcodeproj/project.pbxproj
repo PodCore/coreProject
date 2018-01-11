@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		493300842007F03000DD4D73 /* Host.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 493300832007F03000DD4D73 /* Host.storyboard */; };
+		493300862007F07200DD4D73 /* Watch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 493300852007F07200DD4D73 /* Watch.storyboard */; };
 		F9F94FCF2007EACB00BC25D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F94FCE2007EACB00BC25D2 /* AppDelegate.swift */; };
 		F9F94FD12007EACB00BC25D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F94FD02007EACB00BC25D2 /* ViewController.swift */; };
 		F9F94FD42007EACB00BC25D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9F94FD22007EACB00BC25D2 /* Main.storyboard */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		493300832007F03000DD4D73 /* Host.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Host.storyboard; sourceTree = "<group>"; };
+		493300852007F07200DD4D73 /* Watch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Watch.storyboard; sourceTree = "<group>"; };
 		F9F94FCB2007EACB00BC25D2 /* Streaming.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Streaming.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9F94FCE2007EACB00BC25D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9F94FD02007EACB00BC25D2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +61,8 @@
 				F9F94FCE2007EACB00BC25D2 /* AppDelegate.swift */,
 				F9F94FD02007EACB00BC25D2 /* ViewController.swift */,
 				F9F94FD22007EACB00BC25D2 /* Main.storyboard */,
+				493300852007F07200DD4D73 /* Watch.storyboard */,
+				493300832007F03000DD4D73 /* Host.storyboard */,
 				F9F94FD52007EACB00BC25D2 /* Assets.xcassets */,
 				F9F94FD72007EACB00BC25D2 /* LaunchScreen.storyboard */,
 				F9F94FDA2007EACB00BC25D2 /* Info.plist */,
@@ -123,6 +129,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				493300862007F07200DD4D73 /* Watch.storyboard in Resources */,
+				493300842007F03000DD4D73 /* Host.storyboard in Resources */,
 				F9F94FD92007EACB00BC25D2 /* LaunchScreen.storyboard in Resources */,
 				F9F94FD62007EACB00BC25D2 /* Assets.xcassets in Resources */,
 				F9F94FD42007EACB00BC25D2 /* Main.storyboard in Resources */,
