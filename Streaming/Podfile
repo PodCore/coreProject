@@ -8,4 +8,5 @@ target 'Streaming' do
   pod 'LFLiveKit'
   pod 'Socket.IO-Client-Swift'
   pod 'Alamofire'
+  pod 'Google/SignIn'
 end
