@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/skyxu/code/streamCore/coreProject_mobile/Streaming/Streaming/ViewController/WatchViewController.swift">
-   </FileRef>
-   <FileRef
       location = "group:Streaming.xcodeproj">
    </FileRef>
    <FileRef

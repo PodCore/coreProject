@@ -7,10 +7,9 @@
 //
 
 import UIKit
-import Kingfisher
 
 class HomeViewController: UIViewController {
-
+    
 //    reload data when fetch rooms from server
     var popularVideos: [Room] = [Room(key: "sdfs", title: "skys", img: "https://nextcity.org/images/uploads/_resized/6642874991_9b68764995_b.jpg"),
        Room(key: "sdfs", title: "skys", img: "https://nextcity.org/images/uploads/_resized/6642874991_9b68764995_b.jpg"),
@@ -19,13 +18,29 @@ class HomeViewController: UIViewController {
     let collectionViewDatasource = CollectionViewDatasource(items: [])
     
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    @IBAction func hostButtonTapped(_ sender: UIButton) {
+        
+        
+        if AuthService.instance.isLoggedIn {
+            print("already register, go to host page")
+        } else {
+            let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+            let registerVC = storyBoard.instantiateViewController(withIdentifier: "registerVC") as! RegisterViewController
+            self.navigationController?.pushViewController(registerVC, animated: true)
+        }
+    }
+    
  
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-
+        
         self.collectionViewDatasource.items = popularVideos
         self.collectionView.dataSource = self.collectionViewDatasource
+        
+//        trigger collecionViewFlowlayout delegate
         self.collectionView.delegate = self
+        
         DispatchQueue.main.async {
             self.collectionView.reloadData()
         }

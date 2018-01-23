@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		E67FF817BFDB6B185CD2D46E /* Pods_Streaming.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C361A6392A777A2830731E3 /* Pods_Streaming.framework */; };
+		F91BFDD62017BDA2002A3E7D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91BFDD52017BDA2002A3E7D /* RegisterViewController.swift */; };
+		F91BFDD92017C294002A3E7D /* Authservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91BFDD82017C294002A3E7D /* Authservice.swift */; };
 		F9BCA69020159100006FAB8D /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BCA68F20159100006FAB8D /* Room.swift */; };
 		F9BCA69220164CBC006FAB8D /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BCA69120164CBC006FAB8D /* Comment.swift */; };
 		F9BCA694201651A0006FAB8D /* CollectionViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BCA6932016519F006FAB8D /* CollectionViewDatasource.swift */; };
 		F9BCA69620167623006FAB8D /* UIImage&Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BCA69520167623006FAB8D /* UIImage&Cache.swift */; };
 		F9BCA6992016869F006FAB8D /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BCA6982016869F006FAB8D /* CollectionCell.swift */; };
-		F9BCA69B20168BC8006FAB8D /* WatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BCA69A20168BC7006FAB8D /* WatchViewController.swift */; };
+		F9BCA6A02016A9B1006FAB8D /* WatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BCA69F2016A9B1006FAB8D /* WatchViewController.swift */; };
 		F9F94FCF2007EACB00BC25D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F94FCE2007EACB00BC25D2 /* AppDelegate.swift */; };
 		F9F94FD12007EACB00BC25D2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F94FD02007EACB00BC25D2 /* HomeViewController.swift */; };
 		F9F94FD42007EACB00BC25D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9F94FD22007EACB00BC25D2 /* Main.storyboard */; };
@@ -28,12 +30,14 @@
 		2C361A6392A777A2830731E3 /* Pods_Streaming.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Streaming.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		67F54C6B5E133FAEC9712CE7 /* Pods-Streaming.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Streaming.release.xcconfig"; path = "Pods/Target Support Files/Pods-Streaming/Pods-Streaming.release.xcconfig"; sourceTree = "<group>"; };
 		87C1A2CE772206B44551915C /* Pods-Streaming.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Streaming.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Streaming/Pods-Streaming.debug.xcconfig"; sourceTree = "<group>"; };
+		F91BFDD52017BDA2002A3E7D /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		F91BFDD82017C294002A3E7D /* Authservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authservice.swift; sourceTree = "<group>"; };
 		F9BCA68F20159100006FAB8D /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		F9BCA69120164CBC006FAB8D /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		F9BCA6932016519F006FAB8D /* CollectionViewDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewDatasource.swift; sourceTree = "<group>"; };
 		F9BCA69520167623006FAB8D /* UIImage&Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage&Cache.swift"; sourceTree = "<group>"; };
 		F9BCA6982016869F006FAB8D /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
-		F9BCA69A20168BC7006FAB8D /* WatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WatchViewController.swift; path = /Users/skyxu/code/streamCore/coreProject_mobile/Streaming/Streaming/ViewController/WatchViewController.swift; sourceTree = "<absolute>"; };
+		F9BCA69F2016A9B1006FAB8D /* WatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchViewController.swift; sourceTree = "<group>"; };
 		F9F94FCB2007EACB00BC25D2 /* Streaming.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Streaming.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9F94FCE2007EACB00BC25D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9F94FD02007EACB00BC25D2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +79,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F91BFDD72017C283002A3E7D /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				F91BFDD82017C294002A3E7D /* Authservice.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		F9BCA68E201590EC006FAB8D /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				F9F94FCE2007EACB00BC25D2 /* AppDelegate.swift */,
+				F91BFDD72017C283002A3E7D /* Service */,
 				F9FE157720115AED0086CFDE /* Config */,
 				F9FE15732011586C0086CFDE /* Helper */,
 				F9FE1570201158380086CFDE /* ViewController */,
@@ -139,7 +152,8 @@
 			isa = PBXGroup;
 			children = (
 				F9F94FD02007EACB00BC25D2 /* HomeViewController.swift */,
-				F9BCA69A20168BC7006FAB8D /* WatchViewController.swift */,
+				F9BCA69F2016A9B1006FAB8D /* WatchViewController.swift */,
+				F91BFDD52017BDA2002A3E7D /* RegisterViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -242,14 +256,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Streaming/Pods-Streaming-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/LFLiveKit/LFLiveKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework",
 				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LFLiveKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketIO.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
@@ -302,13 +316,15 @@
 				F9BCA69620167623006FAB8D /* UIImage&Cache.swift in Sources */,
 				F9F94FD12007EACB00BC25D2 /* HomeViewController.swift in Sources */,
 				F9F94FCF2007EACB00BC25D2 /* AppDelegate.swift in Sources */,
+				F91BFDD62017BDA2002A3E7D /* RegisterViewController.swift in Sources */,
 				F9BCA694201651A0006FAB8D /* CollectionViewDatasource.swift in Sources */,
 				F9FE1572201158620086CFDE /* PlayLiveVideo.swift in Sources */,
 				F9BCA69220164CBC006FAB8D /* Comment.swift in Sources */,
-				F9BCA69B20168BC8006FAB8D /* WatchViewController.swift in Sources */,
+				F9BCA6A02016A9B1006FAB8D /* WatchViewController.swift in Sources */,
 				F9BCA6992016869F006FAB8D /* CollectionCell.swift in Sources */,
 				F9BCA69020159100006FAB8D /* Room.swift in Sources */,
 				F9FE157920115AFB0086CFDE /* Config.swift in Sources */,
+				F91BFDD92017C294002A3E7D /* Authservice.swift in Sources */,
 				F9FE157B2011695B0086CFDE /* TableViewDatasource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

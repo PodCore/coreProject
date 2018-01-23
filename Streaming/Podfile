@@ -7,4 +7,5 @@ target 'Streaming' do
   # Pods for Streaming
   pod 'LFLiveKit'
   pod 'Socket.IO-Client-Swift'
+  pod 'Alamofire'
 end
