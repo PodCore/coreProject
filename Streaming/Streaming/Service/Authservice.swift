@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-typealias CompletionHandler = (_ Success: Bool) -> ()
+typealias CompletionHandler = (_ username: String?, _ userId: String?) -> ()
 
 class AuthService {
     
@@ -46,11 +46,17 @@ class AuthService {
         let HEADER = [
             "Content-Type": "application/json"
         ]
-        Alamofire.request(BASE_URL, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseString{ (response) in
+        
+        
+        Alamofire.request(BASE_URL, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseJSON{ (response) in
             if response.result.error == nil {
-                completion(true)
+                guard let json = response.result.value as? [String: String] else { return }
+                print(json)
+                guard let name = json["username"],
+                    let userId = json["_id"] else { return }
+                completion(name, userId)
             } else {
-                completion(false)
+                completion(nil, nil)
                 debugPrint(response.result.error as Any)
             }
         }

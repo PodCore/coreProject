@@ -30,8 +30,18 @@ class RegisterViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDe
             return
         }
         
-//        Where you get the user objject after login
+//        Where you get the user object after login
         print(user.profile.email)
+        AuthService.instance.registerUser(username: user.profile.name, email: user.profile.email, password: "LoggedInWithGoogle") { (username, userId ) in
+//            if username != nil, userId != nil {
+//                let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+//                let hostVC = storyBoard.instantiateViewController(withIdentifier: "hostVC") as! HostViewController
+//                self.present(hostVC, animated: true, completion: nil)
+//            } else {
+//                print("sign up failed")
+//            }
+        }
+//        registerUser(username: user.profile.name, email: user.profile.email, password: "GoogleSignUp", completion: @escaping CompletionHandler)
     }
     
     func setUpGoogleSignIn() {
