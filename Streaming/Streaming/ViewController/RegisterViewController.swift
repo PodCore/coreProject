@@ -20,6 +20,16 @@ class RegisterViewController: UIViewController {
         guard let usernametxt = username.text, let emailtxt = email.text, let passwordtxt = password.text,
         !usernametxt.isEmpty, !emailtxt.isEmpty, !passwordtxt.isEmpty else { return }
         
+        AuthService.instance.registerUser(username: usernametxt, email: emailtxt, password: passwordtxt) { (username, userId) in
+            if username != nil, userId != nil {
+                let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+                let hostVC = storyBoard.instantiateViewController(withIdentifier: "hostVC") as! HostViewController
+                self.present(hostVC, animated: true, completion: nil)
+            } else {
+                print("sign up failed")
+            }
+        }
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
