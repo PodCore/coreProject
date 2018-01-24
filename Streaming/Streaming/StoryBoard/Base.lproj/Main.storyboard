@@ -135,39 +135,37 @@
                                     <action selector="signupClicked:" destination="wne-tx-KMA" eventType="touchUpInside" id="U4e-Ui-IkW"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="7YC-Qh-4lK">
-                                <rect key="frame" x="49.5" y="434" width="276" height="104"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="79B-Xb-vio">
+                                <rect key="frame" x="133.5" y="424" width="109" height="80"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rN4-h6-GDX">
-                                        <rect key="frame" x="0.0" y="0.0" width="276" height="42"/>
-                                        <color key="backgroundColor" red="0.094117647060000004" green="0.1450980392" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
-                                        <state key="normal" title="  Sign Up  with facebook ">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qfl-Ll-sSM">
+                                        <rect key="frame" x="0.0" y="0.0" width="109" height="35"/>
+                                        <state key="normal" image="fbbutton"/>
+                                        <connections>
+                                            <action selector="fbLoginTapped:" destination="wne-tx-KMA" eventType="touchUpInside" id="tll-K3-7Vt"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17U-9Y-aon">
-                                        <rect key="frame" x="24.5" y="62" width="227" height="42"/>
-                                        <color key="backgroundColor" red="0.094117647060000004" green="0.1450980392" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
-                                        <state key="normal" title="  Sign Up  with gmail">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qcb-Vv-89i">
+                                        <rect key="frame" x="0.0" y="45" width="109" height="35"/>
+                                        <state key="normal" image="gmailbutton"/>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="s12-qx-Eui"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="7YC-Qh-4lK" firstAttribute="centerX" secondItem="fCM-c5-S06" secondAttribute="centerX" id="2Oz-xc-PvQ"/>
                             <constraint firstItem="M4j-hR-jWz" firstAttribute="centerX" secondItem="fCM-c5-S06" secondAttribute="centerX" id="9qS-qH-qe8"/>
                             <constraint firstItem="Aid-7e-f7c" firstAttribute="top" secondItem="M4j-hR-jWz" secondAttribute="bottom" constant="45" id="BPr-mF-7k0"/>
-                            <constraint firstItem="7YC-Qh-4lK" firstAttribute="top" secondItem="Aid-7e-f7c" secondAttribute="bottom" constant="45" id="GkI-zn-xP7"/>
                             <constraint firstItem="hsr-KY-0sp" firstAttribute="top" secondItem="i29-ea-Ctl" secondAttribute="bottom" constant="25" id="I3p-Ic-tXw"/>
                             <constraint firstItem="M4j-hR-jWz" firstAttribute="top" secondItem="hsr-KY-0sp" secondAttribute="bottom" constant="20" id="MeE-yk-cc9"/>
                             <constraint firstItem="hsr-KY-0sp" firstAttribute="centerX" secondItem="fCM-c5-S06" secondAttribute="centerX" id="Rzr-Fk-eMH"/>
+                            <constraint firstItem="79B-Xb-vio" firstAttribute="top" secondItem="Aid-7e-f7c" secondAttribute="bottom" constant="35" id="Uwg-2y-KeL"/>
                             <constraint firstItem="Aid-7e-f7c" firstAttribute="centerX" secondItem="fCM-c5-S06" secondAttribute="centerX" id="Vkm-SS-kPL"/>
                             <constraint firstItem="i29-ea-Ctl" firstAttribute="top" secondItem="wIz-Hd-NRJ" secondAttribute="top" constant="10" id="nuk-Xd-kpd"/>
+                            <constraint firstItem="79B-Xb-vio" firstAttribute="centerX" secondItem="fCM-c5-S06" secondAttribute="centerX" id="o7m-cn-9Kz"/>
                             <constraint firstItem="i29-ea-Ctl" firstAttribute="centerX" secondItem="fCM-c5-S06" secondAttribute="centerX" id="rYc-Wa-KRB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wIz-Hd-NRJ"/>
@@ -380,6 +378,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="fbbutton" width="107" height="24"/>
+        <image name="gmailbutton" width="109" height="24"/>
         <image name="popular" width="400" height="300"/>
         <image name="profilePlaceholder" width="192" height="192"/>
     </resources>
