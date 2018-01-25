@@ -18,6 +18,10 @@ class RegisterViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDe
     
     @IBOutlet weak var password: UITextField!
     
+    @IBAction func signUpWithGmailButton(_ sender: Any) {
+        GIDSignIn.sharedInstance().signIn()
+    }
+    
     @IBAction func signupClicked(_ sender: UIButton) {
         guard let usernametxt = username.text, let emailtxt = email.text, let passwordtxt = password.text,
         !usernametxt.isEmpty, !emailtxt.isEmpty, !passwordtxt.isEmpty else { return }
@@ -56,12 +60,10 @@ class RegisterViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDe
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().delegate = self
         
-        let signInButton = GIDSignInButton()
-        
-//        ADJUST THE POSITION OF THE BUTTON
-        signInButton.center = view.center
-        
-        view.addSubview(signInButton)
+//        let signInButton = GIDSignInButton()
+//////        ADJUST THE POSITION OF THE BUTTON
+//        signInButton.center = view.center
+//        view.addSubview(signInButton)
     }
     
     override func viewDidLoad() {

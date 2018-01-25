@@ -153,6 +153,9 @@
                                         <state key="normal" title="  Sign Up  with gmail">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="signUpWithGmailButton:" destination="wne-tx-KMA" eventType="touchUpInside" id="URQ-31-eL4"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
