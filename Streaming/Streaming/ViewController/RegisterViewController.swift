@@ -17,7 +17,7 @@ class RegisterViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDe
     
     var loginName: String?
     var loginEmail: String?
-
+    
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -25,33 +25,39 @@ class RegisterViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDe
     @IBOutlet weak var fbButton: UIButton!
     @IBOutlet weak var gmailButton: UIButton!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-//        setUpGoogleSignIn()
+        setUpGoogleSignIn()
     }
     
+    //   MARK: (helper) main func to call google Signin
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if error != nil {
             print(error)
             return
         }
-        //    Where you get the user object after login
-        print(user.profile.email)
+        AuthService.instance.registerUser(username: user.profile.givenName, email: user.profile.email, password: "gmailpassword ", completion: { (username, userId) in
+            print(username, userId)
+            let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+            let hostVC = storyBoard.instantiateViewController(withIdentifier: "hostVC") as! HostViewController
+            self.present(hostVC, animated: true, completion: nil)
+        })
     }
     
-//    func setUpGoogleSignIn() {
-//        var error: NSError?
-//        GGLContext.sharedInstance().configureWithError(&error)
-//
-//        if error != nil {
-//            print(error!)
-//            return
-//        }
-//
-//        GIDSignIn.sharedInstance().uiDelegate = self
-//        GIDSignIn.sharedInstance().delegate = self
-//    }
+    //    MARK: (helper) setupGoogleSignin
+    func setUpGoogleSignIn() {
+        var error: NSError?
+        GGLContext.sharedInstance().configureWithError(&error)
+        if error != nil {
+            print(error!)
+            return
+        }
+        //  call Gmail uiDelegate and signindelegate
+        DispatchQueue.main.async {
+            GIDSignIn.sharedInstance().uiDelegate = self
+            GIDSignIn.sharedInstance().delegate = self
+        }
+    }
     
     //  MARK : (helper) fbloginmanager to authenticate user via fb
     
@@ -101,7 +107,7 @@ class RegisterViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDe
     @IBAction func signupClicked(_ sender: UIButton) {
         guard let usernametxt = username.text, let emailtxt = email.text, let passwordtxt = password.text,
         !usernametxt.isEmpty, !emailtxt.isEmpty, !passwordtxt.isEmpty else { return }
-        
+
         AuthService.instance.registerUser(username: usernametxt, email: emailtxt, password: passwordtxt) { (username, userId) in
             if username != nil, userId != nil {
                 let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
@@ -125,8 +131,6 @@ class RegisterViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDe
                 })
             }
         }
-    
-    
     }
     
 }
