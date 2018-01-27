@@ -148,6 +148,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qcb-Vv-89i">
                                         <rect key="frame" x="0.0" y="45" width="109" height="35"/>
                                         <state key="normal" image="gmailbutton"/>
+                                        <connections>
+                                            <action selector="signUpWithGmailButton:" destination="wne-tx-KMA" eventType="touchUpInside" id="ak3-fa-yXs"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -172,7 +175,10 @@
                     </view>
                     <connections>
                         <outlet property="email" destination="fpI-mR-DBk" id="Z1x-TH-k6w"/>
+                        <outlet property="fbButton" destination="Qfl-Ll-sSM" id="2tL-bw-Cpf"/>
+                        <outlet property="gmailButton" destination="qcb-Vv-89i" id="Cfn-PP-cxT"/>
                         <outlet property="password" destination="Q3X-p7-Lla" id="Mnm-an-Zig"/>
+                        <outlet property="regularButton" destination="Aid-7e-f7c" id="84R-AW-Q8h"/>
                         <outlet property="username" destination="p6e-cq-N03" id="N0x-wR-hRu"/>
                     </connections>
                 </viewController>

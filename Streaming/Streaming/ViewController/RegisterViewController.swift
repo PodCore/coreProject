@@ -10,24 +10,50 @@ import UIKit
 import FacebookLogin
 import FBSDKLoginKit
 import FBSDKCoreKit
+import GoogleSignIn
+import Google
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate  {
     
     var loginName: String?
     var loginEmail: String?
-    
+
     @IBOutlet weak var username: UITextField!
-    
     @IBOutlet weak var email: UITextField!
-    
     @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var regularButton: UIButton!
+    @IBOutlet weak var fbButton: UIButton!
+    @IBOutlet weak var gmailButton: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+//        setUpGoogleSignIn()
     }
     
-    //  MARK : fbloginmanager to authenticate user via fb
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if error != nil {
+            print(error)
+            return
+        }
+        //    Where you get the user object after login
+        print(user.profile.email)
+    }
+    
+//    func setUpGoogleSignIn() {
+//        var error: NSError?
+//        GGLContext.sharedInstance().configureWithError(&error)
+//
+//        if error != nil {
+//            print(error!)
+//            return
+//        }
+//
+//        GIDSignIn.sharedInstance().uiDelegate = self
+//        GIDSignIn.sharedInstance().delegate = self
+//    }
+    
+    //  MARK : (helper) fbloginmanager to authenticate user via fb
     
     func fbManagerSuccess(completion: @escaping (Bool) -> ()) {
         let loginManager = FBSDKLoginManager()
@@ -52,7 +78,7 @@ class RegisterViewController: UIViewController {
         }
     }
     
-    //  MARK: fbgraghQL request get user public profile and email info
+    //  MARK: (helper) fbgraghQL request get user public profile and email info
     
     func fbGraphRequest(completion: @escaping (Bool) -> ()) {
         let request = FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, gender, first_name, email"])
@@ -63,7 +89,14 @@ class RegisterViewController: UIViewController {
            completion(true)
         })
     }
-
+    
+    //    MARK: IBAction: GmailLoginButton
+    
+    @IBAction func signUpWithGmailButton(_ sender: Any) {
+        GIDSignIn.sharedInstance().signIn()
+    }
+    
+    //    MARK: IBAction: RegularSignupButton
     
     @IBAction func signupClicked(_ sender: UIButton) {
         guard let usernametxt = username.text, let emailtxt = email.text, let passwordtxt = password.text,
@@ -80,6 +113,7 @@ class RegisterViewController: UIViewController {
         }
     }
     
+    //    MARK: IBAction: fbLoginButton
     @IBAction func fbLoginTapped(_ sender: UIButton) {
         fbManagerSuccess{ (success) in
             if success {
@@ -91,6 +125,10 @@ class RegisterViewController: UIViewController {
                 })
             }
         }
+    
+    
     }
+    
 }
+
 

@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Streaming/ViewController/RegisterViewController.swift"
-            timestampString = "538523239.694792"
+            timestampString = "538780345.661664"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
-            landmarkName = "fbLoginTapped(_:)"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "signUpWithGmailButton(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -42,12 +42,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Streaming/ViewController/RegisterViewController.swift"
-            timestampString = "538523317.34729"
+            timestampString = "538780345.662806"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "signupClicked(_:)"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "sign(_:didSignInFor:withError:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
