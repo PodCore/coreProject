@@ -28,7 +28,7 @@ class RegisterViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        setUpGoogleSignIn()
+        setUpGoogleSignIn()
     }
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
@@ -36,22 +36,22 @@ class RegisterViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDe
             print(error)
             return
         }
-        //    Where you get the user object after login
+//            Where you get the user object after login
         print(user.profile.email)
     }
     
-//    func setUpGoogleSignIn() {
-//        var error: NSError?
-//        GGLContext.sharedInstance().configureWithError(&error)
-//
-//        if error != nil {
-//            print(error!)
-//            return
-//        }
-//
-//        GIDSignIn.sharedInstance().uiDelegate = self
-//        GIDSignIn.sharedInstance().delegate = self
-//    }
+    func setUpGoogleSignIn() {
+        var error: NSError?
+        GGLContext.sharedInstance().configureWithError(&error)
+
+        if error != nil {
+            print(error!)
+            return
+        }
+
+        GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance().delegate = self
+    }
     
     //  MARK : (helper) fbloginmanager to authenticate user via fb
     
