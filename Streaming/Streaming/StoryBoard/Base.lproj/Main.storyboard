@@ -141,9 +141,6 @@
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qfl-Ll-sSM">
                                         <rect key="frame" x="0.0" y="0.0" width="109" height="35"/>
                                         <state key="normal" image="fbbutton"/>
-                                        <connections>
-                                            <action selector="fbLoginTapped:" destination="wne-tx-KMA" eventType="touchUpInside" id="tll-K3-7Vt"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qcb-Vv-89i">
                                         <rect key="frame" x="0.0" y="45" width="109" height="35"/>
