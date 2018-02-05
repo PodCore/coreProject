@@ -46,13 +46,25 @@ class VideoViewController: UIViewController, WZStatusCallback, WZVideoSink, WZAu
         if let savedConfig:Data = UserDefaults.standard.object(forKey: SDKSampleSavedConfigKey) as? Data {
             if let wowzaConfig = NSKeyedUnarchiver.unarchiveObject(with: savedConfig) as? WowzaConfig {
                 goCoderConfig = wowzaConfig
+                goCoderConfig.hostAddress = "5f23ba.entrypoint.cloud.wowza.com"
+                goCoderConfig.portNumber = 1935
+                goCoderConfig.applicationName = "newStream"
+                goCoderConfig.streamName = "c377bc25"
             }
             else {
                 goCoderConfig = WowzaConfig()
+                goCoderConfig.hostAddress = "5f23ba.entrypoint.cloud.wowza.com"
+                goCoderConfig.portNumber = 1935
+                goCoderConfig.applicationName = "newStream"
+                goCoderConfig.streamName = "c377bc25"
             }
         }
         else {
             goCoderConfig = WowzaConfig()
+            goCoderConfig.hostAddress = "5f23ba.entrypoint.cloud.wowza.com"
+            goCoderConfig.portNumber = 1935
+            goCoderConfig.applicationName = "newStream"
+            goCoderConfig.streamName = "c377bc25"
         }
         
         // Log version and platform info
