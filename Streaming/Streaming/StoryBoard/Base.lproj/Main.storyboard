@@ -315,7 +315,23 @@
                     <view key="view" contentMode="scaleToFill" id="eTY-pO-dtU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.90000000000000002" green="0.097641509429999995" blue="0.40521226420000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZe-MU-n5o">
+                                <rect key="frame" x="133.5" y="299" width="108" height="84"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <state key="normal" title="Play">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="playVideo:" destination="Jzs-Qp-CJf" eventType="touchUpInside" id="hJP-WP-Znx"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="OZe-MU-n5o" firstAttribute="centerY" secondItem="Gv6-Zp-nNO" secondAttribute="centerY" id="0en-8Z-eOZ"/>
+                            <constraint firstItem="OZe-MU-n5o" firstAttribute="centerX" secondItem="Gv6-Zp-nNO" secondAttribute="centerX" id="IAu-bL-Di3"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Gv6-Zp-nNO"/>
                     </view>
                 </viewController>
