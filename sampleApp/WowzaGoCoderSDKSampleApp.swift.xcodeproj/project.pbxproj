@@ -17,7 +17,6 @@
 		1C305FDC1C9A26CE00AD17F9 /* SettingsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C305FD81C9A26CE00AD17F9 /* SettingsViewModel.m */; };
 		1C305FDF1C9A27A500AD17F9 /* GoCoderSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C305FDE1C9A27A500AD17F9 /* GoCoderSettings.storyboard */; };
 		1C305FE11C9A282200AD17F9 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C305FE01C9A282200AD17F9 /* VideoViewController.swift */; };
-		F921B62A2027F1F100039C95 /* WatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F921B6292027F1F100039C95 /* WatchViewController.swift */; };
 		F9A7FD0220197EC300082392 /* validatesdk.sh in Resources */ = {isa = PBXBuildFile; fileRef = F9A7FD0020197EC300082392 /* validatesdk.sh */; };
 		F9E3F9C720198050002F632F /* WowzaGoCoderSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9E3F9C620198050002F632F /* WowzaGoCoderSDK.framework */; };
 		F9E3F9CA201980B8002F632F /* WowzaGoCoderSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F9E3F9C8201980B8002F632F /* WowzaGoCoderSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -55,7 +54,6 @@
 		1C305FD81C9A26CE00AD17F9 /* SettingsViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewModel.m; path = shared/SettingsViewModel.m; sourceTree = SOURCE_ROOT; };
 		1C305FDE1C9A27A500AD17F9 /* GoCoderSettings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = GoCoderSettings.storyboard; path = shared/GoCoderSettings.storyboard; sourceTree = SOURCE_ROOT; };
 		1C305FE01C9A282200AD17F9 /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
-		F921B6292027F1F100039C95 /* WatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchViewController.swift; sourceTree = "<group>"; };
 		F9A7FD0020197EC300082392 /* validatesdk.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = validatesdk.sh; sourceTree = SOURCE_ROOT; };
 		F9E3F9C620198050002F632F /* WowzaGoCoderSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WowzaGoCoderSDK.framework; sourceTree = "<group>"; };
 		F9E3F9C8201980B8002F632F /* WowzaGoCoderSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WowzaGoCoderSDK.framework; sourceTree = "<group>"; };
@@ -99,7 +97,6 @@
 				1C305FDD1C9A26DD00AD17F9 /* shared */,
 				1C305FB11C99F87600AD17F9 /* AppDelegate.swift */,
 				1C305FB51C99F87600AD17F9 /* Main.storyboard */,
-				F921B6292027F1F100039C95 /* WatchViewController.swift */,
 				1C305FB81C99F87600AD17F9 /* Assets.xcassets */,
 				1C305FBA1C99F87600AD17F9 /* LaunchScreen.storyboard */,
 				1C305FBD1C99F87600AD17F9 /* Info.plist */,
@@ -224,7 +221,6 @@
 				1C305FDB1C9A26CE00AD17F9 /* SettingsViewController.m in Sources */,
 				1C305FD91C9A26CE00AD17F9 /* CustomFrameSizeViewController.m in Sources */,
 				1C305FB21C99F87600AD17F9 /* AppDelegate.swift in Sources */,
-				F921B62A2027F1F100039C95 /* WatchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

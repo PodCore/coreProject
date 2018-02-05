@@ -104,24 +104,6 @@
             </objects>
             <point key="canvasLocation" x="508" y="582"/>
         </scene>
-        <!--Watch View Controller-->
-        <scene sceneID="cLV-AQ-t1L">
-            <objects>
-                <viewController storyboardIdentifier="watchVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YeS-hh-X52" customClass="WatchViewController" customModule="SwiftSDKSampleApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Jk4-MQ-Nyh"/>
-                        <viewControllerLayoutGuide type="bottom" id="UZf-56-VUo"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="e6b-RF-wvY">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Fk5-bN-ab6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="438" y="1368"/>
-        </scene>
     </scenes>
     <resources>
         <image name="mic_on_button" width="45" height="45"/>
