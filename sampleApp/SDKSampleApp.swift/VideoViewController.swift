@@ -14,7 +14,9 @@ class VideoViewController: UIViewController, WZStatusCallback, WZVideoSink, WZAu
     
     //MARK: - Class Member Variables
     
-    let SDKSampleSavedConfigKey = "gocoder://configure/?publishHost=127.0.0.1&publishPort=1935&publishApplication=podcore&publishStream=myStream&publishUseTCP=YES&publishUser=podcore"
+//    let SDKSampleSavedConfigKey = "gocoder://configure/?publishHost=127.0.0.1&publishPort=1935&publishApplication=podcore&publishStream=myStream&publishUseTCP=YES&publishUser=podcore"
+    let SDKSampleSavedConfigKey = "gocoder://configure/?publishUseTCP=YES&publishHost=271dd7.entrypoint.cloud.wowza.com&publishPort=1935&publishApplication=app-a804&publishStream=8db65432&publishUser=client28871&publishPassword=9fec9dc1&publishAutoRestart=YES&publishBroadcastType=2&publishFPS=25&publishKeyFrameInterval=50&publishBitrateIndex=1&publishFrameSizeIndex=7&publishFilterType=0&publishURL=https://player.cloud.wowza.com/hosted/lgkf507q/player.html"
+
     let SDKSampleAppLicenseKey = "GOSK-B144-0103-A817-22A8-2C70"
     let BlackAndWhiteEffectKey = "BlackAndWhiteKey"
     
@@ -46,25 +48,31 @@ class VideoViewController: UIViewController, WZStatusCallback, WZVideoSink, WZAu
         if let savedConfig:Data = UserDefaults.standard.object(forKey: SDKSampleSavedConfigKey) as? Data {
             if let wowzaConfig = NSKeyedUnarchiver.unarchiveObject(with: savedConfig) as? WowzaConfig {
                 goCoderConfig = wowzaConfig
-                goCoderConfig.hostAddress = "5f23ba.entrypoint.cloud.wowza.com"
+                goCoderConfig.hostAddress = "271dd7.entrypoint.cloud.wowza.com"
                 goCoderConfig.portNumber = 1935
-                goCoderConfig.applicationName = "newStream"
-                goCoderConfig.streamName = "c377bc25"
+                goCoderConfig.applicationName = "app-a804"
+                goCoderConfig.streamName = "8db65432"
+                goCoderConfig.username = "client28871"
+                goCoderConfig.password = "9fec9dc1"
             }
             else {
                 goCoderConfig = WowzaConfig()
-                goCoderConfig.hostAddress = "5f23ba.entrypoint.cloud.wowza.com"
+                goCoderConfig.hostAddress = "271dd7.entrypoint.cloud.wowza.com"
                 goCoderConfig.portNumber = 1935
-                goCoderConfig.applicationName = "newStream"
-                goCoderConfig.streamName = "c377bc25"
+                goCoderConfig.applicationName = "app-a804"
+                goCoderConfig.streamName = "8db65432"
+                goCoderConfig.username = "client28871"
+                goCoderConfig.password = "9fec9dc1"
             }
         }
         else {
             goCoderConfig = WowzaConfig()
-            goCoderConfig.hostAddress = "5f23ba.entrypoint.cloud.wowza.com"
+            goCoderConfig.hostAddress = "271dd7.entrypoint.cloud.wowza.com"
             goCoderConfig.portNumber = 1935
-            goCoderConfig.applicationName = "newStream"
-            goCoderConfig.streamName = "c377bc25"
+            goCoderConfig.applicationName = "app-a804"
+            goCoderConfig.streamName = "8db65432"
+            goCoderConfig.username = "client28871"
+            goCoderConfig.password = "9fec9dc1"
         }
         
         // Log version and platform info
