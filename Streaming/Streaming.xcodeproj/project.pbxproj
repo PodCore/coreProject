@@ -27,6 +27,10 @@
 		F9BCA69620167623006FAB8D /* UIImage&Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BCA69520167623006FAB8D /* UIImage&Cache.swift */; };
 		F9BCA6992016869F006FAB8D /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BCA6982016869F006FAB8D /* CollectionCell.swift */; };
 		F9BCA6A02016A9B1006FAB8D /* WatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BCA69F2016A9B1006FAB8D /* WatchViewController.swift */; };
+		F9D64D8F202A2B9700C335BA /* WowzaGoCoderSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9D64D8E202A2B9700C335BA /* WowzaGoCoderSDK.framework */; };
+		F9D64D91202A2C7200C335BA /* validatesdk.sh in Resources */ = {isa = PBXBuildFile; fileRef = F9D64D90202A2C7200C335BA /* validatesdk.sh */; };
+		F9D64D92202A2D4400C335BA /* WowzaGoCoderSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9D64D8E202A2B9700C335BA /* WowzaGoCoderSDK.framework */; };
+		F9D64D93202A2D4400C335BA /* WowzaGoCoderSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F9D64D8E202A2B9700C335BA /* WowzaGoCoderSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F9F94FCF2007EACB00BC25D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F94FCE2007EACB00BC25D2 /* AppDelegate.swift */; };
 		F9F94FD12007EACB00BC25D2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F94FD02007EACB00BC25D2 /* HomeViewController.swift */; };
 		F9F94FD42007EACB00BC25D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9F94FD22007EACB00BC25D2 /* Main.storyboard */; };
@@ -44,6 +48,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				F9D64D93202A2D4400C335BA /* WowzaGoCoderSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -78,6 +83,8 @@
 		F9BCA69520167623006FAB8D /* UIImage&Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage&Cache.swift"; sourceTree = "<group>"; };
 		F9BCA6982016869F006FAB8D /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		F9BCA69F2016A9B1006FAB8D /* WatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchViewController.swift; sourceTree = "<group>"; };
+		F9D64D8E202A2B9700C335BA /* WowzaGoCoderSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WowzaGoCoderSDK.framework; sourceTree = "<group>"; };
+		F9D64D90202A2C7200C335BA /* validatesdk.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = validatesdk.sh; sourceTree = "<group>"; };
 		F9F94FCB2007EACB00BC25D2 /* Streaming.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Streaming.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9F94FCE2007EACB00BC25D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9F94FD02007EACB00BC25D2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +102,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9D64D92202A2D4400C335BA /* WowzaGoCoderSDK.framework in Frameworks */,
+				F9D64D8F202A2B9700C335BA /* WowzaGoCoderSDK.framework in Frameworks */,
 				E67FF817BFDB6B185CD2D46E /* Pods_Streaming.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -166,6 +175,7 @@
 		F9F94FCD2007EACB00BC25D2 /* Streaming */ = {
 			isa = PBXGroup;
 			children = (
+				F9D64D8E202A2B9700C335BA /* WowzaGoCoderSDK.framework */,
 				4901703E20290B6B0099961E /* CustomFrameSizeViewController.h */,
 				4901703920290B680099961E /* CustomFrameSizeViewController.m */,
 				4901703A20290B690099961E /* GoCoderSettings.storyboard */,
@@ -179,6 +189,7 @@
 				4954A9BE2028F47000164E38 /* UYLNotificationDelegate.swift */,
 				4954A9C12028F47100164E38 /* VideoViewController.swift */,
 				F9F94FCE2007EACB00BC25D2 /* AppDelegate.swift */,
+				F9D64D90202A2C7200C335BA /* validatesdk.sh */,
 				F91BFDD72017C283002A3E7D /* Service */,
 				F9FE157720115AED0086CFDE /* Config */,
 				F9FE15732011586C0086CFDE /* Helper */,
@@ -248,6 +259,7 @@
 				A145BC59A1858ABF11E9ACD0 /* [CP] Embed Pods Frameworks */,
 				A26930C906DC1439406AFC2D /* [CP] Copy Pods Resources */,
 				4954A9CC2028F6BF00164E38 /* Embed Frameworks */,
+				F9D64D94202A2D8200C335BA /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -302,6 +314,7 @@
 				F9F94FD62007EACB00BC25D2 /* Assets.xcassets in Resources */,
 				4954A9BD2028F40500164E38 /* Host.storyboard in Resources */,
 				F9F94FD42007EACB00BC25D2 /* Main.storyboard in Resources */,
+				F9D64D91202A2C7200C335BA /* validatesdk.sh in Resources */,
 				4901704320290B6D0099961E /* GoCoderSettings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -370,6 +383,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Streaming/Pods-Streaming-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		F9D64D94202A2D8200C335BA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/WowzaGoCoderSDK.framework/strip-frameworks.sh\"\n";
 		};
 		FB0A5F3AD5EABE5809CBB7B8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
