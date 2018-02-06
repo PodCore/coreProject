@@ -23,7 +23,9 @@ class HomeViewController: UIViewController {
         
         
         if AuthService.instance.isLoggedIn {
-            print("already register, go to host page")
+            let storyBoard = UIStoryboard.init(name: "Host", bundle: nil)
+            let hostVC = storyBoard.instantiateViewController(withIdentifier: "hostID") as! VideoViewController
+            self.navigationController?.pushViewController(hostVC, animated: true)
         } else {
             let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
             let registerVC = storyBoard.instantiateViewController(withIdentifier: "registerVC") as! RegisterViewController

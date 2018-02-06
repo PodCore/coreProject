@@ -62,6 +62,10 @@
 	<true/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
+	<key>NSCameraUsageDescription</key>
+	<string>The camera will be used to capture video for live streaming</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>The microphone will be used to capture live audio for streaming</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>

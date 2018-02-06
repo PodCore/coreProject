@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		21EF45862017E73F0017CBC7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21EF45852017E73F0017CBC7 /* GoogleService-Info.plist */; };
+		4901704120290B6D0099961E /* SettingsTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4901703820290B680099961E /* SettingsTextFieldCell.m */; };
+		4901704220290B6D0099961E /* CustomFrameSizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4901703920290B680099961E /* CustomFrameSizeViewController.m */; };
+		4901704320290B6D0099961E /* GoCoderSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4901703A20290B690099961E /* GoCoderSettings.storyboard */; };
+		4901704420290B6D0099961E /* SettingsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4901703B20290B690099961E /* SettingsViewModel.m */; };
+		4901704520290B6D0099961E /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4901703D20290B6B0099961E /* SettingsViewController.m */; };
+		4954A9BD2028F40500164E38 /* Host.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4954A9BB2028F40400164E38 /* Host.storyboard */; };
+		4954A9C22028F47100164E38 /* UYLNotificationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4954A9BE2028F47000164E38 /* UYLNotificationDelegate.swift */; };
+		4954A9C42028F47100164E38 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4954A9C12028F47100164E38 /* VideoViewController.swift */; };
 		E67FF817BFDB6B185CD2D46E /* Pods_Streaming.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C361A6392A777A2830731E3 /* Pods_Streaming.framework */; };
 		F91BFDD62017BDA2002A3E7D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91BFDD52017BDA2002A3E7D /* RegisterViewController.swift */; };
 		F91BFDD92017C294002A3E7D /* Authservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91BFDD82017C294002A3E7D /* Authservice.swift */; };
@@ -29,9 +37,35 @@
 		F9FE157B2011695B0086CFDE /* TableViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FE157A2011695B0086CFDE /* TableViewDatasource.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		4954A9CC2028F6BF00164E38 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		21EF45852017E73F0017CBC7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		2C361A6392A777A2830731E3 /* Pods_Streaming.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Streaming.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4901703820290B680099961E /* SettingsTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTextFieldCell.m; sourceTree = "<group>"; };
+		4901703920290B680099961E /* CustomFrameSizeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomFrameSizeViewController.m; sourceTree = "<group>"; };
+		4901703A20290B690099961E /* GoCoderSettings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GoCoderSettings.storyboard; sourceTree = "<group>"; };
+		4901703B20290B690099961E /* SettingsViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewModel.m; sourceTree = "<group>"; };
+		4901703C20290B6A0099961E /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		4901703D20290B6B0099961E /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		4901703E20290B6B0099961E /* CustomFrameSizeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomFrameSizeViewController.h; sourceTree = "<group>"; };
+		4901703F20290B6C0099961E /* SettingsViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewModel.h; sourceTree = "<group>"; };
+		4901704020290B6C0099961E /* SettingsTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTextFieldCell.h; sourceTree = "<group>"; };
+		4954A9BC2028F40400164E38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ../../../sampleApp/SDKSampleApp.swift/Base.lproj/Host.storyboard; sourceTree = "<group>"; };
+		4954A9BE2028F47000164E38 /* UYLNotificationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UYLNotificationDelegate.swift; path = ../../sampleApp/SDKSampleApp.swift/UYLNotificationDelegate.swift; sourceTree = "<group>"; };
+		4954A9BF2028F47000164E38 /* SwiftSDKSampleApp-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SwiftSDKSampleApp-Bridging-Header.h"; path = "../../sampleApp/SDKSampleApp.swift/SwiftSDKSampleApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		4954A9C12028F47100164E38 /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoViewController.swift; path = ../../sampleApp/SDKSampleApp.swift/VideoViewController.swift; sourceTree = "<group>"; };
 		67F54C6B5E133FAEC9712CE7 /* Pods-Streaming.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Streaming.release.xcconfig"; path = "Pods/Target Support Files/Pods-Streaming/Pods-Streaming.release.xcconfig"; sourceTree = "<group>"; };
 		87C1A2CE772206B44551915C /* Pods-Streaming.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Streaming.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Streaming/Pods-Streaming.debug.xcconfig"; sourceTree = "<group>"; };
 		F91BFDD52017BDA2002A3E7D /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +166,18 @@
 		F9F94FCD2007EACB00BC25D2 /* Streaming */ = {
 			isa = PBXGroup;
 			children = (
+				4901703E20290B6B0099961E /* CustomFrameSizeViewController.h */,
+				4901703920290B680099961E /* CustomFrameSizeViewController.m */,
+				4901703A20290B690099961E /* GoCoderSettings.storyboard */,
+				4901704020290B6C0099961E /* SettingsTextFieldCell.h */,
+				4901703820290B680099961E /* SettingsTextFieldCell.m */,
+				4901703C20290B6A0099961E /* SettingsViewController.h */,
+				4901703D20290B6B0099961E /* SettingsViewController.m */,
+				4901703F20290B6C0099961E /* SettingsViewModel.h */,
+				4901703B20290B690099961E /* SettingsViewModel.m */,
+				4954A9BF2028F47000164E38 /* SwiftSDKSampleApp-Bridging-Header.h */,
+				4954A9BE2028F47000164E38 /* UYLNotificationDelegate.swift */,
+				4954A9C12028F47100164E38 /* VideoViewController.swift */,
 				F9F94FCE2007EACB00BC25D2 /* AppDelegate.swift */,
 				F91BFDD72017C283002A3E7D /* Service */,
 				F9FE157720115AED0086CFDE /* Config */,
@@ -151,6 +197,7 @@
 		F9FE156F201158210086CFDE /* StoryBoard */ = {
 			isa = PBXGroup;
 			children = (
+				4954A9BB2028F40400164E38 /* Host.storyboard */,
 				F9F94FD22007EACB00BC25D2 /* Main.storyboard */,
 			);
 			path = StoryBoard;
@@ -200,6 +247,7 @@
 				F9F94FC92007EACB00BC25D2 /* Resources */,
 				A145BC59A1858ABF11E9ACD0 /* [CP] Embed Pods Frameworks */,
 				A26930C906DC1439406AFC2D /* [CP] Copy Pods Resources */,
+				4954A9CC2028F6BF00164E38 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -252,7 +300,9 @@
 				F9F94FD92007EACB00BC25D2 /* LaunchScreen.storyboard in Resources */,
 				21EF45862017E73F0017CBC7 /* GoogleService-Info.plist in Resources */,
 				F9F94FD62007EACB00BC25D2 /* Assets.xcassets in Resources */,
+				4954A9BD2028F40500164E38 /* Host.storyboard in Resources */,
 				F9F94FD42007EACB00BC25D2 /* Main.storyboard in Resources */,
+				4901704320290B6D0099961E /* GoCoderSettings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,13 +400,19 @@
 				F9F94FD12007EACB00BC25D2 /* HomeViewController.swift in Sources */,
 				F9F94FCF2007EACB00BC25D2 /* AppDelegate.swift in Sources */,
 				F91BFDD62017BDA2002A3E7D /* RegisterViewController.swift in Sources */,
+				4954A9C22028F47100164E38 /* UYLNotificationDelegate.swift in Sources */,
 				F9BCA694201651A0006FAB8D /* CollectionViewDatasource.swift in Sources */,
+				4901704520290B6D0099961E /* SettingsViewController.m in Sources */,
 				F9FE1572201158620086CFDE /* PlayLiveVideo.swift in Sources */,
 				F91BFDDE2017DC12002A3E7D /* User.swift in Sources */,
+				4954A9C42028F47100164E38 /* VideoViewController.swift in Sources */,
 				F9BCA69220164CBC006FAB8D /* Comment.swift in Sources */,
+				4901704120290B6D0099961E /* SettingsTextFieldCell.m in Sources */,
+				4901704220290B6D0099961E /* CustomFrameSizeViewController.m in Sources */,
 				F9BCA6A02016A9B1006FAB8D /* WatchViewController.swift in Sources */,
 				F9BCA6992016869F006FAB8D /* CollectionCell.swift in Sources */,
 				F9BCA69020159100006FAB8D /* Room.swift in Sources */,
+				4901704420290B6D0099961E /* SettingsViewModel.m in Sources */,
 				F91BFDE02017DF58002A3E7D /* HostViewController.swift in Sources */,
 				F9FE157920115AFB0086CFDE /* Config.swift in Sources */,
 				F91BFDD92017C294002A3E7D /* Authservice.swift in Sources */,
@@ -367,6 +423,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		4954A9BB2028F40400164E38 /* Host.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4954A9BC2028F40400164E38 /* Base */,
+			);
+			name = Host.storyboard;
+			sourceTree = "<group>";
+		};
 		F9F94FD22007EACB00BC25D2 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -505,12 +569,28 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Streaming",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"${PODS_ROOT}/Google/Headers",
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseAnalytics\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseCore\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseInstanceID\"",
+					"\"${PODS_ROOT}/Headers/Public/Google\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleSignIn\"",
+					"$(PROJECT_DIR)/Frameworks/WowzaGoCoderSDK.framework/Headers",
 				);
 				INFOPLIST_FILE = Streaming/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sky.Streaming;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftSDKSampleApp-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "SwiftSDKSampleApp-Swift.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -526,12 +606,28 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Streaming",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"${PODS_ROOT}/Google/Headers",
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseAnalytics\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseCore\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseInstanceID\"",
+					"\"${PODS_ROOT}/Headers/Public/Google\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleSignIn\"",
+					"$(PROJECT_DIR)/Frameworks/WowzaGoCoderSDK.framework/Headers",
 				);
 				INFOPLIST_FILE = Streaming/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sky.Streaming;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftSDKSampleApp-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "SwiftSDKSampleApp-Swift.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
