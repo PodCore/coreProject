@@ -81,6 +81,11 @@
 			<key>orderHint</key>
 			<integer>8</integer>
 		</dict>
+		<key>KeychainSwift.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>16</integer>
+		</dict>
 		<key>LFLiveKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
