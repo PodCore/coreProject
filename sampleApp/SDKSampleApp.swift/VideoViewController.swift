@@ -100,7 +100,7 @@ class VideoViewController: UIViewController, WZStatusCallback, WZVideoSink, WZAu
         // Update the configuration settings in the GoCoder SDK
         if (goCoder != nil) {
             goCoder?.config = goCoderConfig
-            blackAndWhiteVideoEffect = UserDefaults.standard.bool(forKey: BlackAndWhiteKey)
+            blackAndWhiteVideoEffect = UserDefaults.standard.bool(forKey: BlackAndWhiteEffectKey)
         }
     }
 

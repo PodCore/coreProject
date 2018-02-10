@@ -25,6 +25,16 @@ class AuthService {
         }
     }
     
+//    var keychainLoggedIn: Bool {
+//        get {
+//
+//        }
+//
+//        set {
+//
+//        }
+//    }
+    
     var authToken: String {
         get {
             return defaults.value(forKey: "TOKEN_KEY") as! String
@@ -50,11 +60,12 @@ class AuthService {
    
         Alamofire.request(BASE_URL, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseJSON{ (response) in
             if response.result.error == nil {
-                guard let json = response.result.value as? [String: String] else { return }
+                guard let json = response.result.value as? [String: Any] else { return }
                 print(json)
                 guard let name = json["username"],
                     let userId = json["_id"] else { return }
-                completion(name, userId)
+                self.isLoggedIn = true
+                completion(name as? String, userId as? String)
             } else {
                 completion(nil, nil)
                 debugPrint(response.result.error as Any)

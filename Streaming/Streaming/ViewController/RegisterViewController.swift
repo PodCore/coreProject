@@ -17,6 +17,7 @@ class RegisterViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDe
     
     var loginName: String?
     var loginEmail: String?
+    let defaults = UserDefaults.standard
     
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var email: UITextField!
@@ -37,10 +38,10 @@ class RegisterViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDe
             return
         }
         AuthService.instance.registerUser(username: user.profile.givenName, email: user.profile.email, password: "gmailpassword ", completion: { (username, userId) in
-            print(username, userId)
-            let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
-            let hostVC = storyBoard.instantiateViewController(withIdentifier: "hostVC") as! HostViewController
-            self.present(hostVC, animated: true, completion: nil)
+//            print(username, userId)
+            let storyBoard = UIStoryboard.init(name: "Host", bundle: nil)
+            let hostVC = storyBoard.instantiateViewController(withIdentifier: "hostID") as! VideoViewController
+            self.navigationController?.pushViewController(hostVC, animated: true)
         })
     }
     
@@ -110,9 +111,9 @@ class RegisterViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDe
 
         AuthService.instance.registerUser(username: usernametxt, email: emailtxt, password: passwordtxt) { (username, userId) in
             if username != nil, userId != nil {
-                let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
-                let hostVC = storyBoard.instantiateViewController(withIdentifier: "hostVC") as! HostViewController
-                self.present(hostVC, animated: true, completion: nil)
+                let storyBoard = UIStoryboard.init(name: "Host", bundle: nil)
+                let hostVC = storyBoard.instantiateViewController(withIdentifier: "hostID") as! VideoViewController
+                self.navigationController?.pushViewController(hostVC, animated: true)
             } else {
                 print("sign up failed")
             }
@@ -124,10 +125,10 @@ class RegisterViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDe
         fbManagerSuccess{ (success) in
             if success {
                 AuthService.instance.registerUser(username: self.loginName!, email: self.loginEmail!, password: "facebookpassword ", completion: { (username, userId) in
-                    print(username, userId)
-                    let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
-                    let hostVC = storyBoard.instantiateViewController(withIdentifier: "hostVC") as! HostViewController
-                    self.present(hostVC, animated: true, completion: nil)
+//                    print(username, userId)
+                    let storyBoard = UIStoryboard.init(name: "Host", bundle: nil)
+                    let hostVC = storyBoard.instantiateViewController(withIdentifier: "hostID") as! VideoViewController
+                    self.navigationController?.pushViewController(hostVC, animated: true)
                 })
             }
         }

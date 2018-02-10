@@ -12,6 +12,6 @@ target 'Streaming' do
   pod 'FacebookCore'
   pod 'FacebookLogin'
   pod 'FacebookShare'
-
+  pod 'KeychainSwift', '~> 10.0'
   pod 'Google/SignIn'
 end

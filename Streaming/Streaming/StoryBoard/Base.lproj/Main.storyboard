@@ -141,6 +141,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qfl-Ll-sSM">
                                         <rect key="frame" x="0.0" y="0.0" width="109" height="35"/>
                                         <state key="normal" image="fbbutton"/>
+                                        <connections>
+                                            <action selector="fbLoginTapped:" destination="wne-tx-KMA" eventType="touchUpInside" id="Me4-6a-SRt"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qcb-Vv-89i">
                                         <rect key="frame" x="0.0" y="45" width="109" height="35"/>
@@ -182,21 +185,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rDP-NZ-ww5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="796" y="-7"/>
-        </scene>
-        <!--Host View Controller-->
-        <scene sceneID="2TA-8d-dU1">
-            <objects>
-                <viewController storyboardIdentifier="hostVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5l3-QP-Pau" customClass="HostViewController" customModule="Streaming" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="bNO-pt-xHp">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <viewLayoutGuide key="safeArea" id="dsT-EC-0WA"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KnX-8l-80i" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1490" y="8"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="Uaa-Bn-sLQ">

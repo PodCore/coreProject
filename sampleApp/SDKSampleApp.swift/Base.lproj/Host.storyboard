@@ -13,7 +13,7 @@
         <!--Video View Controller-->
         <scene sceneID="gkK-bu-F86">
             <objects>
-                <viewController id="Mjt-yW-ku4" customClass="VideoViewController" customModule="SwiftSDKSampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="hostID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Mjt-yW-ku4" customClass="VideoViewController" customModule="Streaming" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OPt-HR-DBp"/>
                         <viewControllerLayoutGuide type="bottom" id="SLE-NL-cXE"/>
