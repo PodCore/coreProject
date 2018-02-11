@@ -17,8 +17,6 @@ class SocketService: NSObject {
         super.init()
     }
     
-//  ?  connectParams(["token": ""])
-    
     let manager = SocketManager(socketURL: URL(string: Config.serverUrl)!, config: [.log(true), .compress])
     
 //    only initialize socket when we call this service instance so we can fix manager property not initalized before runtime issue
@@ -51,9 +49,18 @@ class SocketService: NSObject {
 //                let result = try? JSONDecoder().decode([Rooms].self, from: data) as! [String: Any]
 //                guard let rooms = json.rooms else { return }
 //        guard let rooms = data as? Any else {return}
-//                print("YOOOOOOOOO \(rooms)")
+                print("YOOOOOOOOO \(data)")
         completion(true)
         }
+    }
+    
+    // MARK:  Follow Host
+    func followHost(owner: String, completion: @escaping (Bool) -> ()) {
+        let following = Following(dict: ["username": "sky" as AnyObject, "followingName": "james" as AnyObject])
+        
+        self.socket.emit("new_follower", following.toDict())
+        completion(true)
+        
     }
     
 }

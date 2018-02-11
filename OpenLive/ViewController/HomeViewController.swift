@@ -20,8 +20,6 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBAction func hostButtonTapped(_ sender: UIButton) {
-        
-        
         if AuthService.instance.isLoggedIn {
             let storyBoard = UIStoryboard.init(name: "CreateRoom", bundle: nil)
             let createRoomVC = storyBoard.instantiateViewController(withIdentifier: "createRoomVC") as! CreateRoomViewController
@@ -37,6 +35,10 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
+        //  MARK: fetch all the available live room using socket
+//        SocketService.instance.getChannel { (success) in
+//            
+//        }
         self.collectionViewDatasource.items = popularVideos
         self.collectionView.dataSource = self.collectionViewDatasource
         
@@ -48,8 +50,10 @@ class HomeViewController: UIViewController {
         }
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 //     update Cell UI vy calling configureCell call back function
         collectionViewDatasource.configureCell = { (collectionView, indexPath) -> UICollectionViewCell in
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as! CollectionCell
@@ -57,7 +61,6 @@ class HomeViewController: UIViewController {
             
             return cell
         }
-        
        
     }
 }

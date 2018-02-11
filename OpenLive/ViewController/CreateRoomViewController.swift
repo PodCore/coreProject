@@ -25,6 +25,13 @@ class CreateRoomViewController: UIViewController {
             print("rwrwr")
         }
     }
+    
+    @IBAction func followTapped(_ sender: UIButton) {
+        SocketService.instance.followHost(owner: "James") { (success) in
+            print("YOOOOOO followed")
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let segueId = segue.identifier else {
             return

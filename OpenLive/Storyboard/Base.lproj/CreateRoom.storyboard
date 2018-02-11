@@ -264,6 +264,13 @@
                                     <action selector="testGetroomTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WXr-RS-CiC"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tCc-bU-Cr3">
+                                <rect key="frame" x="165" y="518.5" width="44" height="30"/>
+                                <state key="normal" title="Follow"/>
+                                <connections>
+                                    <action selector="followTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KFD-gL-45h"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -273,8 +280,10 @@
                             <constraint firstItem="UsM-kr-5FN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FSs-Wz-ZfS"/>
                             <constraint firstItem="4Xd-Ai-SWi" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" id="IN1-7i-Qd4"/>
                             <constraint firstItem="wKA-aN-RbB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Idb-km-eC2"/>
+                            <constraint firstItem="tCc-bU-Cr3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="M65-B0-VTy"/>
                             <constraint firstItem="wKA-aN-RbB" firstAttribute="top" secondItem="UsM-kr-5FN" secondAttribute="bottom" constant="36" id="XLV-qV-LaI"/>
                             <constraint firstAttribute="trailing" secondItem="4Xd-Ai-SWi" secondAttribute="trailing" id="XnI-39-Q2G"/>
+                            <constraint firstItem="tCc-bU-Cr3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="200" id="dxd-YQ-Hwv"/>
                             <constraint firstItem="Khm-S2-H2f" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="eBO-0N-WcG"/>
                             <constraint firstItem="ioN-uk-xK5" firstAttribute="top" secondItem="wKA-aN-RbB" secondAttribute="bottom" constant="13" id="eRt-4d-JWi"/>
                             <constraint firstItem="Khm-S2-H2f" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="h2b-4R-3zq"/>

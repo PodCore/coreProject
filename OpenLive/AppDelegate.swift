@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
         /* Facebook login */
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
@@ -42,8 +43,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     //    MARK: connectToSocket
+//    ! viewDidload happens before didBecomeActive
     func applicationDidBecomeActive(_ application: UIApplication) {
-      SocketService.instance.establishConnection()
+//        //        MARK: connect to socket
+        SocketService.instance.establishConnection()
     }
     
     //    MARK: leave Socket

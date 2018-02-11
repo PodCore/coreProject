@@ -50,6 +50,7 @@
 		F96ACB82202F803F001CA53F /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F96ACB81202F803F001CA53F /* Register.storyboard */; };
 		F96ACB84202F88DB001CA53F /* FakeRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96ACB83202F88DB001CA53F /* FakeRoom.swift */; };
 		F96ACB85202F8A0E001CA53F /* LiveRoom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F96ACB7E202F7D1E001CA53F /* LiveRoom.storyboard */; };
+		F96ACB89202FC6F5001CA53F /* Following.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96ACB88202FC6F5001CA53F /* Following.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,7 @@
 		F96ACB7E202F7D1E001CA53F /* LiveRoom.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LiveRoom.storyboard; sourceTree = "<group>"; };
 		F96ACB81202F803F001CA53F /* Register.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 		F96ACB83202F88DB001CA53F /* FakeRoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeRoom.swift; sourceTree = "<group>"; };
+		F96ACB88202FC6F5001CA53F /* Following.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Following.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,6 +257,7 @@
 				F96ACB83202F88DB001CA53F /* FakeRoom.swift */,
 				F96ACB5A202D829D001CA53F /* Room.swift */,
 				F96ACB56202D1851001CA53F /* Poop.swift */,
+				F96ACB88202FC6F5001CA53F /* Following.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -570,6 +573,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0790F1691D1EEAB2003F8C18 /* ProfileCell.swift in Sources */,
+				F96ACB89202FC6F5001CA53F /* Following.swift in Sources */,
 				F96ACB77202F7BED001CA53F /* UIImage&Cache.swift in Sources */,
 				0790F1511D1E9631003F8C18 /* VideoSession.swift in Sources */,
 				F96ACB5B202D829D001CA53F /* Room.swift in Sources */,
