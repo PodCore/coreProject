@@ -30,6 +30,8 @@ class RegisterViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDe
         super.viewDidLoad()
         setUpGoogleSignIn()
     }
+    @IBAction func logInButton(_ sender: Any) {
+    }
     
     //   MARK: (helper) main func to call google Signin
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
