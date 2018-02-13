@@ -30,6 +30,8 @@ class RegisterViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDe
         super.viewDidLoad()
         setUpGoogleSignIn()
     }
+    @IBAction func logInButton(_ sender: Any) {
+    }
     
     //    notifi application notification center about user info if registered!
     func updateUserStatus() {
