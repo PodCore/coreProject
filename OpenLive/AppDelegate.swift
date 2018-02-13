@@ -13,6 +13,7 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 import Google
 import GoogleSignIn
+import SocketIO
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -42,11 +43,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                                  annotation: options[UIApplicationOpenURLOptionsKey.annotation.rawValue])
     }
     
+    func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
+        SocketService.instance.establishConnection()
+        
+        return true
+    }
+    
     //    MARK: connectToSocket
 //    ! viewDidload happens before didBecomeActive
     func applicationDidBecomeActive(_ application: UIApplication) {
-//        //        MARK: connect to socket
-        SocketService.instance.establishConnection()
+    //        MARK: connect to socket
+//        SocketService.instance.establishConnection()
+        
     }
     
     //    MARK: leave Socket

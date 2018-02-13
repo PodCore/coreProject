@@ -17,13 +17,21 @@ class SocketService: NSObject {
         super.init()
     }
     
-    let manager = SocketManager(socketURL: URL(string: Config.serverUrl)!, config: [.log(true), .compress])
+    let manager = SocketManager(
+        socketURL: URL(string: Config.serverUrl)!,
+        config: [.log(true), .compress, .reconnects(true)]
+    )
     
 //    only initialize socket when we call this service instance so we can fix manager property not initalized before runtime issue
    lazy var socket: SocketIOClient = manager.defaultSocket
     
     func establishConnection() {
         socket.connect()
+    }
+    
+    func observeIfConnected(completion: @escaping NormalCallback){
+        socket.on(clientEvent: .disconnect, callback: completion)
+        socket.on(clientEvent: .connect, callback: completion)
     }
     
     func closeConnection() {

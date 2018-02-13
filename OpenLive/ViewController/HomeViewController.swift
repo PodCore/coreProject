@@ -35,10 +35,16 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-        //  MARK: fetch all the available live room using socket
-//        SocketService.instance.getChannel { (success) in
-//            
-//        }
+        SocketService.instance.observeIfConnected { (payload, ack) in
+            //  if it's true, then we are connected
+//            if ack.expected {
+                //  MARK: Fix me! fetch all the available live room using socket
+                SocketService.instance.getChannel { (success) in
+                    print(success)
+                }
+//            }
+        }
+
         self.collectionViewDatasource.items = popularVideos
         self.collectionView.dataSource = self.collectionViewDatasource
         

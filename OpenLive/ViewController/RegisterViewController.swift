@@ -31,6 +31,25 @@ class RegisterViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDe
         setUpGoogleSignIn()
     }
     
+    //    notifi application notification center about user info if registered!
+    func updateUserStatus() {
+        NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
+    }
+    
+    //    MARK: put these into view did load of profile VC
+//     NotificationCenter.default.addObserver(self, selector: #selector(ProfileViewController.userDataDidChange(_:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
+//
+    @objc func userDataDidChange(_ notif: Notification) {
+        if AuthService.instance.isLoggedIn {
+//            update userinfo if user is logged in
+            let username = UserdataService.instance.username
+            let avatar = UserdataService.instance.avatar
+        } else {
+//            set UI to be default value
+        }
+    }
+    
+    
     //   MARK: (helper) main func to call google Signin
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if error != nil {
