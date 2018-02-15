@@ -35,6 +35,9 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
+        // Hide the navigation bar on the this view controller
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        
         SocketService.instance.observeIfConnected { (payload, ack) in
             //  if it's true, then we are connected
 //            if ack.expected {
@@ -44,6 +47,7 @@ class HomeViewController: UIViewController {
                 }
 //            }
         }
+        
 
         self.collectionViewDatasource.items = popularVideos
         self.collectionView.dataSource = self.collectionViewDatasource
@@ -54,6 +58,13 @@ class HomeViewController: UIViewController {
         DispatchQueue.main.async {
             self.collectionView.reloadData()
         }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        // Show the navigation bar on other view controllers
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     
@@ -78,6 +89,11 @@ extension HomeViewController: UICollectionViewDelegate {
         let liveRoomVC = storyBoard.instantiateViewController(withIdentifier: "liveRoomVC") as! LiveRoomViewController
         self.navigationController?.pushViewController(liveRoomVC, animated: true)
     }
+}
+
+extension HomeViewController: UICollectionViewDelegate {
+    //    go to watch VC when click on the cell
+    func collectionView
 }
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {

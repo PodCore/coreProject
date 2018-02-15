@@ -21,16 +21,16 @@ class UserProfileViewController: UIViewController, UITableViewDataSource, UITabl
         if indexPath.row == 0 {
 //            This cell contains the user's information
             let cell = tableView.dequeueReusableCell(withIdentifier: "userProfileCell", for: indexPath) as! UserProfileCell
-            cell.profileImageView.image = // Profile image
-            cell.userNameLabel.text = // User name
-            cell.subCountLabel.text = // Number of subscribers
+//            cell.profileImageView.image = // Profile image
+//            cell.userNameLabel.text = // User name
+//            cell.subCountLabel.text = // Number of subscribers
             return cell
         } else {
 //            This cell contains a person that the user is following
             let cell = tableView.dequeueReusableCell(withIdentifier: "subscriptionCell", for: indexPath) as! SubscriptionCell
-            cell.streamNameLabel.text = // The name of the current stream or "offline" if there isn't one
-            cell.subImageView.image = // Profile image of person
-            cell.subNameLabel.text = // The username of the person
+//            cell.streamNameLabel.text = // The name of the current stream or "offline" if there isn't one
+//            cell.subImageView.image = // Profile image of person
+//            cell.subNameLabel.text = // The username of the person
             return cell
         }
     }
