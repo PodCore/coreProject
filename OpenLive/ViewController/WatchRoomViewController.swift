@@ -24,7 +24,8 @@ class WatchRoomViewController: UIViewController {
     
     var roomName: String!
     
-    var videoProfile: AgoraRtcVideoProfile!
+    var videoProfile: AgoraRtcVideoProfile?
+
     //video Profile to set Quality/FrameR (retrieved from previous VC)
     
     weak var delegate: WatchRoomVCDelegate?
@@ -95,7 +96,7 @@ private extension WatchRoomViewController {
         //  Enable Video
         rtcEngine.enableVideo()
         //Set video profile (using videoProfile variable from previous VC)
-        rtcEngine.setVideoProfile(videoProfile, swapWidthAndHeight: true)
+//        rtcEngine.setVideoProfile(videoProfile, swapWidthAndHeight: true)
         rtcEngine.setVideoQualityParameters(false)
         
         // Set client role (using clientRole variable)
@@ -188,7 +189,6 @@ private extension WatchRoomViewController {
             }
         } else {
             for session in sessions {
-                //.videoStream_High -> high resolution, high frame rate (based on videoProfile)
                 rtcEngine.setRemoteVideoStream(UInt(session.uid), type: .videoStream_High)
             }
         }

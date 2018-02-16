@@ -49,12 +49,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    //    MARK: connectToSocket
-//    ! viewDidload happens before didBecomeActive
     func applicationDidBecomeActive(_ application: UIApplication) {
-    //        MARK: connect to socket
-//        SocketService.instance.establishConnection()
-        
+    
     }
     
     //    MARK: leave Socket

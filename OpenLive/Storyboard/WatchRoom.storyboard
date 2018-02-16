@@ -81,7 +81,6 @@
                         <viewLayoutGuide key="safeArea" id="Soa-fR-VB3"/>
                     </view>
                     <connections>
-                        <outlet property="audioMuteButton" destination="5RD-BY-0z7" id="CK0-gF-4p8"/>
                         <outlet property="remoteContainerView" destination="oyQ-M8-I1n" id="kCe-dw-gMi"/>
                         <outlet property="roomNameLabel" destination="VHK-hw-we3" id="RFi-sC-FDv"/>
                     </connections>

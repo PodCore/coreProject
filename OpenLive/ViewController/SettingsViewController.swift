@@ -52,7 +52,7 @@ extension SettingsViewController: UITableViewDelegate {
     }
 }
 
-private extension AgoraRtcVideoProfile {
+ extension AgoraRtcVideoProfile {
     static func list() -> [AgoraRtcVideoProfile] {
         return [._VideoProfile_120P,
                 ._VideoProfile_180P,

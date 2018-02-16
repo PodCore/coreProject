@@ -40,26 +40,24 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-        // Hide the navigation bar on the this view controller
-        self.navigationController?.setNavigationBarHidden(true, animated: animated)
-        
-        SocketService.instance.observeIfConnected { (payload, ack) in
-            
-                SocketService.instance.getChannel { (success, rooms) in
-                    self.popularVideos = rooms
-                }
-        }
-        
-
         self.collectionViewDatasource.items = popularVideos
         self.collectionView.dataSource = self.collectionViewDatasource
-        
-//        trigger collecionViewFlowlayout delegate
+        //  trigger collecionViewFlowlayout delegate
         self.collectionView.delegate = self
         
-        DispatchQueue.main.async {
-            self.collectionView.reloadData()
+        //     update Cell UI vy calling configureCell call back function
+        collectionViewDatasource.configureCell = { (collectionView, indexPath) -> UICollectionViewCell in
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as! CollectionCell
+            //            cell.img.loadImageFromUrlString(urlString: self.popularVideos[indexPath.row].img)
+//            if self.popularVideos[indexPath.row].name != nil {
+//            cell.roomName.text = self.popularVideos[indexPath.row].name
+//            }
+            return cell
         }
+        
+//        DispatchQueue.main.async {
+//            self.collectionView.reloadData()
+//        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -72,14 +70,15 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Hide the navigation bar on the this view controller
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
         
-//     update Cell UI vy calling configureCell call back function
-        collectionViewDatasource.configureCell = { (collectionView, indexPath) -> UICollectionViewCell in
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as! CollectionCell
-//            cell.img.loadImageFromUrlString(urlString: self.popularVideos[indexPath.row].img)
-            cell.roomName.text = self.popularVideos[indexPath.row].name
-            return cell
+        SocketService.instance.observeIfConnected { (payload, ack) in
+            SocketService.instance.getChannel { (success, rooms) in
+                self.popularVideos = rooms
+            }
         }
+
        
     }
 }

@@ -38,21 +38,23 @@ class SocketService: NSObject {
         socket.disconnect()
     }
     
-    func addChannel(id: String, name: String, owner: String, topic: String, viewCount: Int, likes: Int, viewers: [String], completion: @escaping (Bool) -> ()) {
+    func addChannel(id: String, name: String, owner: String, topic: String, viewCount: Int, likes: Int, viewers: [String], image: String, completion: @escaping (Bool) -> ()) {
         let room = Room(dict: ["name": name as Any,
                                "id": id as Any,
                                "owner": owner as Any,
                                "topic": topic as Any,
                                "viewCount": viewCount as Any,
-                               "viewers": viewers as [String]])
-        guard let data = try? JSONEncoder().encode(room) else {return}
-        socket.emit("create_room", data)
+                               "likes": likes as Any,
+                               "viewers": viewers as [String],
+                               "image": image as String])
+//        guard let data = try? JSONEncoder().encode(room) else {return}
+        socket.emit("create_room", room.toDict())
         
     }
     
     func joinChannel(username: String, owner: String, completion: @escaping (Bool) -> ()) {
         let data = ["username": username, "owner": owner]
-        socket.emit("create_room", data)
+        socket.emit("join_room", data)
     }
     // MARK: get data from service once socket connected
     func getChannel(completion: @escaping (Bool, [Room]) -> ()) {

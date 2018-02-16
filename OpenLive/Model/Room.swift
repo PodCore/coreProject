@@ -20,6 +20,7 @@ struct Room: Codable {
     let viewCount: Int
     let likes: Int
     let viewers: [String]
+    let image: String
 //    init(json: [String :Any]) {
 //        roomId = (json["roomId"] as? String)!
 //        roomName = (json["roomName"] as? String)!
@@ -34,14 +35,19 @@ struct Room: Codable {
         viewCount = dict["viewCount"] as! Int
         likes = dict["likes"] as! Int
         viewers = dict["viewers"] as! [String]
+        image = dict["image"] as! String
     }
     
-//    func toDict() -> [String: AnyObject] {
-//        return [
-//            "name": name as AnyObject,
-//            "id": id as AnyObject,
-//            "owner": owner as AnyObject,
-//            "topic": topic as AnyObject
-//        ]
-//    }
+    func toDict() -> [String: Any] {
+        return [
+            "name": name as Any,
+            "id": id as Any,
+            "owner": owner as Any,
+            "topic": topic as Any,
+            "viewCount": viewCount as Any,
+            "likes": likes as Any,
+            "viewers": viewers as [String],
+            "image": image as String
+        ]
+    }
 }
