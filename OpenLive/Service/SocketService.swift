@@ -38,27 +38,28 @@ class SocketService: NSObject {
         socket.disconnect()
     }
     
-    func addChannel(id: String, name: String, owner: String, topic: String, completion: @escaping (Bool) -> ()) {
-        let room = Room(dict: ["name": name as AnyObject,
-                               "id": id as AnyObject,
-                               "owner": owner as AnyObject,
-                               "topic": topic as AnyObject])
-        socket.emit("create_room", room.toDict())
+    func addChannel(id: String, name: String, owner: String, topic: String, viewCount: Int, likes: Int, viewers: [String], completion: @escaping (Bool) -> ()) {
+        let room = Room(dict: ["name": name as Any,
+                               "id": id as Any,
+                               "owner": owner as Any,
+                               "topic": topic as Any,
+                               "viewCount": viewCount as Any,
+                               "viewers": viewers as [String]])
+        guard let data = try? JSONEncoder().encode(room) else {return}
+        socket.emit("create_room", data)
+        
     }
     
     // MARK: get data from service once socket connected
-    func getChannel(completion: @escaping (Bool) -> ()) {
+    func getChannel(completion: @escaping (Bool, [Room]) -> ()) {
 //        listening for event
             self.socket.emit("get_rooms")
             socket.on("get_rooms") {(data, ack) in
-//                self.socket.emit("get_rooms")
-//           make sure we get back a list of rooms
-//                let json = try JSONSerialization.jsonObject(with: data[0], options: .allowFragments) as! [Any]
-//                let result = try? JSONDecoder().decode([Rooms].self, from: data) as! [String: Any]
-//                guard let rooms = json.rooms else { return }
-//        guard let rooms = data as? Any else {return}
-                print("YOOOOOOOOO \(data)")
-        completion(true)
+                guard let json = data[0] as? [Any]
+                   else {return}
+                let rooms = json.map{Room(dict:$0 as! [String : Any])}
+                
+        completion(true, rooms)
         }
     }
     

@@ -11,9 +11,14 @@ import UIKit
 class HomeViewController: UIViewController {
     
 //    reload data when fetch rooms from server
-    var popularVideos: [FakeRoom] = [FakeRoom(key: "sdfs", title: "skys", img: "https://nextcity.org/images/uploads/_resized/6642874991_9b68764995_b.jpg"),
-       FakeRoom(key: "sdfs", title: "skys", img: "https://nextcity.org/images/uploads/_resized/6642874991_9b68764995_b.jpg"),
-        FakeRoom(key: "sdfs", title: "skys", img: "https://nextcity.org/images/uploads/_resized/6642874991_9b68764995_b.jpg")]
+//    var popularVideos: [FakeRoom] = [FakeRoom(key: "sdfs", title: "skys", img: "https://nextcity.org/images/uploads/_resized/6642874991_9b68764995_b.jpg"),
+//       FakeRoom(key: "sdfs", title: "skys", img: "https://nextcity.org/images/uploads/_resized/6642874991_9b68764995_b.jpg"),
+//        FakeRoom(key: "sdfs", title: "skys", img: "https://nextcity.org/images/uploads/_resized/6642874991_9b68764995_b.jpg")]
+    var popularVideos = [Room](){
+        didSet {
+            collectionView.reloadData()
+        }
+    }
     
     let collectionViewDatasource = CollectionViewDatasource(items: [])
     
@@ -39,13 +44,10 @@ class HomeViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
         
         SocketService.instance.observeIfConnected { (payload, ack) in
-            //  if it's true, then we are connected
-//            if ack.expected {
-                //  MARK: Fix me! fetch all the available live room using socket
-                SocketService.instance.getChannel { (success) in
-                    print(success)
+            
+                SocketService.instance.getChannel { (success, rooms) in
+                    self.popularVideos = rooms
                 }
-//            }
         }
         
 
@@ -74,7 +76,7 @@ class HomeViewController: UIViewController {
 //     update Cell UI vy calling configureCell call back function
         collectionViewDatasource.configureCell = { (collectionView, indexPath) -> UICollectionViewCell in
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as! CollectionCell
-            cell.img.loadImageFromUrlString(urlString: self.popularVideos[indexPath.row].img)
+//            cell.img.loadImageFromUrlString(urlString: self.popularVideos[indexPath.row].img)
             
             return cell
         }
@@ -91,10 +93,10 @@ extension HomeViewController: UICollectionViewDelegate {
     }
 }
 
-extension HomeViewController: UICollectionViewDelegate {
-    //    go to watch VC when click on the cell
-    func collectionView
-}
+//extension HomeViewController: UICollectionViewDelegate {
+//    //    go to watch VC when click on the cell
+//    func collectionView
+//}
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

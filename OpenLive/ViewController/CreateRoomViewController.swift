@@ -20,11 +20,6 @@ class CreateRoomViewController: UIViewController {
         super.viewDidLoad()
         
     }
-    @IBAction func testGetroomTapped(_ sender: UIButton) {
-        SocketService.instance.getChannel { (success) in
-            print("rwrwr")
-        }
-    }
     
     @IBAction func followTapped(_ sender: UIButton) {
         SocketService.instance.followHost(owner: "James") { (success) in
