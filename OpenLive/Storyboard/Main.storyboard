@@ -23,10 +23,10 @@
             </objects>
             <point key="canvasLocation" x="1125" y="-1040"/>
         </scene>
-        <!--LiveRoom-->
+        <!--WatchRoom-->
         <scene sceneID="oLf-nD-rzA">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="liveRoomVC" storyboardName="LiveRoom" id="xbM-87-ANa" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="liveRoomVC" storyboardName="WatchRoom" id="xbM-87-ANa" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cMv-U1-efk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1198" y="-692"/>
@@ -59,16 +59,25 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="popular" translatesAutoresizingMaskIntoConstraints="NO" id="kqT-eQ-HSS" customClass="CustomImageView" customModule="OpenLive" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vZe-PQ-Og7">
+                                                    <rect key="frame" x="88" y="65" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </view>
                                         <constraints>
                                             <constraint firstItem="kqT-eQ-HSS" firstAttribute="top" secondItem="aJw-w6-QWG" secondAttribute="top" id="17b-oG-c2a"/>
+                                            <constraint firstItem="vZe-PQ-Og7" firstAttribute="centerX" secondItem="kqT-eQ-HSS" secondAttribute="centerX" id="3lH-eA-S1c"/>
                                             <constraint firstAttribute="trailing" secondItem="kqT-eQ-HSS" secondAttribute="trailing" id="Ekt-d7-TKg"/>
+                                            <constraint firstItem="vZe-PQ-Og7" firstAttribute="width" secondItem="kqT-eQ-HSS" secondAttribute="width" id="JVt-4u-rRW"/>
                                             <constraint firstAttribute="bottom" secondItem="kqT-eQ-HSS" secondAttribute="bottom" id="MDQ-U6-OIb"/>
                                             <constraint firstItem="kqT-eQ-HSS" firstAttribute="leading" secondItem="aJw-w6-QWG" secondAttribute="leading" id="as1-Zc-4HP"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="img" destination="kqT-eQ-HSS" id="4Jd-gS-VWx"/>
+                                            <outlet property="roomName" destination="vZe-PQ-Og7" id="kqG-gy-Spw"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

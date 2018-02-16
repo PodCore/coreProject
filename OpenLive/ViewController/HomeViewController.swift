@@ -77,7 +77,7 @@ class HomeViewController: UIViewController {
         collectionViewDatasource.configureCell = { (collectionView, indexPath) -> UICollectionViewCell in
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as! CollectionCell
 //            cell.img.loadImageFromUrlString(urlString: self.popularVideos[indexPath.row].img)
-            
+            cell.roomName.text = self.popularVideos[indexPath.row].name
             return cell
         }
        
@@ -92,11 +92,6 @@ extension HomeViewController: UICollectionViewDelegate {
         self.navigationController?.pushViewController(liveRoomVC, animated: true)
     }
 }
-
-//extension HomeViewController: UICollectionViewDelegate {
-//    //    go to watch VC when click on the cell
-//    func collectionView
-//}
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

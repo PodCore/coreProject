@@ -12,6 +12,7 @@ class CollectionCell: UICollectionViewCell {
     
     @IBOutlet weak var img: CustomImageView!
     
+    @IBOutlet weak var roomName: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         

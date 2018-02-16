@@ -50,6 +50,10 @@ class SocketService: NSObject {
         
     }
     
+    func joinChannel(username: String, owner: String, completion: @escaping (Bool) -> ()) {
+        let data = ["username": username, "owner": owner]
+        socket.emit("create_room", data)
+    }
     // MARK: get data from service once socket connected
     func getChannel(completion: @escaping (Bool, [Room]) -> ()) {
 //        listening for event
