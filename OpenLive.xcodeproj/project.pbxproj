@@ -59,6 +59,7 @@
 		F96ACB902032563B001CA53F /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96ACB8F2032563B001CA53F /* Constant.swift */; };
 		F9CC457B20369D3A003CCD65 /* WatchRoom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9CC457A20369D3A003CCD65 /* WatchRoom.storyboard */; };
 		F9CC457D2036B079003CCD65 /* WatchRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CC457C2036B079003CCD65 /* WatchRoomViewController.swift */; };
+		F9CC457F2036C080003CCD65 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9CC457E2036C080003CCD65 /* Settings.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +133,7 @@
 		F96ACB8F2032563B001CA53F /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		F9CC457A20369D3A003CCD65 /* WatchRoom.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WatchRoom.storyboard; sourceTree = "<group>"; };
 		F9CC457C2036B079003CCD65 /* WatchRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WatchRoomViewController.swift; path = OpenLive/ViewController/WatchRoomViewController.swift; sourceTree = SOURCE_ROOT; };
+		F9CC457E2036C080003CCD65 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -306,6 +308,7 @@
 				21D85D88202F995E001FEABA /* profile.storyboard */,
 				F96ACB81202F803F001CA53F /* Register.storyboard */,
 				078012F01D1E57730093DE24 /* CreateRoom.storyboard */,
+				F9CC457E2036C080003CCD65 /* Settings.storyboard */,
 				F96ACB7E202F7D1E001CA53F /* LiveRoom.storyboard */,
 				F9CC457A20369D3A003CCD65 /* WatchRoom.storyboard */,
 				078012F51D1E57730093DE24 /* LaunchScreen.storyboard */,
@@ -450,6 +453,7 @@
 			files = (
 				1F91232B20290D8D007E30C3 /* infoPlist.png in Resources */,
 				078012F71D1E57730093DE24 /* LaunchScreen.storyboard in Resources */,
+				F9CC457F2036C080003CCD65 /* Settings.storyboard in Resources */,
 				F96ACB82202F803F001CA53F /* Register.storyboard in Resources */,
 				21D85D89202F995E001FEABA /* profile.storyboard in Resources */,
 				F96ACB7D202F7C58001CA53F /* Main.storyboard in Resources */,

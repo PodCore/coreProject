@@ -87,9 +87,11 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UICollectionViewDelegate {
 //    go to watch VC when click on the cell
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let storyBoard = UIStoryboard.init(name: "LiveRoom", bundle: nil)
-        let liveRoomVC = storyBoard.instantiateViewController(withIdentifier: "liveRoomVC") as! LiveRoomViewController
-        self.navigationController?.pushViewController(liveRoomVC, animated: true)
+        let storyBoard = UIStoryboard.init(name: "WatchRoom", bundle: nil)
+        let watchRoomVC = storyBoard.instantiateViewController(withIdentifier: "watchRoomVC") as! WatchRoomViewController
+        watchRoomVC.roomId = self.popularVideos[indexPath.row].id
+        watchRoomVC.roomName = self.popularVideos[indexPath.row].name
+        self.navigationController?.pushViewController(watchRoomVC, animated: true)
     }
 }
 

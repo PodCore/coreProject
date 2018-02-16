@@ -148,7 +148,7 @@ private extension LiveRoomViewController {
         rtcEngine.enableDualStreamMode(true)
         // Step 4 -> Enable Video
         rtcEngine.enableVideo()
-        // Step 5 -> Set video profile (using videoProfile variable from previous VC)
+        // Set video profile (using videoProfile variable from previous VC)
         rtcEngine.setVideoProfile(videoProfile, swapWidthAndHeight: true)
         rtcEngine.setVideoQualityParameters(false)
         
