@@ -60,6 +60,8 @@
 		F9CC457B20369D3A003CCD65 /* WatchRoom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9CC457A20369D3A003CCD65 /* WatchRoom.storyboard */; };
 		F9CC457D2036B079003CCD65 /* WatchRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CC457C2036B079003CCD65 /* WatchRoomViewController.swift */; };
 		F9CC457F2036C080003CCD65 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9CC457E2036C080003CCD65 /* Settings.storyboard */; };
+		F9CC45812037933E003CCD65 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CC45802037933E003CCD65 /* Comment.swift */; };
+		F9CC45832037981C003CCD65 /* OverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CC45822037981C003CCD65 /* OverlayViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +136,8 @@
 		F9CC457A20369D3A003CCD65 /* WatchRoom.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WatchRoom.storyboard; sourceTree = "<group>"; };
 		F9CC457C2036B079003CCD65 /* WatchRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WatchRoomViewController.swift; path = OpenLive/ViewController/WatchRoomViewController.swift; sourceTree = SOURCE_ROOT; };
 		F9CC457E2036C080003CCD65 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		F9CC45802037933E003CCD65 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		F9CC45822037981C003CCD65 /* OverlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,6 +278,7 @@
 				F96ACB70202F7BC6001CA53F /* RegisterViewController.swift */,
 				078012EE1D1E57730093DE24 /* CreateRoomViewController.swift */,
 				F9CC457C2036B079003CCD65 /* WatchRoomViewController.swift */,
+				F9CC45822037981C003CCD65 /* OverlayViewController.swift */,
 				21D85D8A202F9AE0001FEABA /* UserProfileViewController.swift */,
 				0790F1251D1E6450003F8C18 /* SettingsViewController.swift */,
 				0790F1271D1E645B003F8C18 /* LiveRoomViewController.swift */,
@@ -288,6 +293,7 @@
 				F96ACB5A202D829D001CA53F /* Room.swift */,
 				F96ACB56202D1851001CA53F /* Poop.swift */,
 				F96ACB88202FC6F5001CA53F /* Following.swift */,
+				F9CC45802037933E003CCD65 /* Comment.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -560,6 +566,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RNCryptor/RNCryptor.framework",
 				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework",
 				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
 			);
@@ -577,6 +584,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RNCryptor.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketIO.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
 			);
@@ -613,6 +621,7 @@
 				0790F1691D1EEAB2003F8C18 /* ProfileCell.swift in Sources */,
 				F96ACB89202FC6F5001CA53F /* Following.swift in Sources */,
 				F9CC457D2036B079003CCD65 /* WatchRoomViewController.swift in Sources */,
+				F9CC45812037933E003CCD65 /* Comment.swift in Sources */,
 				F96ACB77202F7BED001CA53F /* UIImage&Cache.swift in Sources */,
 				0790F1511D1E9631003F8C18 /* VideoSession.swift in Sources */,
 				F96ACB5B202D829D001CA53F /* Room.swift in Sources */,
@@ -625,6 +634,7 @@
 				F96ACB84202F88DB001CA53F /* FakeRoom.swift in Sources */,
 				F96ACB59202D74CD001CA53F /* SocketService.swift in Sources */,
 				07130E8A1D22928200CC85D8 /* KeyCenter.swift in Sources */,
+				F9CC45832037981C003CCD65 /* OverlayViewController.swift in Sources */,
 				F96ACB74202F7BC6001CA53F /* RegisterViewController.swift in Sources */,
 				0790F1531D1E9781003F8C18 /* VideoViewLayouter.swift in Sources */,
 				F96ACB6C202F7BB3001CA53F /* CollectionCell.swift in Sources */,

@@ -12,6 +12,7 @@ import FBSDKLoginKit
 import FBSDKCoreKit
 import GoogleSignIn
 import Google
+import RNCryptor
 
 class RegisterViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate  {
     
@@ -129,7 +130,12 @@ class RegisterViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDe
     @IBAction func signupClicked(_ sender: UIButton) {
         guard let usernametxt = username.text, let emailtxt = email.text, let passwordtxt = password.text,
         !usernametxt.isEmpty, !emailtxt.isEmpty, !passwordtxt.isEmpty else { return }
-
+        
+//        // Encryption
+//        let data = Data()
+//        let ciphertext = RNCryptor.encrypt(data: data, withPassword: passwordtxt)
+//        print(ciphertext)
+        
         AuthService.instance.registerUser(username: usernametxt, email: emailtxt, password: passwordtxt) { (username, userId) in
             if username != nil, userId != nil {
                 let storyBoard = UIStoryboard.init(name: "CreateRoom", bundle: nil)

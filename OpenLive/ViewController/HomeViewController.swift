@@ -25,11 +25,14 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBAction func hostButtonTapped(_ sender: UIButton) {
+        print("==================")
         if AuthService.instance.isLoggedIn {
+            print("CREATE ROOM")
             let storyBoard = UIStoryboard.init(name: "CreateRoom", bundle: nil)
             let createRoomVC = storyBoard.instantiateViewController(withIdentifier: "createRoomVC") as! CreateRoomViewController
             self.navigationController?.pushViewController(createRoomVC, animated: true)
         } else {
+            print("REGISTER")
             let storyBoard = UIStoryboard.init(name: "Register", bundle: nil)
             let registerVC = storyBoard.instantiateViewController(withIdentifier: "registerVC") as! RegisterViewController
             self.navigationController?.pushViewController(registerVC, animated: true)

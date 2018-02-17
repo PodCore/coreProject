@@ -13,6 +13,13 @@
         <!--Watch Room View Controller-->
         <scene sceneID="hh6-Pq-OFR">
             <objects>
+                <exit id="EWN-4q-LVy" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="lH8-mR-qv7">
+                    <connections>
+                        <action selector="doubleTapped:" destination="Dit-gK-0Kv" id="20q-LY-fgc"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aDd-y3-i89" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="watchRoomVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Dit-gK-0Kv" customClass="WatchRoomViewController" customModule="OpenLive" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JGx-x1-ZYe"/>
@@ -81,19 +88,27 @@
                         <viewLayoutGuide key="safeArea" id="Soa-fR-VB3"/>
                     </view>
                     <connections>
-                        <outlet property="remoteContainerView" destination="oyQ-M8-I1n" id="kCe-dw-gMi"/>
+                        <outlet property="remoteContainerView" destination="oyQ-M8-I1n" id="sSx-yt-4gy"/>
                         <outlet property="roomNameLabel" destination="VHK-hw-we3" id="RFi-sC-FDv"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aDd-y3-i89" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="EWN-4q-LVy" userLabel="Exit" sceneMemberID="exit"/>
-                <tapGestureRecognizer numberOfTapsRequired="2" id="lH8-mR-qv7">
-                    <connections>
-                        <action selector="doDoubleTapped:" destination="Dit-gK-0Kv" id="w1y-2W-Wrd"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2510" y="327"/>
+        </scene>
+        <!--Overlay View Controller-->
+        <scene sceneID="WiC-Er-6sA">
+            <objects>
+                <viewController id="oRq-Nt-Wa1" customClass="OverlayViewController" customModule="OpenLive" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="S26-4h-WUr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="MZO-Fg-rhc"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sU0-KD-655" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3322" y="327"/>
         </scene>
     </scenes>
     <resources>

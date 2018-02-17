@@ -111,7 +111,6 @@
                                         <state key="normal" image="HostButtonImage"/>
                                         <connections>
                                             <action selector="hostButtonTapped:" destination="W1o-MO-Gl7" eventType="touchUpInside" id="QNb-DC-NU7"/>
-                                            <segue destination="5uF-ao-cXI" kind="show" id="rpf-AV-fKl"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Host" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hqz-Cd-mIx">
@@ -146,6 +145,7 @@
                         <outlet property="collectionView" destination="Swf-DZ-qZu" id="mSP-SO-BWb"/>
                         <segue destination="irm-05-DwM" kind="show" id="b5q-Df-gZB"/>
                         <segue destination="xbM-87-ANa" kind="show" id="crH-KD-p7l"/>
+                        <segue destination="5uF-ao-cXI" kind="show" id="npl-pf-A8e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n13-6L-nVb" userLabel="First Responder" sceneMemberID="firstResponder"/>

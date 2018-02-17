@@ -103,7 +103,7 @@ class LiveRoomViewController: UIViewController {
         isMuted = !isMuted
     }
     
-//    switch client role
+    //  MARK:  switch client role
     @IBAction func doBroadcastPressed(_ sender: UIButton) {
         if isBroadcaster {
             clientRole = .clientRole_Audience
@@ -203,6 +203,8 @@ private extension LiveRoomViewController {
         videoSessions.removeAll()
         
         delegate?.liveVCNeedClose(self)
+        
+        dismiss(animated: true, completion: nil)
     }
     
 }

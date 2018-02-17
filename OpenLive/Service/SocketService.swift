@@ -47,15 +47,18 @@ class SocketService: NSObject {
                                "likes": likes as Any,
                                "viewers": viewers as [String],
                                "image": image as String])
-//        guard let data = try? JSONEncoder().encode(room) else {return}
         socket.emit("create_room", room.toDict())
         
+        completion(true)
     }
     
     func joinChannel(username: String, owner: String, completion: @escaping (Bool) -> ()) {
         let data = ["username": username, "owner": owner]
         socket.emit("join_room", data)
+        
+        completion(true)
     }
+    
     // MARK: get data from service once socket connected
     func getChannel(completion: @escaping (Bool, [Room]) -> ()) {
 //        listening for event
@@ -75,7 +78,19 @@ class SocketService: NSObject {
         
         self.socket.emit("new_follower", following.toDict())
         completion(true)
-        
     }
     
+    // MARK: live comment in watchRoom
+    func liveComment(comment: String, owner: String, commenter: String, completion: @escaping (Bool, String) -> ()) {
+        let comment = Comment(dict: ["comment": comment,
+                                     "owner": owner,
+                                     "commenter": commenter])
+        self.socket.emit("comment", comment.toDict())
+        socket.on("comment") { (data, ack) in
+            print(data)
+//            guard let json = data[0] as? [Any] else { return }
+            completion(true, "yo")
+        }
+        
+    }
 }

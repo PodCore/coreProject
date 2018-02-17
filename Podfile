@@ -15,6 +15,7 @@ target 'OpenLive' do
   pod 'FacebookShare'
   pod 'KeychainSwift', '~> 10.0'
   pod 'Google/SignIn'
+  pod 'RNCryptor'
 
   target 'OpenLiveUITests' do
     inherit! :search_paths

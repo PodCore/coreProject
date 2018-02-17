@@ -65,7 +65,7 @@ class AuthService {
                 guard let name = json["username"],
                     let userId = json["_id"] else { return }
                 //   update userdata so we can use notification center to notify profile page update
-                self.setUserInfo(json: json)
+//                self.setUserInfo(json: json)
                 // MARK: update userdefault of isloggIn
                 self.isLoggedIn = true
                 completion(name as? String, userId as? String)
