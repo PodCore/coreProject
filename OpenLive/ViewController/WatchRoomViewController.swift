@@ -24,9 +24,25 @@ class WatchRoomViewController: UIViewController {
     
     var roomName: String!
     
+    @IBAction func doubleTapped(_ sender: UITapGestureRecognizer) {
+        if fullScreenSession == nil {
+            if let tappedSession = viewLayouter.responseSession(of: sender, inSessions: videoSessions, inContainerView: remoteContainerView) {
+                fullScreenSession = tappedSession
+            }
+        } else {
+            fullScreenSession = nil
+        }
+    }
+    
+    @IBAction func commentTapped(_ sender: UIButton) {
+        SocketService.instance.liveComment(comment: "yooooo", owner: "sky1", commenter: "sky2") { (success, data) in
+            print(data)
+            //            self.comments.append(data)
+        }
+    }
     var videoProfile: AgoraRtcVideoProfile?
-
-    //video Profile to set Quality/FrameR (retrieved from previous VC)
+    
+//    var overlayVC: OverlayViewController!
     
     weak var delegate: WatchRoomVCDelegate?
 
@@ -37,6 +53,12 @@ class WatchRoomViewController: UIViewController {
             rtcEngine?.muteLocalAudioStream(isMuted)
         }
     }
+    
+//    var videoSession: VideoSession?{
+//        didSet {
+//            guard remoteContainerView != nil else {return}
+//        }
+//    }
     
     fileprivate var videoSessions = [VideoSession]() {
         didSet {
@@ -65,18 +87,18 @@ class WatchRoomViewController: UIViewController {
         loadAgoraKit()
     }
     
+    //  MARK: for showing live comments overlay
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "overlay" {
+//            overlayController = segue.destination as! OverlayViewController
+////            overlayController.room = room
+//        }
+//    }
+    
     @IBAction func doMutePressed(_ sender: UIButton) {
         isMuted = !isMuted
     }
-    
-    //    switch client role
-    @IBAction func doBroadcastPressed(_ sender: UIButton) {
-            if fullScreenSession?.uid == 0 {
-                fullScreenSession = nil
-            }
-        updateInterface(withAnimation :true)
-    }
-    
+ 
     @IBAction func doLeavePressed(_ sender: UIButton) {
         leaveChannel()
     } //Leave channel when X is clicked
@@ -89,19 +111,24 @@ private extension WatchRoomViewController {
     // MARK: connect to  engine and channel room
     func loadAgoraKit() {
         rtcEngine = AgoraRtcEngineKit.sharedEngine(withAppId: KeyCenter.AppId, delegate: self)
+        
         // Set Channel Profile
         rtcEngine.setChannelProfile(.channelProfile_LiveBroadcasting)
+        
         // (Ignore Now) Enable dual stream mode
-//        rtcEngine.enableDualStreamMode(true)
+        // rtcEngine.enableDualStreamMode(true)
+        
         //  Enable Video
         rtcEngine.enableVideo()
+        
         //Set video profile (using videoProfile variable from previous VC)
-//        rtcEngine.setVideoProfile(videoProfile, swapWidthAndHeight: true)
+        //  rtcEngine.setVideoProfile(videoProfile, swapWidthAndHeight: true)
         rtcEngine.setVideoQualityParameters(false)
         
         // Set client role (using clientRole variable)
-    rtcEngine.setClientRole(AgoraRtcClientRole.clientRole_Audience, withKey: nil)
-//      Set up local session
+        rtcEngine.setClientRole(AgoraRtcClientRole.clientRole_Audience, withKey: nil)
+
+        //  Set up local session
         addLocalSession()
         
         // MARK: Join rtcEngine channel
@@ -132,8 +159,8 @@ private extension WatchRoomViewController {
         //Leave the channel
         rtcEngine.setupLocalVideo(nil)
         rtcEngine.leaveChannel(nil)
-       
-        //Removes all video sessions from the array of VideoSessions
+//
+//        //Removes all video sessions from the array of VideoSessions
         videoSessions.removeAll()
         
         delegate?.watchVCNeedClose(self)
@@ -175,9 +202,15 @@ private extension WatchRoomViewController {
     //   MARK: Remove??
     func updateInterface() {
         var displaySessions = videoSessions //# of video sessions (broadcasters) = # of display sessions for the view
+
+        if !displaySessions.isEmpty {
+            displaySessions.removeFirst()
+        }
         
+       
         viewLayouter.layout(sessions: displaySessions, fullScreenSession: fullScreenSession, inContainer: remoteContainerView)
         setStreamType(forSessions: displaySessions, fullScreenSession: fullScreenSession)
+        
     }
     
     func setStreamType(forSessions sessions: [VideoSession], fullScreenSession: VideoSession?) {
@@ -185,7 +218,7 @@ private extension WatchRoomViewController {
             for session in sessions {
                 // If the videoSession is a fullscreenSession, choose to recieve high stream, the others to recieve the low stream
                 rtcEngine.setRemoteVideoStream(UInt(session.uid), type: (session == fullScreenSession ? .videoStream_High : .videoStream_Low))
-                
+
             }
         } else {
             for session in sessions {
@@ -194,7 +227,7 @@ private extension WatchRoomViewController {
         }
     }
     
-    // MARK: Set up the local video canvas
+    // MARK: (for broadcaster) Set up the local video canvas
     func addLocalSession() {
         let localSession = VideoSession.localSession()
         videoSessions.append(localSession)
@@ -239,15 +272,15 @@ extension WatchRoomViewController: AgoraRtcEngineDelegate {
     func rtcEngine(_ engine: AgoraRtcEngineKit, didOfflineOfUid uid: UInt, reason: AgoraRtcUserOfflineReason) {
         var indexToDelete: Int?
         for (index, session) in videoSessions.enumerated() {
-            if session.uid == Int64(uid) {
-                indexToDelete = index
+        if session.uid == Int64(uid) {
+            session.hostingView.removeFromSuperview()
             }
         }
-        
+    
         if let indexToDelete = indexToDelete {
             let deletedSession = videoSessions.remove(at: indexToDelete)
             deletedSession.hostingView.removeFromSuperview()
-            
+
             if deletedSession == fullScreenSession {
                 fullScreenSession = nil
             }
