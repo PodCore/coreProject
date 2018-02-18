@@ -66,6 +66,7 @@ class SocketService: NSObject {
             socket.on("get_rooms") {(data, ack) in
                 guard let json = data[0] as? [Any]
                    else {return}
+                // convert json into array of Room
                 let rooms = json.map{Room(dict:$0 as! [String : Any])}
                 
         completion(true, rooms)
@@ -81,16 +82,16 @@ class SocketService: NSObject {
     }
     
     // MARK: live comment in watchRoom
-    func liveComment(comment: String, owner: String, commenter: String, completion: @escaping (Bool, String) -> ()) {
-        let comment = Comment(dict: ["comment": comment,
-                                     "owner": owner,
-                                     "commenter": commenter])
+    func liveComment(comment: String, owner: String, commenter: String, roomId: String, completion: @escaping (Bool, NewComment) -> ()) {
+        let comment = Comment(dict: ["comment": comment as Any,
+                                     "owner": owner as Any,
+                                     "commenter": commenter as Any,
+                                     "roomId": roomId as Any])
         self.socket.emit("comment", comment.toDict())
         socket.on("comment") { (data, ack) in
-            print(data)
-//            guard let json = data[0] as? [Any] else { return }
-            completion(true, "yo")
+            guard let json = data[0] as? Any else { return }
+            let newComment = NewComment(dict: json as! [String : Any])
+            completion(true, newComment)
         }
-        
     }
 }

@@ -49,7 +49,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5RD-BY-0z7">
-                                <rect key="frame" x="10" y="613" width="54" height="54"/>
+                                <rect key="frame" x="10" y="603" width="54" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="9Go-xO-xQk"/>
                                     <constraint firstAttribute="width" constant="54" id="kNI-lR-feD"/>
@@ -58,6 +58,17 @@
                                 <connections>
                                     <action selector="audioMuteButton:" destination="EWN-4q-LVy" eventType="touchUpInside" id="pVs-qr-qOJ"/>
                                     <action selector="doMutePressed:" destination="Dit-gK-0Kv" eventType="touchUpInside" id="aQd-c0-4QK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pDE-zL-WGB">
+                                <rect key="frame" x="311" y="603" width="54" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="54" id="OmW-Jf-cdJ"/>
+                                    <constraint firstAttribute="height" constant="54" id="q8P-bn-BJO"/>
+                                </constraints>
+                                <state key="normal" title="Comments"/>
+                                <connections>
+                                    <action selector="commentTapped:" destination="Dit-gK-0Kv" eventType="touchUpInside" id="aM0-Zl-y70"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VHK-hw-we3">
@@ -76,13 +87,15 @@
                         <constraints>
                             <constraint firstItem="5RD-BY-0z7" firstAttribute="leading" secondItem="Soa-fR-VB3" secondAttribute="leading" constant="10" id="7m4-09-lZb"/>
                             <constraint firstItem="VHK-hw-we3" firstAttribute="centerX" secondItem="OLZ-KB-j4j" secondAttribute="centerX" id="E3x-WM-kdt"/>
-                            <constraint firstAttribute="bottom" secondItem="5RD-BY-0z7" secondAttribute="bottom" id="UQc-uc-F3l"/>
+                            <constraint firstItem="Soa-fR-VB3" firstAttribute="trailing" secondItem="pDE-zL-WGB" secondAttribute="trailing" constant="10" id="HY7-Nm-e4K"/>
+                            <constraint firstItem="Soa-fR-VB3" firstAttribute="bottom" secondItem="5RD-BY-0z7" secondAttribute="bottom" constant="10" id="UQc-uc-F3l"/>
                             <constraint firstItem="oyQ-M8-I1n" firstAttribute="leading" secondItem="OLZ-KB-j4j" secondAttribute="leading" id="YWD-ej-1rW"/>
                             <constraint firstItem="oyQ-M8-I1n" firstAttribute="top" secondItem="OLZ-KB-j4j" secondAttribute="top" id="ZSW-6A-cfw"/>
                             <constraint firstAttribute="trailing" secondItem="2fn-ZK-bvv" secondAttribute="trailing" id="abt-c7-aCG"/>
                             <constraint firstItem="VHK-hw-we3" firstAttribute="top" secondItem="OLZ-KB-j4j" secondAttribute="top" constant="20" id="hk5-j3-3rD"/>
                             <constraint firstAttribute="trailing" secondItem="oyQ-M8-I1n" secondAttribute="trailing" id="wH9-pQ-pAF"/>
                             <constraint firstItem="2fn-ZK-bvv" firstAttribute="top" secondItem="OLZ-KB-j4j" secondAttribute="top" constant="20" id="x8n-Zt-AKF"/>
+                            <constraint firstItem="Soa-fR-VB3" firstAttribute="bottom" secondItem="pDE-zL-WGB" secondAttribute="bottom" constant="10" id="xGN-Eg-h2e"/>
                             <constraint firstAttribute="bottom" secondItem="oyQ-M8-I1n" secondAttribute="bottom" id="xsc-li-sXH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Soa-fR-VB3"/>
@@ -93,7 +106,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="2510" y="327"/>
+            <point key="canvasLocation" x="2509.5999999999999" y="326.98650674662673"/>
         </scene>
         <!--Overlay View Controller-->
         <scene sceneID="WiC-Er-6sA">

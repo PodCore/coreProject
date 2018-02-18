@@ -11,11 +11,12 @@ import SocketIO
 
 class OverlayViewController: UIViewController {
     
+    var roomId: String?
     var comments: [String] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        SocketService.instance.liveComment(comment: "yooooo", owner: "sky1", commenter: "sky2") { (success, data) in
+        SocketService.instance.liveComment(comment: "yooooo", owner: "sky1", commenter: "sky2", roomId: roomId!) { (success, data) in
             print(data)
 //            self.comments.append(data)
         }

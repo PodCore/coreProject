@@ -35,7 +35,7 @@ class WatchRoomViewController: UIViewController {
     }
     
     @IBAction func commentTapped(_ sender: UIButton) {
-        SocketService.instance.liveComment(comment: "yooooo", owner: "sky1", commenter: "sky2") { (success, data) in
+        SocketService.instance.liveComment(comment: "yooooo", owner: "sky1", commenter: "sky2", roomId: roomId!) { (success, data) in
             print(data)
             //            self.comments.append(data)
         }
