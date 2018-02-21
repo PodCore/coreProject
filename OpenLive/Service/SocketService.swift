@@ -82,12 +82,17 @@ class SocketService: NSObject {
     }
     
     // MARK: live comment in watchRoom
-    func liveComment(comment: String, owner: String, commenter: String, roomId: String, completion: @escaping (Bool, NewComment) -> ()) {
+    func liveComment(comment: String, owner: String, commenter: String, roomId: String, completion: @escaping (Bool) -> ()) {
         let comment = Comment(dict: ["comment": comment as Any,
                                      "owner": owner as Any,
                                      "commenter": commenter as Any,
                                      "roomId": roomId as Any])
         self.socket.emit("comment", comment.toDict())
+        completion(true)
+    }
+    
+//    get all comments from socket
+    func getComments(completion: @escaping (Bool, NewComment) -> ()) {
         socket.on("comment") { (data, ack) in
             guard let json = data[0] as? Any else { return }
             let newComment = NewComment(dict: json as! [String : Any])

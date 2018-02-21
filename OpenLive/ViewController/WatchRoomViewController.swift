@@ -21,8 +21,12 @@ class WatchRoomViewController: UIViewController {
     @IBOutlet weak var roomNameLabel: UILabel!
     // MARK: this is Channel ID , has to be unique
     var roomId: String?
-    
     var roomName: String!
+//    var commentData = [NewComment]()
+    var videoProfile: AgoraRtcVideoProfile?
+    var overlayVC: OverlayViewController!
+    weak var delegate: WatchRoomVCDelegate?
+    var rtcEngine : AgoraRtcEngineKit!
     
     @IBAction func doubleTapped(_ sender: UITapGestureRecognizer) {
         if fullScreenSession == nil {
@@ -33,20 +37,6 @@ class WatchRoomViewController: UIViewController {
             fullScreenSession = nil
         }
     }
-    
-    @IBAction func commentTapped(_ sender: UIButton) {
-        SocketService.instance.liveComment(comment: "yooooo", owner: "sky1", commenter: "sky2", roomId: roomId!) { (success, data) in
-            print(data)
-            //            self.comments.append(data)
-        }
-    }
-    var videoProfile: AgoraRtcVideoProfile?
-    
-//    var overlayVC: OverlayViewController!
-    
-    weak var delegate: WatchRoomVCDelegate?
-
-    var rtcEngine : AgoraRtcEngineKit!
    
     fileprivate var isMuted = false {
         didSet {
@@ -88,12 +78,13 @@ class WatchRoomViewController: UIViewController {
     }
     
     //  MARK: for showing live comments overlay
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "overlay" {
-//            overlayController = segue.destination as! OverlayViewController
-////            overlayController.room = room
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "overlay" {
+            overlayVC = segue.destination as! OverlayViewController
+            //  send room info to overlay vc
+            overlayVC.roomId = self.roomId
+        }
+    }
     
     @IBAction func doMutePressed(_ sender: UIButton) {
         isMuted = !isMuted
