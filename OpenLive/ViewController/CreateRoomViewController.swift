@@ -12,19 +12,16 @@ import AgoraRtcEngineKit
 class CreateRoomViewController: UIViewController {
 
     @IBOutlet weak var roomNameTextField: UITextField!
-    @IBOutlet weak var popoverSourceView: UIView!
 
     fileprivate var videoProfile = AgoraRtcVideoProfile._VideoProfile_360P
+    
+    @IBAction func createRoomTapped(_ sender: UIButton) {
+        join(withRole: .clientRole_Broadcaster)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    }
-    
-    @IBAction func followTapped(_ sender: UIButton) {
-        SocketService.instance.followHost(owner: "James") { (success) in
-            print("YOOOOOO followed")
-        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -52,25 +49,6 @@ class CreateRoomViewController: UIViewController {
 }
 
 private extension CreateRoomViewController {
-    func showRoleSelection() {
-        let sheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        let broadcaster = UIAlertAction(title: "Broadcaster", style: .default) { [weak self] _ in
-            self?.join(withRole: .clientRole_Broadcaster)
-        }
-        let audience = UIAlertAction(title: "Audience", style: .default) { [weak self] _ in
-            self?.join(withRole: .clientRole_Audience)
-        }
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        sheet.addAction(broadcaster)
-        sheet.addAction(audience)
-        sheet.addAction(cancel)
-        sheet.popoverPresentationController?.sourceView = popoverSourceView
-        sheet.popoverPresentationController?.permittedArrowDirections = .up
-        present(sheet, animated: true, completion: nil)
-    }
-}
-
-private extension CreateRoomViewController {
     func join(withRole role: AgoraRtcClientRole) {
         performSegue(withIdentifier: "mainToLive", sender: NSNumber(value: role.rawValue as Int))
     }
@@ -82,7 +60,7 @@ extension CreateRoomViewController: SettingsVCDelegate {
         dismiss(animated: true, completion: nil)
     }
 }
-
+//  for navigate to live room VC
 extension CreateRoomViewController: LiveRoomVCDelegate {
     func liveVCNeedClose(_ liveVC: LiveRoomViewController) {
         let _ = navigationController?.popViewController(animated: true)
@@ -92,7 +70,7 @@ extension CreateRoomViewController: LiveRoomVCDelegate {
 extension CreateRoomViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if let string = textField.text , !string.isEmpty {
-            showRoleSelection()
+            join(withRole: .clientRole_Broadcaster)
         }
         
         return true

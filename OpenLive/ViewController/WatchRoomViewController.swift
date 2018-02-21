@@ -28,6 +28,11 @@ class WatchRoomViewController: UIViewController {
     weak var delegate: WatchRoomVCDelegate?
     var rtcEngine : AgoraRtcEngineKit!
     
+    @IBAction func followTapped(_ sender: UIButton) {
+        SocketService.instance.followHost(owner: "James") { (success) in
+            print("YOOOOOO followed")
+        }
+    }
     @IBAction func doubleTapped(_ sender: UITapGestureRecognizer) {
         if fullScreenSession == nil {
             if let tappedSession = viewLayouter.responseSession(of: sender, inSessions: videoSessions, inContainerView: remoteContainerView) {
