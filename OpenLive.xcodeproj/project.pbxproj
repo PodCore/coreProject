@@ -62,6 +62,8 @@
 		F9CC457F2036C080003CCD65 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9CC457E2036C080003CCD65 /* Settings.storyboard */; };
 		F9CC45812037933E003CCD65 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CC45802037933E003CCD65 /* Comment.swift */; };
 		F9CC45832037981C003CCD65 /* OverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CC45822037981C003CCD65 /* OverlayViewController.swift */; };
+		F9CC45EA203A3601003CCD65 /* NewComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CC45E9203A3601003CCD65 /* NewComment.swift */; };
+		F9CC45EC203B8474003CCD65 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CC45EB203B8474003CCD65 /* CommentCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +140,8 @@
 		F9CC457E2036C080003CCD65 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		F9CC45802037933E003CCD65 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		F9CC45822037981C003CCD65 /* OverlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayViewController.swift; sourceTree = "<group>"; };
+		F9CC45E9203A3601003CCD65 /* NewComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewComment.swift; sourceTree = "<group>"; };
+		F9CC45EB203B8474003CCD65 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CommentCell.swift; path = OpenLive/Cells/CommentCell.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,6 +258,7 @@
 		21D85D8D202F9EA9001FEABA /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				F9CC45EB203B8474003CCD65 /* CommentCell.swift */,
 				21D85D8E202F9ECC001FEABA /* UserProfileCell.swift */,
 				21D85D90202F9F65001FEABA /* SubscriptionCell.swift */,
 			);
@@ -294,6 +299,7 @@
 				F96ACB56202D1851001CA53F /* Poop.swift */,
 				F96ACB88202FC6F5001CA53F /* Following.swift */,
 				F9CC45802037933E003CCD65 /* Comment.swift */,
+				F9CC45E9203A3601003CCD65 /* NewComment.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -639,9 +645,11 @@
 				0790F1531D1E9781003F8C18 /* VideoViewLayouter.swift in Sources */,
 				F96ACB6C202F7BB3001CA53F /* CollectionCell.swift in Sources */,
 				F96ACB8E20323EC5001CA53F /* UserdataService.swift in Sources */,
+				F9CC45EC203B8474003CCD65 /* CommentCell.swift in Sources */,
 				F96ACB6A202F7B5E001CA53F /* Authservice.swift in Sources */,
 				21D85D8B202F9AE0001FEABA /* UserProfileViewController.swift in Sources */,
 				0790F1281D1E645B003F8C18 /* LiveRoomViewController.swift in Sources */,
+				F9CC45EA203A3601003CCD65 /* NewComment.swift in Sources */,
 				0790F1261D1E6450003F8C18 /* SettingsViewController.swift in Sources */,
 				21D85D91202F9F65001FEABA /* SubscriptionCell.swift in Sources */,
 				F96ACB78202F7BED001CA53F /* TableViewDatasource.swift in Sources */,

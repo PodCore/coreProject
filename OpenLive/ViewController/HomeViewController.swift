@@ -52,9 +52,9 @@ class HomeViewController: UIViewController {
         collectionViewDatasource.configureCell = { (collectionView, indexPath) -> UICollectionViewCell in
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as! CollectionCell
             //            cell.img.loadImageFromUrlString(urlString: self.popularVideos[indexPath.row].img)
-//            if self.popularVideos[indexPath.row].name != nil {
-//            cell.roomName.text = self.popularVideos[indexPath.row].name
-//            }
+            if self.popularVideos.count != 0 {
+            cell.roomName.text = self.popularVideos[indexPath.row].name
+            }
             return cell
         }
         
@@ -79,6 +79,7 @@ class HomeViewController: UIViewController {
         SocketService.instance.observeIfConnected { (payload, ack) in
             SocketService.instance.getChannel { (success, rooms) in
                 self.popularVideos = rooms
+                self.collectionView.reloadData()
             }
         }
 
