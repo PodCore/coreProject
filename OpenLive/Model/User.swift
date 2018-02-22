@@ -16,7 +16,7 @@ struct User: Codable {
     let followers: [String]
     
     init(dict: [String: Any]) {
-        username = dict["name"] as! String
+        username = dict["username"] as! String
         email = dict["email"] as! String
         imageUrl = dict["imageUrl"] as! String
         followees = dict["following"] as! [Followee]
