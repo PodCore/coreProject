@@ -30,8 +30,6 @@ class RegisterViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDe
         super.viewDidLoad()
         setUpGoogleSignIn()
     }
-    @IBAction func logInButton(_ sender: Any) {
-    }
     
     //    notifi application notification center about user info if registered!
     func updateUserStatus() {
@@ -41,15 +39,15 @@ class RegisterViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDe
     //    MARK: put these into view did load of profile VC
 //     NotificationCenter.default.addObserver(self, selector: #selector(ProfileViewController.userDataDidChange(_:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
 //
-    @objc func userDataDidChange(_ notif: Notification) {
-        if AuthService.instance.isLoggedIn {
-//            update userinfo if user is logged in
-            let username = UserdataService.instance.username
-            let avatar = UserdataService.instance.avatar
-        } else {
-//            set UI to be default value
-        }
-    }
+//    @objc func userDataDidChange(_ notif: Notification) {
+//        if AuthService.instance.isLoggedIn {
+////            update userinfo if user is logged in
+//            let username = UserdataService.instance.username
+//            let avatar = UserdataService.instance.avatar
+//        } else {
+////            set UI to be default value
+//        }
+//    }
     
     
     //   MARK: (helper) main func to call google Signin
@@ -62,6 +60,9 @@ class RegisterViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDe
 //            print(username, userId)
             let storyBoard = UIStoryboard.init(name: "CreateRoom", bundle: nil)
             let createRoomVC = storyBoard.instantiateViewController(withIdentifier: "createRoomVC") as! CreateRoomViewController
+//            let storyBoard = UIStoryboard.init(name: "LiveRoom", bundle: nil)
+//            let createRoomVC = storyBoard.instantiateViewController(withIdentifier: "liveRoomVC") as! LiveRoomViewController
+            UserdataService.instance.setUserdata1(username: username, avatar: "avatar")
             self.navigationController?.pushViewController(createRoomVC, animated: true)
         })
     }
@@ -132,6 +133,7 @@ class RegisterViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDe
 
         AuthService.instance.registerUser(username: usernametxt, email: emailtxt, password: passwordtxt) { (username, userId) in
             if username != nil, userId != nil {
+                UserdataService.instance.setUserdata1(username: username, avatar: "avatar")
                 let storyBoard = UIStoryboard.init(name: "CreateRoom", bundle: nil)
                 let createRoomVC = storyBoard.instantiateViewController(withIdentifier: "createRoomVC") as! CreateRoomViewController
                 self.navigationController?.pushViewController(createRoomVC, animated: true)

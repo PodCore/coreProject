@@ -65,7 +65,7 @@ class AuthService {
                 guard let name = json["username"],
                     let userId = json["_id"] else { return }
                 //   update userdata so we can use notification center to notify profile page update
-                self.setUserInfo(json: json)
+//                self.setUserInfo(json: json)
                 // MARK: update userdefault of isloggIn
                 self.isLoggedIn = true
                 completion(name as? String, userId as? String)
@@ -84,7 +84,7 @@ class AuthService {
         Alamofire.request(BASE_URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON{ (response) in
             if response.result.error == nil {
                 guard let data = response.result.value as? [String: Any] else { return }
-                self.setUserFollowInfo(json: data)
+//                self.setUserFollowInfo(json: data)
                 completion(true)
             } else {
                 completion(false)
@@ -92,12 +92,12 @@ class AuthService {
         }
     }
     
-    func setUserInfo(json:[String: Any]) {
-        let username = json["username"] as! String
-        let avatar = json["avatar"] as! String
-//        only pass in value of username and avatar now since we have no followee and followers when first registered
-        UserdataService.instance.setUserdata1(username: username, avatar: avatar)
-    }
+//    func setUserInfo(json:[String: Any]) {
+//        let username = json["username"] as! String
+//        let avatar = json["avatar"] as! String
+////        only pass in value of username and avatar now since we have no followee and followers when first registered
+//        UserdataService.instance.setUserdata1(username: username, avatar: avatar)
+//    }
     
     func setUserFollowInfo(json:[String: Any]){
         let followees = json["followees"] as! [String]

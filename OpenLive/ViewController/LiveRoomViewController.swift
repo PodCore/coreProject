@@ -33,15 +33,13 @@ class LiveRoomViewController: UIViewController {
    
     // MARK: this is Channel ID , has to be unique
     var roomId: String?
-    
     var roomName: String!
-    
+    var owner: String?
     var clientRole = AgoraRtcClientRole.clientRole_Audience {
         didSet {
             updateButtonsVisiablity()
         }
     } // Sets the member's role to Audience Member (updates the button images - see updateButtonsVisibility() below)
-    
     var videoProfile: AgoraRtcVideoProfile!
     //video Profile to set Quality/FrameR (retrieved from previous VC)
     
@@ -91,6 +89,8 @@ class LiveRoomViewController: UIViewController {
         roomNameLabel.text = roomName
         updateButtonsVisiablity()
         loadAgoraKit()
+        owner = UserdataService.instance.username
+        print(owner)
     }
     
     //MARK: - user action
@@ -130,6 +130,9 @@ class LiveRoomViewController: UIViewController {
     
     @IBAction func doLeavePressed(_ sender: UIButton) {
         leaveChannel()
+        SocketService.instance.exitRoom(roomname: roomName, owner: owner!) { (success) in
+            print("EXIT success")
+        }
     } //Leave channel when X is clicked
 }
 
@@ -146,6 +149,9 @@ private extension LiveRoomViewController {
         rtcEngine.setChannelProfile(.channelProfile_LiveBroadcasting)
         // Step 7 -> Enable dual stream mode
         rtcEngine.enableDualStreamMode(true)
+        
+//        enable web rtc for james
+        rtcEngine.enableWebSdkInteroperability(true)
         // Step 4 -> Enable Video
         rtcEngine.enableVideo()
         // Set video profile (using videoProfile variable from previous VC)

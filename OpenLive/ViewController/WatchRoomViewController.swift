@@ -97,7 +97,7 @@ class WatchRoomViewController: UIViewController {
  
     @IBAction func doLeavePressed(_ sender: UIButton) {
         leaveChannel()
-    } //Leave channel when X is clicked
+    }
 }
 
 
@@ -116,7 +116,8 @@ private extension WatchRoomViewController {
         
         //  Enable Video
         rtcEngine.enableVideo()
-        
+//        for james web rtc
+        rtcEngine.enableWebSdkInteroperability(true)
         //Set video profile (using videoProfile variable from previous VC)
         //  rtcEngine.setVideoProfile(videoProfile, swapWidthAndHeight: true)
         rtcEngine.setVideoQualityParameters(false)
