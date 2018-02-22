@@ -263,6 +263,8 @@
 				F9CC45EB203B8474003CCD65 /* CommentCell.swift */,
 				21D85D8E202F9ECC001FEABA /* UserProfileCell.swift */,
 				21D85D90202F9F65001FEABA /* SubscriptionCell.swift */,
+				F96ACB6B202F7BB3001CA53F /* CollectionCell.swift */,
+				0790F1681D1EEAB2003F8C18 /* ProfileCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -342,9 +344,7 @@
 		F96ACB61202F780C001CA53F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F96ACB6B202F7BB3001CA53F /* CollectionCell.swift */,
 				0790F1521D1E9781003F8C18 /* VideoViewLayouter.swift */,
-				0790F1681D1EEAB2003F8C18 /* ProfileCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";

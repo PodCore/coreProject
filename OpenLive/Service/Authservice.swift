@@ -101,12 +101,12 @@ class AuthService {
         }
     }
     
-    func setUserInfo(json:[String: Any]) {
-        let username = json["username"] as! String
-        let avatar = json["avatar"] as! String
-//        only pass in value of username and avatar now since we have no followee and followers when first registered
-        UserdataService.instance.setUserdata1(username: username, avatar: avatar)
-    }
+//    func setUserInfo(json:[String: Any]) {
+//        let username = json["username"] as! String
+//        let avatar = json["avatar"] as! String
+////        only pass in value of username and avatar now since we have no followee and followers when first registered
+//        UserdataService.instance.setUserdata1(username: username, avatar: avatar)
+//    }
     
     func setUserFollowInfo(json:[String: Any]){
         let followees = json["followees"] as! [String]

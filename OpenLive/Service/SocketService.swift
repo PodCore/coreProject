@@ -37,6 +37,11 @@ class SocketService: NSObject {
     func closeConnection() {
         socket.disconnect()
     }
+//    exit out of room
+    func exitRoom(roomname: String, owner: String, completion: @escaping (Bool) -> ()) {
+        socket.emit("close_room", ["name": roomname, "owner": owner])
+        completion(true)
+    }
     
     func addChannel(id: String, name: String, owner: String, topic: String, viewCount: Int, likes: Int, viewers: [String], image: String, completion: @escaping (Bool) -> ()) {
         let room = Room(dict: ["name": name as Any,
@@ -73,6 +78,16 @@ class SocketService: NSObject {
         }
     }
     
+    //  MARK: get new rooms that just got created
+    func getNewChannel(completion: @escaping (Bool, Room) -> ()) {
+        socket.on("new_room") {(data, ack) in
+            print(data)
+            guard let json = data[0] as? Any else { return }
+            let room = Room(dict: json as! [String: Any])
+            completion(true, room)
+        }
+    }
+    
     // MARK:  Follow Host
     func followHost(owner: String, completion: @escaping (Bool) -> ()) {
         let following = Following(dict: ["username": "sky" as AnyObject, "followingName": "james" as AnyObject])
@@ -94,6 +109,7 @@ class SocketService: NSObject {
 //    get all comments from socket
     func getComments(completion: @escaping (Bool, NewComment) -> ()) {
         socket.on("comment") { (data, ack) in
+            print(data)
             guard let json = data[0] as? Any else { return }
             let newComment = NewComment(dict: json as! [String : Any])
             completion(true, newComment)
