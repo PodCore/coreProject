@@ -30,6 +30,7 @@ class RegisterViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDe
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpGoogleSignIn()
+        
     }
     @IBAction func logInButton(_ sender: Any) {
     }
@@ -138,6 +139,8 @@ class RegisterViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDe
         
         AuthService.instance.registerUser(username: usernametxt, email: emailtxt, password: passwordtxt) { (username, userId) in
             if username != nil, userId != nil {
+                
+//                Switch storyboard
                 let storyBoard = UIStoryboard.init(name: "CreateRoom", bundle: nil)
                 let createRoomVC = storyBoard.instantiateViewController(withIdentifier: "createRoomVC") as! CreateRoomViewController
                 self.navigationController?.pushViewController(createRoomVC, animated: true)

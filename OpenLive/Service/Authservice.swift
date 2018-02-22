@@ -24,6 +24,14 @@ class AuthService {
             defaults.set(newValue, forKey: "isRegistered")
         }
     }
+    var username: String {
+        get {
+            return defaults.string(forKey: "username")!
+        }
+        set {
+            defaults.set(newValue, forKey: "username")
+        }
+    }
     
 //    var keychainLoggedIn: Bool {
 //        get {
@@ -68,6 +76,7 @@ class AuthService {
 //                self.setUserInfo(json: json)
                 // MARK: update userdefault of isloggIn
                 self.isLoggedIn = true
+                self.username = name as! String
                 completion(name as? String, userId as? String)
             } else {
                 completion(nil, nil)
@@ -84,7 +93,7 @@ class AuthService {
         Alamofire.request(BASE_URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON{ (response) in
             if response.result.error == nil {
                 guard let data = response.result.value as? [String: Any] else { return }
-                self.setUserFollowInfo(json: data)
+//                self.setUserFollowInfo(json: data)
                 completion(true)
             } else {
                 completion(false)

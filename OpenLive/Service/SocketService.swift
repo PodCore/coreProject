@@ -99,4 +99,15 @@ class SocketService: NSObject {
             completion(true, newComment)
         }
     }
+    
+    func getFollowees(username: String, completion: @escaping (Bool, [Followee]) -> ()) {
+        socket.emit("following", username)
+        socket.on("following") { (data, ack) in
+            guard let json = data[0] as? [Any]
+                else {return}
+            // convert json into array of Room
+            let followees = json.map{Followee(dict:$0 as! [String : Any])}
+            completion(true, followees)
+        }
+    }
 }
