@@ -181,9 +181,9 @@ private extension LiveRoomViewController {
             rtcEngine.setEnableSpeakerphone(true)
             
             //   MARK: sent room id and infos to socket
-            SocketService.instance.addChannel(id: roomId!, name: roomName, owner: "sky", topic: "shits and grits", viewCount: 100, likes: 0, viewers: [""], image: roomImage!,  completion: { (success) in
-                self.dismiss(animated: true, completion: nil)
-            })
+//            SocketService.instance.addChannel(id: roomId!, name: roomName, owner: "sky", topic: "shits and grits", viewCount: 100, likes: 0, viewers: [""], image: roomImage!,  completion: { (success) in
+//                self.dismiss(animated: true, completion: nil)
+//            })
            
          } else {
             DispatchQueue.main.async(execute: {

@@ -53,7 +53,7 @@ class SocketService: NSObject {
                                "viewers": viewers as [String],
                                "image": image as String])
         socket.emit("create_room", room.toDict())
-        
+
         completion(true)
     }
     
@@ -64,7 +64,7 @@ class SocketService: NSObject {
         completion(true)
     }
     
-    // MARK: get data from service once socket connected
+//    // MARK: get data from service once socket connected
     func getChannel(completion: @escaping (Bool, [Room]) -> ()) {
 //        listening for event
             self.socket.emit("get_rooms")
