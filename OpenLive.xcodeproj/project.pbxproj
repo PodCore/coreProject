@@ -55,11 +55,12 @@
 		F96ACB7D202F7C58001CA53F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F96ACB7B202F7C58001CA53F /* Main.storyboard */; };
 		F96ACB82202F803F001CA53F /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F96ACB81202F803F001CA53F /* Register.storyboard */; };
 		F96ACB84202F88DB001CA53F /* FakeRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96ACB83202F88DB001CA53F /* FakeRoom.swift */; };
-		F96ACB85202F8A0E001CA53F /* LiveRoom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F96ACB7E202F7D1E001CA53F /* LiveRoom.storyboard */; };
 		F96ACB89202FC6F5001CA53F /* Following.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96ACB88202FC6F5001CA53F /* Following.swift */; };
 		F96ACB8E20323EC5001CA53F /* UserdataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96ACB8D20323EC5001CA53F /* UserdataService.swift */; };
 		F96ACB902032563B001CA53F /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96ACB8F2032563B001CA53F /* Constant.swift */; };
-		F9CC457B20369D3A003CCD65 /* WatchRoom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9CC457A20369D3A003CCD65 /* WatchRoom.storyboard */; };
+		F97EE22B203F95F70090E088 /* Overlay.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F97EE22A203F95F70090E088 /* Overlay.storyboard */; };
+		F97EE22D203F96670090E088 /* WatchRoom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F97EE22C203F96660090E088 /* WatchRoom.storyboard */; };
+		F97EE22F203F970E0090E088 /* LiveRoom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F97EE22E203F970E0090E088 /* LiveRoom.storyboard */; };
 		F9CC457D2036B079003CCD65 /* WatchRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CC457C2036B079003CCD65 /* WatchRoomViewController.swift */; };
 		F9CC457F2036C080003CCD65 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9CC457E2036C080003CCD65 /* Settings.storyboard */; };
 		F9CC45812037933E003CCD65 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CC45802037933E003CCD65 /* Comment.swift */; };
@@ -133,13 +134,14 @@
 		F96ACB75202F7BED001CA53F /* UIImage&Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage&Cache.swift"; sourceTree = "<group>"; };
 		F96ACB76202F7BED001CA53F /* TableViewDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDatasource.swift; sourceTree = "<group>"; };
 		F96ACB7B202F7C58001CA53F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		F96ACB7E202F7D1E001CA53F /* LiveRoom.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LiveRoom.storyboard; sourceTree = "<group>"; };
 		F96ACB81202F803F001CA53F /* Register.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 		F96ACB83202F88DB001CA53F /* FakeRoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeRoom.swift; sourceTree = "<group>"; };
 		F96ACB88202FC6F5001CA53F /* Following.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Following.swift; sourceTree = "<group>"; };
 		F96ACB8D20323EC5001CA53F /* UserdataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserdataService.swift; sourceTree = "<group>"; };
 		F96ACB8F2032563B001CA53F /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
-		F9CC457A20369D3A003CCD65 /* WatchRoom.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WatchRoom.storyboard; sourceTree = "<group>"; };
+		F97EE22A203F95F70090E088 /* Overlay.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Overlay.storyboard; sourceTree = "<group>"; };
+		F97EE22C203F96660090E088 /* WatchRoom.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WatchRoom.storyboard; sourceTree = "<group>"; };
+		F97EE22E203F970E0090E088 /* LiveRoom.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LiveRoom.storyboard; sourceTree = "<group>"; };
 		F9CC457C2036B079003CCD65 /* WatchRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WatchRoomViewController.swift; path = OpenLive/ViewController/WatchRoomViewController.swift; sourceTree = SOURCE_ROOT; };
 		F9CC457E2036C080003CCD65 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		F9CC45802037933E003CCD65 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
@@ -324,12 +326,13 @@
 			isa = PBXGroup;
 			children = (
 				F96ACB7B202F7C58001CA53F /* Main.storyboard */,
+				F97EE22C203F96660090E088 /* WatchRoom.storyboard */,
+				F97EE22E203F970E0090E088 /* LiveRoom.storyboard */,
 				21D85D88202F995E001FEABA /* profile.storyboard */,
 				F96ACB81202F803F001CA53F /* Register.storyboard */,
 				078012F01D1E57730093DE24 /* CreateRoom.storyboard */,
 				F9CC457E2036C080003CCD65 /* Settings.storyboard */,
-				F96ACB7E202F7D1E001CA53F /* LiveRoom.storyboard */,
-				F9CC457A20369D3A003CCD65 /* WatchRoom.storyboard */,
+				F97EE22A203F95F70090E088 /* Overlay.storyboard */,
 				078012F51D1E57730093DE24 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboard;
@@ -476,10 +479,11 @@
 				21D85D89202F995E001FEABA /* profile.storyboard in Resources */,
 				F96ACB7D202F7C58001CA53F /* Main.storyboard in Resources */,
 				F96ACB67202F7B20001CA53F /* GoogleService-Info.plist in Resources */,
+				F97EE22F203F970E0090E088 /* LiveRoom.storyboard in Resources */,
+				F97EE22B203F95F70090E088 /* Overlay.storyboard in Resources */,
 				078012F41D1E57730093DE24 /* Assets.xcassets in Resources */,
 				078012F21D1E57730093DE24 /* CreateRoom.storyboard in Resources */,
-				F96ACB85202F8A0E001CA53F /* LiveRoom.storyboard in Resources */,
-				F9CC457B20369D3A003CCD65 /* WatchRoom.storyboard in Resources */,
+				F97EE22D203F96670090E088 /* WatchRoom.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -810,7 +814,7 @@
 					"$(PROJECT_DIR)/OpenLive",
 				);
 				INFOPLIST_FILE = OpenLive/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = sidtesting.9com.test.agora.open.live;
@@ -841,7 +845,7 @@
 					"$(PROJECT_DIR)/OpenLive",
 				);
 				INFOPLIST_FILE = OpenLive/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = sidtesting.9com.test.agora.open.live;
