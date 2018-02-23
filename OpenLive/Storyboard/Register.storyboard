@@ -25,7 +25,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SIGN UP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i29-ea-Ctl">
-                                <rect key="frame" x="118" y="30" width="138.5" height="36"/>
+                                <rect key="frame" x="117.5" y="30" width="139" height="36"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -36,7 +36,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="hsr-KY-0sp">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="94"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p6e-cq-N03">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="james" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p6e-cq-N03">
                                                 <rect key="frame" x="0.0" y="0.0" width="250" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="250" id="Rnw-A0-nwG"/>
@@ -54,7 +54,7 @@
                                                     <constraint firstAttribute="width" constant="250" id="n3A-rq-k4c"/>
                                                 </constraints>
                                             </view>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fpI-mR-DBk">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="email@gmail.com" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fpI-mR-DBk">
                                                 <rect key="frame" x="0.0" y="33" width="250" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="250" id="D6F-FX-YDG"/>
@@ -71,7 +71,7 @@
                                                     <constraint firstAttribute="width" constant="250" id="wMH-A7-GaC"/>
                                                 </constraints>
                                             </view>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q3X-p7-Lla">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q3X-p7-Lla">
                                                 <rect key="frame" x="0.0" y="66" width="250" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="250" id="q0V-Nd-8Lc"/>
@@ -117,7 +117,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="e7z-VH-WLt">
                                         <rect key="frame" x="0.0" y="299" width="250" height="166"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aid-7e-f7c" userLabel="SignUp">
+                                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aid-7e-f7c" userLabel="SignUp">
                                                 <rect key="frame" x="0.0" y="0.0" width="250" height="40"/>
                                                 <color key="backgroundColor" red="0.094117647060000004" green="0.1450980392" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
@@ -128,7 +128,7 @@
                                                     <action selector="signupClicked:" destination="wne-tx-KMA" eventType="touchUpInside" id="U4e-Ui-IkW"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pJh-FZ-PAf">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pJh-FZ-PAf">
                                                 <rect key="frame" x="0.0" y="70" width="250" height="42"/>
                                                 <color key="backgroundColor" red="0.094117647060000004" green="0.1450980392" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
@@ -143,14 +143,14 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="byp-SJ-8Pe">
                                                 <rect key="frame" x="0.0" y="142" width="250" height="24"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qfl-Ll-sSM">
+                                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qfl-Ll-sSM">
                                                         <rect key="frame" x="0.0" y="0.0" width="109" height="24"/>
                                                         <state key="normal" image="fbbutton"/>
                                                         <connections>
                                                             <action selector="fbLoginTapped:" destination="wne-tx-KMA" eventType="touchUpInside" id="Me4-6a-SRt"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qcb-Vv-89i">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qcb-Vv-89i">
                                                         <rect key="frame" x="141" y="0.0" width="109" height="24"/>
                                                         <state key="normal" image="gmailbutton"/>
                                                         <connections>
@@ -171,7 +171,6 @@
                         <constraints>
                             <constraint firstItem="Ibk-yS-8qn" firstAttribute="leading" secondItem="wIz-Hd-NRJ" secondAttribute="leading" constant="62" id="2eO-Jp-37k"/>
                             <constraint firstItem="Ibk-yS-8qn" firstAttribute="top" secondItem="i29-ea-Ctl" secondAttribute="bottom" constant="68" id="6Mc-uP-6kb"/>
-                            <constraint firstItem="i29-ea-Ctl" firstAttribute="leading" secondItem="wIz-Hd-NRJ" secondAttribute="leading" constant="117.5" id="6zi-7B-FeX"/>
                             <constraint firstItem="wIz-Hd-NRJ" firstAttribute="trailing" secondItem="i29-ea-Ctl" secondAttribute="trailing" constant="117.5" id="9Ms-XI-4ph"/>
                             <constraint firstItem="wIz-Hd-NRJ" firstAttribute="trailing" secondItem="Ibk-yS-8qn" secondAttribute="trailing" constant="62" id="AKb-hm-ufg"/>
                             <constraint firstItem="wIz-Hd-NRJ" firstAttribute="bottom" secondItem="Ibk-yS-8qn" secondAttribute="bottom" constant="68" id="Ffy-Ib-wud"/>

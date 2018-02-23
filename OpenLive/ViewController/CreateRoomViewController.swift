@@ -12,8 +12,19 @@ import AgoraRtcEngineKit
 class CreateRoomViewController: UIViewController {
 
     @IBOutlet weak var roomNameTextField: UITextField!
-
+    @IBOutlet weak var roomImage: UIImageView!
     fileprivate var videoProfile = AgoraRtcVideoProfile._VideoProfile_360P
+    var roomImgStr: String?
+    @IBAction func pickRoomTapped(_ sender: UIButton) {
+        CameraHandler.shared.showActionSheet(vc: self)
+        CameraHandler.shared.imagePickedBlock = { (image) in
+            self.roomImage.contentMode = .scaleAspectFill
+            self.roomImage.clipsToBounds = true
+            self.roomImage.image = image
+            let imgData: NSData = UIImagePNGRepresentation(image)! as NSData
+            self.roomImgStr = imgData.base64EncodedString(options: .lineLength64Characters)
+        }
+    }
     
     @IBAction func createRoomTapped(_ sender: UIButton) {
         join(withRole: .clientRole_Broadcaster)
@@ -21,7 +32,7 @@ class CreateRoomViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+//        imagePicker.delegate = self
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -38,6 +49,7 @@ class CreateRoomViewController: UIViewController {
             let liveVC = segue.destination as! LiveRoomViewController
             liveVC.roomName = roomNameTextField.text
             liveVC.videoProfile = videoProfile
+            liveVC.roomImage = self.roomImgStr
             if let value = sender as? NSNumber, let role = AgoraRtcClientRole(rawValue: value.intValue) {
                 liveVC.clientRole = role
             }
