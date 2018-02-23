@@ -12,5 +12,5 @@ import UIKit
 class SubscriptionCell: UITableViewCell {
     @IBOutlet weak var streamNameLabel: UILabel!
     @IBOutlet weak var subNameLabel: UILabel!
-    @IBOutlet weak var subImageView: UIImageView!
+    @IBOutlet weak var subImageView: CustomImageView!
 }

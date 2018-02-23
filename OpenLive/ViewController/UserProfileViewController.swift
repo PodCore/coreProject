@@ -15,9 +15,6 @@ class UserProfileViewController: UIViewController, UITableViewDataSource, UITabl
     let subscriptionCount = 0
     var username = "__guest__"
     var user: User?
-    let customImageView = CustomImageView()
-    var imageArray = [UIImage]()
-    var userImage: UIImage?
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
@@ -36,7 +33,7 @@ class UserProfileViewController: UIViewController, UITableViewDataSource, UITabl
 //            This cell contains the user's information
             let cell = tableView.dequeueReusableCell(withIdentifier: "userProfileCell", for: indexPath) as! UserProfileCell
             guard let user = self.user else {return cell}
-            cell.profileImageView.image = self.userImage
+            cell.profileImageView.loadImageFromUrlString(urlString: user.imageUrl)
             cell.userNameLabel.text = self.user?.username
             cell.subCountLabel.text = String("Followers: \(user.followers.count)")
             return cell
@@ -45,7 +42,7 @@ class UserProfileViewController: UIViewController, UITableViewDataSource, UITabl
             let cell = tableView.dequeueReusableCell(withIdentifier: "subscriptionCell", for: indexPath) as! SubscriptionCell
             guard let user = self.user else {return cell}
             cell.streamNameLabel.text = user.followees[indexPath.row - 1].streamName
-            cell.subImageView.image = self.imageArray[indexPath.row - 1]
+            cell.subImageView.loadImageFromUrlString(urlString: user.followees[indexPath.row - 1].profilePic)
             cell.subNameLabel.text = user.followees[indexPath.row - 1].username
             return cell
         }
@@ -57,37 +54,39 @@ class UserProfileViewController: UIViewController, UITableViewDataSource, UITabl
             if success {
                 self.user = user
                 self.tableView.reloadData()
-                
-                self.loadUserImage()
-                self.loadFolloweeImages()
             }
-            
         }
     }
     
-    func loadFolloweeImages() {
-        guard let user = self.user else {return}
-        for followee in user.followees {
-            customImageView.loadImageFromUrlString(urlString: followee.profilePic)
-            self.imageArray.append(customImageView.image!)
-        }
-        self.tableView.reloadData()
-        
-    }
-    
-    func loadUserImage() {
-        guard let user = self.user else {return}
-        customImageView.loadImageFromUrlString(urlString: user.imageUrl)
-        self.userImage = customImageView.image
-        self.tableView.reloadData()
-    }
+//    func loadFolloweeImages(completion: @escaping ()->()) {
+//        guard let user = self.user else {return}
+//        for followee in user.followees {
+//            customImageView.loadImageFromUrlString(urlString: followee.profilePic){
+//                self.imageArray.append(self.customImageView.image!)
+//                if self.imageArray.count == user.followees.count {
+//                    completion()
+//                }
+//            }
+//        }
+//
+//    }
+//
+//    func loadUserImage(completion: @escaping ()->()) {
+//        guard let user = self.user else {return}
+//        self.customImageView.loadImageFromUrlString(urlString: user.imageUrl) {
+//            self.userImage = self.customImageView.image
+//            if self.userImage != nil {
+//                completion()
+//            }
+//        }
+//
+//    }
     
     override func viewWillAppear(_ animated: Bool) {
         let defaults = UserDefaults.standard
         if let username = defaults.string(forKey: "username") {
             self.username = username
         }
-        
         self.getUser(username: username)
     }
     

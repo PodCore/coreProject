@@ -10,7 +10,7 @@ import UIKit
 
 // Used in UserProfileViewController
 class UserProfileCell: UITableViewCell {
-    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var profileImageView: CustomImageView!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var subCountLabel: UILabel!
 }
