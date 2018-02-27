@@ -141,10 +141,10 @@
             </objects>
             <point key="canvasLocation" x="2516" y="-152.47376311844079"/>
         </scene>
-        <!--View Controller-->
+        <!--Login As Guest View Controller-->
         <scene sceneID="0FO-Va-iLA">
             <objects>
-                <viewController id="OUa-1t-3iT" sceneMemberID="viewController">
+                <viewController id="OUa-1t-3iT" customClass="LoginAsGuestViewController" customModule="OpenLive" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="A4Y-Kh-h4d">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -161,6 +161,9 @@
                                 <state key="normal" title="Sign In as Guest">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="signInAsGuest:" destination="OUa-1t-3iT" eventType="touchUpInside" id="17f-cS-myd"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WgB-8O-lUb">
                                 <rect key="frame" x="30" y="550" width="315" height="70"/>

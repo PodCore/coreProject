@@ -168,7 +168,7 @@
         <!--main-->
         <scene sceneID="3sB-n7-ELg">
             <objects>
-                <tabBarController title="main" id="JHj-VJ-z16" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="mainTabBarController" title="main" id="JHj-VJ-z16" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xu1-Rb-41H">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
