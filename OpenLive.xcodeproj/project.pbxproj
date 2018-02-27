@@ -37,6 +37,7 @@
 		21D85D91202F9F65001FEABA /* SubscriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D85D90202F9F65001FEABA /* SubscriptionCell.swift */; };
 		9BD495C2E9E5B995DC49A798 /* Pods_OpenLive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A389B5D17B2C3222BF04AE0 /* Pods_OpenLive.framework */; };
 		F798436423339E6CEA04AF25 /* Pods_OpenLiveUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FED29D567E083B1BD7F0EE0 /* Pods_OpenLiveUITests.framework */; };
+		F93478F9203E4B6D00E4B0A9 /* CameraHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93478F8203E4B6D00E4B0A9 /* CameraHandler.swift */; };
 		F96ACB4E202CFA1D001CA53F /* SocketIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F96ACB50202CFA1D001CA53F /* SocketIO.framework */; };
 		F96ACB4F202CFA1D001CA53F /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F96ACB51202CFA1D001CA53F /* Starscream.framework */; };
 		F96ACB52202CFA22001CA53F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F96ACB53202CFA22001CA53F /* Alamofire.framework */; };
@@ -54,12 +55,12 @@
 		F96ACB78202F7BED001CA53F /* TableViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96ACB76202F7BED001CA53F /* TableViewDatasource.swift */; };
 		F96ACB7D202F7C58001CA53F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F96ACB7B202F7C58001CA53F /* Main.storyboard */; };
 		F96ACB82202F803F001CA53F /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F96ACB81202F803F001CA53F /* Register.storyboard */; };
-		F96ACB84202F88DB001CA53F /* FakeRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96ACB83202F88DB001CA53F /* FakeRoom.swift */; };
-		F96ACB85202F8A0E001CA53F /* LiveRoom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F96ACB7E202F7D1E001CA53F /* LiveRoom.storyboard */; };
 		F96ACB89202FC6F5001CA53F /* Following.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96ACB88202FC6F5001CA53F /* Following.swift */; };
 		F96ACB8E20323EC5001CA53F /* UserdataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96ACB8D20323EC5001CA53F /* UserdataService.swift */; };
 		F96ACB902032563B001CA53F /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96ACB8F2032563B001CA53F /* Constant.swift */; };
-		F9CC457B20369D3A003CCD65 /* WatchRoom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9CC457A20369D3A003CCD65 /* WatchRoom.storyboard */; };
+		F97EE22B203F95F70090E088 /* Overlay.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F97EE22A203F95F70090E088 /* Overlay.storyboard */; };
+		F97EE22D203F96670090E088 /* WatchRoom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F97EE22C203F96660090E088 /* WatchRoom.storyboard */; };
+		F97EE22F203F970E0090E088 /* LiveRoom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F97EE22E203F970E0090E088 /* LiveRoom.storyboard */; };
 		F9CC457D2036B079003CCD65 /* WatchRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CC457C2036B079003CCD65 /* WatchRoomViewController.swift */; };
 		F9CC457F2036C080003CCD65 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9CC457E2036C080003CCD65 /* Settings.storyboard */; };
 		F9CC45812037933E003CCD65 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CC45802037933E003CCD65 /* Comment.swift */; };
@@ -117,6 +118,7 @@
 		50215475412EB07621262284 /* Pods-OpenLiveUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenLiveUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OpenLiveUITests/Pods-OpenLiveUITests.release.xcconfig"; sourceTree = "<group>"; };
 		67D0FE019758116E88F0DB1D /* Pods-OpenLive.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenLive.release.xcconfig"; path = "Pods/Target Support Files/Pods-OpenLive/Pods-OpenLive.release.xcconfig"; sourceTree = "<group>"; };
 		B7C30B0E9B19F46A7D6AF5DE /* Pods-OpenLive.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenLive.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OpenLive/Pods-OpenLive.debug.xcconfig"; sourceTree = "<group>"; };
+		F93478F8203E4B6D00E4B0A9 /* CameraHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHandler.swift; sourceTree = "<group>"; };
 		F96ACB50202CFA1D001CA53F /* SocketIO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SocketIO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F96ACB51202CFA1D001CA53F /* Starscream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Starscream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F96ACB53202CFA22001CA53F /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,13 +135,13 @@
 		F96ACB75202F7BED001CA53F /* UIImage&Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage&Cache.swift"; sourceTree = "<group>"; };
 		F96ACB76202F7BED001CA53F /* TableViewDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDatasource.swift; sourceTree = "<group>"; };
 		F96ACB7B202F7C58001CA53F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		F96ACB7E202F7D1E001CA53F /* LiveRoom.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LiveRoom.storyboard; sourceTree = "<group>"; };
 		F96ACB81202F803F001CA53F /* Register.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
-		F96ACB83202F88DB001CA53F /* FakeRoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeRoom.swift; sourceTree = "<group>"; };
 		F96ACB88202FC6F5001CA53F /* Following.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Following.swift; sourceTree = "<group>"; };
 		F96ACB8D20323EC5001CA53F /* UserdataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserdataService.swift; sourceTree = "<group>"; };
 		F96ACB8F2032563B001CA53F /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
-		F9CC457A20369D3A003CCD65 /* WatchRoom.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WatchRoom.storyboard; sourceTree = "<group>"; };
+		F97EE22A203F95F70090E088 /* Overlay.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Overlay.storyboard; sourceTree = "<group>"; };
+		F97EE22C203F96660090E088 /* WatchRoom.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WatchRoom.storyboard; sourceTree = "<group>"; };
+		F97EE22E203F970E0090E088 /* LiveRoom.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LiveRoom.storyboard; sourceTree = "<group>"; };
 		F9CC457C2036B079003CCD65 /* WatchRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WatchRoomViewController.swift; path = OpenLive/ViewController/WatchRoomViewController.swift; sourceTree = SOURCE_ROOT; };
 		F9CC457E2036C080003CCD65 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		F9CC45802037933E003CCD65 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
@@ -300,8 +302,6 @@
 		F96ACB5D202F76A1001CA53F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F96ACB83202F88DB001CA53F /* FakeRoom.swift */,
-				21BAE41A203F29A200A74F2F /* User.swift */,
 				F96ACB5A202D829D001CA53F /* Room.swift */,
 				F96ACB56202D1851001CA53F /* Poop.swift */,
 				F96ACB88202FC6F5001CA53F /* Following.swift */,
@@ -325,12 +325,13 @@
 			isa = PBXGroup;
 			children = (
 				F96ACB7B202F7C58001CA53F /* Main.storyboard */,
+				F97EE22C203F96660090E088 /* WatchRoom.storyboard */,
+				F97EE22E203F970E0090E088 /* LiveRoom.storyboard */,
 				21D85D88202F995E001FEABA /* profile.storyboard */,
 				F96ACB81202F803F001CA53F /* Register.storyboard */,
 				078012F01D1E57730093DE24 /* CreateRoom.storyboard */,
 				F9CC457E2036C080003CCD65 /* Settings.storyboard */,
-				F96ACB7E202F7D1E001CA53F /* LiveRoom.storyboard */,
-				F9CC457A20369D3A003CCD65 /* WatchRoom.storyboard */,
+				F97EE22A203F95F70090E088 /* Overlay.storyboard */,
 				078012F51D1E57730093DE24 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboard;
@@ -369,6 +370,7 @@
 				F96ACB76202F7BED001CA53F /* TableViewDatasource.swift */,
 				F96ACB75202F7BED001CA53F /* UIImage&Cache.swift */,
 				F96ACB8F2032563B001CA53F /* Constant.swift */,
+				F93478F8203E4B6D00E4B0A9 /* CameraHandler.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -429,7 +431,7 @@
 				TargetAttributes = {
 					078012E81D1E57730093DE24 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = JDYWQEVARC;
+						DevelopmentTeam = A3KV3V94JT;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -476,10 +478,11 @@
 				21D85D89202F995E001FEABA /* profile.storyboard in Resources */,
 				F96ACB7D202F7C58001CA53F /* Main.storyboard in Resources */,
 				F96ACB67202F7B20001CA53F /* GoogleService-Info.plist in Resources */,
+				F97EE22F203F970E0090E088 /* LiveRoom.storyboard in Resources */,
+				F97EE22B203F95F70090E088 /* Overlay.storyboard in Resources */,
 				078012F41D1E57730093DE24 /* Assets.xcassets in Resources */,
 				078012F21D1E57730093DE24 /* CreateRoom.storyboard in Resources */,
-				F96ACB85202F8A0E001CA53F /* LiveRoom.storyboard in Resources */,
-				F9CC457B20369D3A003CCD65 /* WatchRoom.storyboard in Resources */,
+				F97EE22D203F96670090E088 /* WatchRoom.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -644,7 +647,7 @@
 				078012EF1D1E57730093DE24 /* CreateRoomViewController.swift in Sources */,
 				078012ED1D1E57730093DE24 /* AppDelegate.swift in Sources */,
 				F96ACB902032563B001CA53F /* Constant.swift in Sources */,
-				F96ACB84202F88DB001CA53F /* FakeRoom.swift in Sources */,
+				F93478F9203E4B6D00E4B0A9 /* CameraHandler.swift in Sources */,
 				F96ACB59202D74CD001CA53F /* SocketService.swift in Sources */,
 				07130E8A1D22928200CC85D8 /* KeyCenter.swift in Sources */,
 				F9CC45832037981C003CCD65 /* OverlayViewController.swift in Sources */,
@@ -803,14 +806,14 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Yuhua Gong (TH5SJ72C94)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JDYWQEVARC;
+				DEVELOPMENT_TEAM = A3KV3V94JT;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/OpenLive",
 				);
 				INFOPLIST_FILE = OpenLive/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = sidtesting.9com.test.agora.open.live;
@@ -834,14 +837,14 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Agora Lab, Inc. (48TB6ZZL5S)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JDYWQEVARC;
+				DEVELOPMENT_TEAM = A3KV3V94JT;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/OpenLive",
 				);
 				INFOPLIST_FILE = OpenLive/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = sidtesting.9com.test.agora.open.live;

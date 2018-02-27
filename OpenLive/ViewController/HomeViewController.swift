@@ -11,66 +11,31 @@ import UIKit
 class HomeViewController: UIViewController {
     
 //    reload data when fetch rooms from server
-//    var popularVideos: [FakeRoom] = [FakeRoom(key: "sdfs", title: "skys", img: "https://nextcity.org/images/uploads/_resized/6642874991_9b68764995_b.jpg"),
-//       FakeRoom(key: "sdfs", title: "skys", img: "https://nextcity.org/images/uploads/_resized/6642874991_9b68764995_b.jpg"),
-//        FakeRoom(key: "sdfs", title: "skys", img: "https://nextcity.org/images/uploads/_resized/6642874991_9b68764995_b.jpg")]
-    var popularVideos = [Room](){
-        didSet {
-            collectionView.reloadData()
-        }
-    }
+    var popularVideos = [Room]()
     
     let collectionViewDatasource = CollectionViewDatasource(items: [])
-    
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBAction func hostButtonTapped(_ sender: UIButton) {
-        print("==================")
-        if AuthService.instance.isLoggedIn {
-            print("CREATE ROOM")
+//        if AuthService.instance.isLoggedIn {
+//            print("CREATE ROOM")
             let storyBoard = UIStoryboard.init(name: "CreateRoom", bundle: nil)
             let createRoomVC = storyBoard.instantiateViewController(withIdentifier: "createRoomVC") as! CreateRoomViewController
             self.navigationController?.pushViewController(createRoomVC, animated: true)
-        } else {
-            print("REGISTER")
-            let storyBoard = UIStoryboard.init(name: "Register", bundle: nil)
-            let registerVC = storyBoard.instantiateViewController(withIdentifier: "registerVC") as! RegisterViewController
-            self.navigationController?.pushViewController(registerVC, animated: true)
-        }
+//        } else {
+//            print("REGISTER")
+//            let storyBoard = UIStoryboard.init(name: "Register", bundle: nil)
+//            let registerVC = storyBoard.instantiateViewController(withIdentifier: "registerVC") as! RegisterViewController
+//            self.navigationController?.pushViewController(registerVC, animated: true)
+//        }
     }
     
  
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
-        self.collectionViewDatasource.items = popularVideos
-        self.collectionView.dataSource = self.collectionViewDatasource
         //  trigger collecionViewFlowlayout delegate
         self.collectionView.delegate = self
-        
-        //     update Cell UI vy calling configureCell call back function
-        collectionViewDatasource.configureCell = { (collectionView, indexPath) -> UICollectionViewCell in
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as! CollectionCell
-            //            cell.img.loadImageFromUrlString(urlString: self.popularVideos[indexPath.row].img)
-            if self.popularVideos.count != 0 {
-                print(self.popularVideos)
-            cell.roomName.text = self.popularVideos[indexPath.row].name
-            }
-            return cell
-        }
-        
-//        DispatchQueue.main.async {
-//            self.collectionView.reloadData()
-//        }
     }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        // Show the navigation bar on other view controllers
-        self.navigationController?.setNavigationBarHidden(false, animated: animated)
-    }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,10 +43,16 @@ class HomeViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         
         SocketService.instance.observeIfConnected { (payload, ack) in
+//            it keeps being called, maybe that's why only one text is displayed on view?
             SocketService.instance.getChannel { (success, rooms) in
-                self.popularVideos = rooms
-                DispatchQueue.main.async {
-                    self.collectionView.reloadData()
+                if success {
+                    self.popularVideos = rooms
+                    self.collectionViewDatasource.items = self.popularVideos
+                    self.collectionView.dataSource = self.collectionViewDatasource
+                    
+                    DispatchQueue.main.async {
+                        self.collectionView.reloadData()
+                    }
                 }
             }
         }
@@ -93,7 +64,19 @@ class HomeViewController: UIViewController {
             }
         }
         
-       
+        //     update Cell UI vy calling configureCell call back function
+        collectionViewDatasource.configureCell = { (collectionView, indexPath) -> UICollectionViewCell in
+            
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as! CollectionCell
+            if self.popularVideos.count != 0 {
+                DispatchQueue.main.async {
+                    cell.roomName.text = self.popularVideos[indexPath.row].name
+                    cell.img.loadImageFromUrlString(urlString: self.popularVideos[indexPath.row].image)
+                }
+            }
+            
+            return cell
+        }
     }
 }
 
@@ -108,6 +91,7 @@ extension HomeViewController: UICollectionViewDelegate {
     }
 }
 
+// first section of collection view to be across the width of the screen, the rests be halves of width
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let height = CGFloat(250)
@@ -125,4 +109,5 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: width, height: height)
     }
 }
+
 
