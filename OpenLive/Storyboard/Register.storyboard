@@ -93,7 +93,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="signupClicked:" destination="wne-tx-KMA" eventType="touchUpInside" id="U4e-Ui-IkW"/>
+                                            <segue destination="HP2-rJ-1AP" kind="show" id="YUE-5L-U4T"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -136,9 +136,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wIz-Hd-NRJ"/>
                     </view>
-                    <connections>
-                        <outlet property="regularButton" destination="Aid-7e-f7c" id="84R-AW-Q8h"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rDP-NZ-ww5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -203,7 +200,7 @@
         <!--View Controller-->
         <scene sceneID="Eh6-Ae-Ww0">
             <objects>
-                <viewController storyboardIdentifier="registerVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HP2-rJ-1AP" sceneMemberID="viewController">
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="HP2-rJ-1AP" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ohT-Xy-NqZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -211,18 +208,6 @@
                             <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iPhone" translatesAutoresizingMaskIntoConstraints="NO" id="azF-Yx-oPQ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kME-ol-K7c">
-                                <rect key="frame" x="30" y="525" width="315" height="70"/>
-                                <color key="backgroundColor" red="0.0009097358172" green="0.017255492269999999" blue="0.72761342009999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="XBj-Y6-H2A"/>
-                                    <constraint firstAttribute="height" constant="70" id="gJW-A7-kft"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="22"/>
-                                <state key="normal" title="Sign Up">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SIGN UP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JOa-h6-cmN">
                                 <rect key="frame" x="117.5" y="30" width="140" height="36"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
@@ -288,22 +273,36 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H0p-em-d4t" userLabel="SignUp">
+                                <rect key="frame" x="30" y="572" width="315" height="70"/>
+                                <color key="backgroundColor" red="0.090472020210000004" green="0.01687713154" blue="0.72553408149999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="VZx-zE-ebh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="22"/>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="signupClicked:" destination="wne-tx-KMA" eventType="touchUpInside" id="2QS-rL-bwx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="4xB-g1-hvc" firstAttribute="top" secondItem="JOa-h6-cmN" secondAttribute="bottom" constant="100" id="2ay-mA-w4B"/>
+                            <constraint firstItem="H0p-em-d4t" firstAttribute="leading" secondItem="wS3-k7-Jv0" secondAttribute="leading" constant="30" id="47T-jj-WZa"/>
                             <constraint firstItem="azF-Yx-oPQ" firstAttribute="leading" secondItem="wS3-k7-Jv0" secondAttribute="leading" id="8rv-rq-2Fa"/>
                             <constraint firstItem="wS3-k7-Jv0" firstAttribute="top" secondItem="azF-Yx-oPQ" secondAttribute="top" constant="20" id="ABw-af-wki"/>
-                            <constraint firstItem="kME-ol-K7c" firstAttribute="leading" secondItem="wS3-k7-Jv0" secondAttribute="leading" constant="30" id="C7B-uj-PId"/>
                             <constraint firstItem="wS3-k7-Jv0" firstAttribute="trailing" secondItem="azF-Yx-oPQ" secondAttribute="trailing" id="F11-pG-d4d"/>
                             <constraint firstItem="wS3-k7-Jv0" firstAttribute="bottom" secondItem="azF-Yx-oPQ" secondAttribute="bottom" id="F7t-WU-Kya"/>
-                            <constraint firstItem="wS3-k7-Jv0" firstAttribute="trailing" secondItem="kME-ol-K7c" secondAttribute="trailing" constant="30" id="TPs-PT-PDb"/>
+                            <constraint firstItem="wS3-k7-Jv0" firstAttribute="trailing" secondItem="H0p-em-d4t" secondAttribute="trailing" constant="30" id="HkN-jU-LBc"/>
                             <constraint firstItem="wS3-k7-Jv0" firstAttribute="trailing" secondItem="JOa-h6-cmN" secondAttribute="trailing" constant="117.5" id="TvV-7x-IBl"/>
                             <constraint firstItem="wS3-k7-Jv0" firstAttribute="trailing" secondItem="4xB-g1-hvc" secondAttribute="trailing" constant="30" id="VhJ-2H-wyZ"/>
                             <constraint firstItem="4xB-g1-hvc" firstAttribute="leading" secondItem="wS3-k7-Jv0" secondAttribute="leading" constant="30" id="nOc-XH-S7G"/>
                             <constraint firstItem="JOa-h6-cmN" firstAttribute="top" secondItem="wS3-k7-Jv0" secondAttribute="top" constant="10" id="qsh-jY-1e1"/>
+                            <constraint firstItem="wS3-k7-Jv0" firstAttribute="bottom" secondItem="H0p-em-d4t" secondAttribute="bottom" constant="25" id="tO4-ab-Oyk"/>
                             <constraint firstItem="JOa-h6-cmN" firstAttribute="centerX" secondItem="ohT-Xy-NqZ" secondAttribute="centerX" id="uRN-FH-McZ"/>
-                            <constraint firstItem="kME-ol-K7c" firstAttribute="top" secondItem="4xB-g1-hvc" secondAttribute="bottom" constant="110" id="vg6-ze-PIs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wS3-k7-Jv0"/>
                     </view>
