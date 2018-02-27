@@ -12,11 +12,6 @@ class HomeViewController: UIViewController {
     
 //    reload data when fetch rooms from server
     var popularVideos = [Room]()
-//    {
-//        didSet {
-//            collectionView.reloadData()
-//        }
-//    }
     
     let collectionViewDatasource = CollectionViewDatasource(items: [])
     @IBOutlet weak var collectionView: UICollectionView!
@@ -38,24 +33,8 @@ class HomeViewController: UIViewController {
  
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
-        self.collectionViewDatasource.items = popularVideos
-        self.collectionView.dataSource = self.collectionViewDatasource
         //  trigger collecionViewFlowlayout delegate
         self.collectionView.delegate = self
-
-        //     update Cell UI vy calling configureCell call back function
-        collectionViewDatasource.configureCell = { (collectionView, indexPath) -> UICollectionViewCell in
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as! CollectionCell
-                if self.popularVideos.count != 0 {
-                    DispatchQueue.main.async {
-                    cell.roomName.text = self.popularVideos[indexPath.row].name
-//                    cell.img.loadImageFromUrlString(urlString: self.popularVideos[indexPath.row].image)
-                    }
-                }
-
-            return cell
-        }
     }
     
     override func viewDidLoad() {
@@ -68,6 +47,9 @@ class HomeViewController: UIViewController {
             SocketService.instance.getChannel { (success, rooms) in
                 if success {
                     self.popularVideos = rooms
+                    self.collectionViewDatasource.items = self.popularVideos
+                    self.collectionView.dataSource = self.collectionViewDatasource
+                    
                     DispatchQueue.main.async {
                         self.collectionView.reloadData()
                     }
@@ -80,6 +62,20 @@ class HomeViewController: UIViewController {
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
             }
+        }
+        
+        //     update Cell UI vy calling configureCell call back function
+        collectionViewDatasource.configureCell = { (collectionView, indexPath) -> UICollectionViewCell in
+            
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as! CollectionCell
+            if self.popularVideos.count != 0 {
+                DispatchQueue.main.async {
+                    cell.roomName.text = self.popularVideos[indexPath.row].name
+                    cell.img.loadImageFromUrlString(urlString: self.popularVideos[indexPath.row].image)
+                }
+            }
+            
+            return cell
         }
     }
 }
@@ -113,4 +109,5 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: width, height: height)
     }
 }
+
 

@@ -4,8 +4,6 @@
 //
 //  Created by Sky Xu on 2/8/18.
 //  Copyright © 2018 Agora. All rights reserved.
-//
-
 import Foundation
 
 struct Rooms: Codable {
@@ -21,12 +19,7 @@ struct Room: Codable {
     let likes: Int
     let viewers: [String]
     let image: String
-//    init(json: [String :Any]) {
-//        roomId = (json["roomId"] as? String)!
-//        roomName = (json["roomName"] as? String)!
-//        userName = (json["userName"] as? String)!
-//        topic = (json["topic"] as? String)!
-//    }
+
     init(dict: [String: Any]) {
         name = dict["name"] as! String
         id = dict["id"] as! String
@@ -37,7 +30,7 @@ struct Room: Codable {
         viewers = dict["viewers"] as! [String]
         image = dict["image"] as! String
     }
-    
+
     func toDict() -> [String: Any] {
         return [
             "name": name as Any,
@@ -51,3 +44,4 @@ struct Room: Codable {
         ]
     }
 }
+

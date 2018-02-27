@@ -20,6 +20,8 @@ class CollectionViewDatasource<Item>: NSObject, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print("**** numberOfItemsInSection")
+        print(items.count)
         if section == 0 {
             return 1
         } else {
@@ -36,6 +38,8 @@ class CollectionViewDatasource<Item>: NSObject, UICollectionViewDataSource {
         if configureCell == nil {
             precondition(false, "you didn't pass collectionCongigurecell")
         }
+        
+        print("Cellfigure section:", indexPath.section)
         
         return configureCell!(collectionView, indexPath)
     }

@@ -55,7 +55,6 @@
 		F96ACB78202F7BED001CA53F /* TableViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96ACB76202F7BED001CA53F /* TableViewDatasource.swift */; };
 		F96ACB7D202F7C58001CA53F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F96ACB7B202F7C58001CA53F /* Main.storyboard */; };
 		F96ACB82202F803F001CA53F /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F96ACB81202F803F001CA53F /* Register.storyboard */; };
-		F96ACB84202F88DB001CA53F /* FakeRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96ACB83202F88DB001CA53F /* FakeRoom.swift */; };
 		F96ACB89202FC6F5001CA53F /* Following.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96ACB88202FC6F5001CA53F /* Following.swift */; };
 		F96ACB8E20323EC5001CA53F /* UserdataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96ACB8D20323EC5001CA53F /* UserdataService.swift */; };
 		F96ACB902032563B001CA53F /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96ACB8F2032563B001CA53F /* Constant.swift */; };
@@ -137,7 +136,6 @@
 		F96ACB76202F7BED001CA53F /* TableViewDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDatasource.swift; sourceTree = "<group>"; };
 		F96ACB7B202F7C58001CA53F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F96ACB81202F803F001CA53F /* Register.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
-		F96ACB83202F88DB001CA53F /* FakeRoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeRoom.swift; sourceTree = "<group>"; };
 		F96ACB88202FC6F5001CA53F /* Following.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Following.swift; sourceTree = "<group>"; };
 		F96ACB8D20323EC5001CA53F /* UserdataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserdataService.swift; sourceTree = "<group>"; };
 		F96ACB8F2032563B001CA53F /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
@@ -305,7 +303,6 @@
 		F96ACB5D202F76A1001CA53F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F96ACB83202F88DB001CA53F /* FakeRoom.swift */,
 				F96ACB5A202D829D001CA53F /* Room.swift */,
 				F96ACB56202D1851001CA53F /* Poop.swift */,
 				F96ACB88202FC6F5001CA53F /* Following.swift */,
@@ -651,7 +648,6 @@
 				078012EF1D1E57730093DE24 /* CreateRoomViewController.swift in Sources */,
 				078012ED1D1E57730093DE24 /* AppDelegate.swift in Sources */,
 				F96ACB902032563B001CA53F /* Constant.swift in Sources */,
-				F96ACB84202F88DB001CA53F /* FakeRoom.swift in Sources */,
 				F93478F9203E4B6D00E4B0A9 /* CameraHandler.swift in Sources */,
 				F96ACB59202D74CD001CA53F /* SocketService.swift in Sources */,
 				07130E8A1D22928200CC85D8 /* KeyCenter.swift in Sources */,

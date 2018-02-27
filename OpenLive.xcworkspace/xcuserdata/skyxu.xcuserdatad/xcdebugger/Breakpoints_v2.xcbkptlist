@@ -150,7 +150,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OpenLive/ViewController/LiveRoomViewController.swift"
-            timestampString = "541029684.7143821"
+            timestampString = "541106391.263105"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "280"
@@ -166,7 +166,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OpenLive/ViewController/LiveRoomViewController.swift"
-            timestampString = "541029684.715115"
+            timestampString = "541106391.2632051"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "302"
@@ -182,7 +182,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OpenLive/ViewController/LiveRoomViewController.swift"
-            timestampString = "541029684.716686"
+            timestampString = "541106391.2632869"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "310"
@@ -198,7 +198,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OpenLive/ViewController/LiveRoomViewController.swift"
-            timestampString = "541029684.717108"
+            timestampString = "541106391.263345"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "330"
@@ -214,7 +214,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OpenLive/ViewController/LiveRoomViewController.swift"
-            timestampString = "541029684.717731"
+            timestampString = "541106391.263404"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "123"
@@ -230,7 +230,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OpenLive/ViewController/LiveRoomViewController.swift"
-            timestampString = "541029684.718179"
+            timestampString = "541106391.263464"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "124"
@@ -246,7 +246,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OpenLive/ViewController/LiveRoomViewController.swift"
-            timestampString = "541029684.719517"
+            timestampString = "541106391.2635109"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "125"
@@ -262,7 +262,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OpenLive/ViewController/LiveRoomViewController.swift"
-            timestampString = "541029684.720018"
+            timestampString = "541106391.263553"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "128"
@@ -468,12 +468,12 @@
                   moduleName = "OpenLive"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/skyxu/code/streamCore/coreProject_mobile/OpenLive/ViewController/OverlayViewController.swift"
-                  timestampString = "541037458.211643"
+                  timestampString = "541106391.566425"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
                   endingLineNumber = "0"
-                  offsetFromSymbolStart = "16">
+                  offsetFromSymbolStart = "4">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -483,12 +483,12 @@
                   moduleName = "OpenLive"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/skyxu/code/streamCore/coreProject_mobile/OpenLive/ViewController/OverlayViewController.swift"
-                  timestampString = "541037458.213549"
+                  timestampString = "541106391.569478"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
                   endingLineNumber = "0"
-                  offsetFromSymbolStart = "16">
+                  offsetFromSymbolStart = "12">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -498,12 +498,12 @@
                   moduleName = "OpenLive"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/skyxu/code/streamCore/coreProject_mobile/OpenLive/ViewController/OverlayViewController.swift"
-                  timestampString = "541037458.215199"
+                  timestampString = "541106391.572515"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
                   endingLineNumber = "14"
-                  offsetFromSymbolStart = "72">
+                  offsetFromSymbolStart = "79">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -513,12 +513,12 @@
                   moduleName = "OpenLive"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/skyxu/code/streamCore/coreProject_mobile/OpenLive/ViewController/OverlayViewController.swift"
-                  timestampString = "541037458.216884"
+                  timestampString = "541106391.575403"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
                   endingLineNumber = "0"
-                  offsetFromSymbolStart = "16">
+                  offsetFromSymbolStart = "4">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -528,12 +528,12 @@
                   moduleName = "OpenLive"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/skyxu/code/streamCore/coreProject_mobile/OpenLive/ViewController/OverlayViewController.swift"
-                  timestampString = "541037458.218652"
+                  timestampString = "541106391.578205"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
                   endingLineNumber = "14"
-                  offsetFromSymbolStart = "52">
+                  offsetFromSymbolStart = "49">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -561,12 +561,12 @@
                   moduleName = "OpenLive"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/skyxu/code/streamCore/coreProject_mobile/OpenLive/ViewController/WatchRoomViewController.swift"
-                  timestampString = "541037458.225311"
+                  timestampString = "541106391.587154"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "27"
                   endingLineNumber = "27"
-                  offsetFromSymbolStart = "104">
+                  offsetFromSymbolStart = "109">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -576,12 +576,12 @@
                   moduleName = "OpenLive"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/skyxu/code/streamCore/coreProject_mobile/OpenLive/ViewController/WatchRoomViewController.swift"
-                  timestampString = "541037458.2279069"
+                  timestampString = "541106391.589878"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "27"
                   endingLineNumber = "27"
-                  offsetFromSymbolStart = "120">
+                  offsetFromSymbolStart = "112">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -591,12 +591,12 @@
                   moduleName = "OpenLive"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/skyxu/code/streamCore/coreProject_mobile/OpenLive/ViewController/WatchRoomViewController.swift"
-                  timestampString = "541037458.230029"
+                  timestampString = "541106391.5927041"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "27"
                   endingLineNumber = "27"
-                  offsetFromSymbolStart = "800">
+                  offsetFromSymbolStart = "1077">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -606,12 +606,12 @@
                   moduleName = "OpenLive"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/skyxu/code/streamCore/coreProject_mobile/OpenLive/ViewController/WatchRoomViewController.swift"
-                  timestampString = "541037458.232095"
+                  timestampString = "541106391.59556"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "27"
                   endingLineNumber = "27"
-                  offsetFromSymbolStart = "764">
+                  offsetFromSymbolStart = "990">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -735,12 +735,12 @@
                   moduleName = "OpenLive"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/skyxu/code/streamCore/coreProject_mobile/OpenLive/ViewController/WatchRoomViewController.swift"
-                  timestampString = "541037458.2656519"
+                  timestampString = "541106391.638781"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "32"
                   endingLineNumber = "32"
-                  offsetFromSymbolStart = "24">
+                  offsetFromSymbolStart = "18">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -750,12 +750,12 @@
                   moduleName = "OpenLive"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/skyxu/code/streamCore/coreProject_mobile/OpenLive/ViewController/WatchRoomViewController.swift"
-                  timestampString = "541037458.267696"
+                  timestampString = "541106391.641607"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "33"
                   endingLineNumber = "33"
-                  offsetFromSymbolStart = "20">
+                  offsetFromSymbolStart = "16">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -783,12 +783,12 @@
                   moduleName = "OpenLive"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/skyxu/code/streamCore/coreProject_mobile/OpenLive/ViewController/OverlayViewController.swift"
-                  timestampString = "541037458.2740231"
+                  timestampString = "541106391.651065"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "24"
                   endingLineNumber = "24"
-                  offsetFromSymbolStart = "24">
+                  offsetFromSymbolStart = "21">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -798,12 +798,12 @@
                   moduleName = "OpenLive"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/skyxu/code/streamCore/coreProject_mobile/OpenLive/ViewController/OverlayViewController.swift"
-                  timestampString = "541037458.276687"
+                  timestampString = "541106391.654951"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "25"
                   endingLineNumber = "25"
-                  offsetFromSymbolStart = "20">
+                  offsetFromSymbolStart = "19">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -847,12 +847,12 @@
                   moduleName = "OpenLive"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/skyxu/code/streamCore/coreProject_mobile/OpenLive/ViewController/OverlayViewController.swift"
-                  timestampString = "541037458.286936"
+                  timestampString = "541106391.669796"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "41"
                   endingLineNumber = "41"
-                  offsetFromSymbolStart = "1148">
+                  offsetFromSymbolStart = "1100">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -862,12 +862,12 @@
                   moduleName = "OpenLive"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/skyxu/code/streamCore/coreProject_mobile/OpenLive/ViewController/OverlayViewController.swift"
-                  timestampString = "541037458.289093"
+                  timestampString = "541106391.672869"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "42"
                   endingLineNumber = "42"
-                  offsetFromSymbolStart = "76">
+                  offsetFromSymbolStart = "78">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -895,7 +895,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OpenLive/Service/SocketService.swift"
-            timestampString = "540951525.93349"
+            timestampString = "541106391.2644809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "112"
@@ -911,7 +911,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OpenLive/Service/SocketService.swift"
-            timestampString = "540951525.934045"
+            timestampString = "541106391.264537"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "113"
@@ -927,7 +927,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OpenLive/Service/SocketService.swift"
-            timestampString = "540951525.934379"
+            timestampString = "541106391.264581"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "114"
@@ -943,7 +943,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OpenLive/Service/SocketService.swift"
-            timestampString = "540951525.934781"
+            timestampString = "541106391.264623"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "110"
@@ -959,7 +959,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OpenLive/ViewController/LiveRoomViewController.swift"
-            timestampString = "541029684.733112"
+            timestampString = "541106391.264665"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "135"
@@ -975,7 +975,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OpenLive/ViewController/LiveRoomViewController.swift"
-            timestampString = "541029684.7335221"
+            timestampString = "541106391.264708"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "134"
@@ -991,12 +991,12 @@
                   moduleName = "OpenLive"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/skyxu/code/streamCore/coreProject_mobile/OpenLive/ViewController/LiveRoomViewController.swift"
-                  timestampString = "541037458.32034"
+                  timestampString = "541106391.7260031"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "134"
                   endingLineNumber = "134"
-                  offsetFromSymbolStart = "36">
+                  offsetFromSymbolStart = "34">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1006,62 +1006,14 @@
                   moduleName = "OpenLive"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/skyxu/code/streamCore/coreProject_mobile/OpenLive/ViewController/LiveRoomViewController.swift"
-                  timestampString = "541037458.322331"
+                  timestampString = "541106391.728664"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "135"
                   endingLineNumber = "135"
-                  offsetFromSymbolStart = "20">
+                  offsetFromSymbolStart = "16">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "OpenLive/Service/SocketService.swift"
-            timestampString = "540951525.935181"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
-            landmarkName = "getNewChannel(completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "OpenLive/Service/SocketService.swift"
-            timestampString = "540951525.9355609"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
-            landmarkName = "getNewChannel(completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "OpenLive/Service/SocketService.swift"
-            timestampString = "540951525.93612"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
-            landmarkName = "getNewChannel(completion:)"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1087,141 +1039,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OpenLive/ViewController/LiveRoomViewController.swift"
-            timestampString = "541029684.737623"
+            timestampString = "541106391.264789"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "93"
             endingLineNumber = "93"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "OpenLive/Model/Room.swift"
-            timestampString = "540972490.453728"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
-            landmarkName = "Room"
-            landmarkType = "14">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "OpenLive/Model/Room.swift"
-            timestampString = "540972490.453799"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
-            landmarkName = "Room"
-            landmarkType = "14">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "OpenLive/Model/Room.swift"
-            timestampString = "540972490.45386"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "Room"
-            landmarkType = "14">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "OpenLive/Model/Room.swift"
-            timestampString = "540972490.453934"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "Room"
-            landmarkType = "14">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "OpenLive/Model/Room.swift"
-            timestampString = "540972490.453994"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "Room"
-            landmarkType = "14">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "OpenLive/Model/Room.swift"
-            timestampString = "540972490.454077"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "Room"
-            landmarkType = "14">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "OpenLive/Model/Room.swift"
-            timestampString = "540972490.454149"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "Room"
-            landmarkType = "14">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "OpenLive/Model/Room.swift"
-            timestampString = "540972490.454212"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "Room"
-            landmarkType = "14">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1278,13 +1102,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "OpenLive/ViewController/HomeViewController.swift"
-            timestampString = "541037457.598639"
+            filePath = "OpenLive/ViewController/HomeViewController2.swift"
+            timestampString = "541106391.264942"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "collectionView(_:didSelectItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1294,13 +1118,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "OpenLive/ViewController/HomeViewController.swift"
-            timestampString = "541037457.599093"
+            filePath = "OpenLive/ViewController/HomeViewController2.swift"
+            timestampString = "541106391.265412"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "collectionView(_:didSelectItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1310,13 +1134,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "OpenLive/ViewController/HomeViewController.swift"
-            timestampString = "541037457.599321"
+            filePath = "OpenLive/Helper/CollectionViewDatasource.swift"
+            timestampString = "541106391.265703"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "viewWillAppear(_:)"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "collectionView(_:numberOfItemsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1326,125 +1150,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "OpenLive/AppDelegate.swift"
-            timestampString = "541029684.748089"
+            filePath = "OpenLive/Helper/CollectionViewDatasource.swift"
+            timestampString = "541106391.265759"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "application(_:willFinishLaunchingWithOptions:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "OpenLive/ViewController/HomeViewController.swift"
-            timestampString = "541037457.599584"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "viewWillAppear(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "OpenLive/ViewController/HomeViewController.swift"
-            timestampString = "541037457.599797"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "viewWillAppear(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "OpenLive/ViewController/HomeViewController.swift"
-            timestampString = "541037457.600004"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "OpenLive.HomeViewController.viewDidLoad() -&gt; ()"
-                  moduleName = "OpenLive"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/skyxu/code/streamCore/coreProject_mobile/OpenLive/ViewController/HomeViewController.swift"
-                  timestampString = "541037458.467137"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "78"
-                  endingLineNumber = "78"
-                  offsetFromSymbolStart = "400">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Bool, OpenLive.Room) -&gt; () in OpenLive.HomeViewController.viewDidLoad() -&gt; ()"
-                  moduleName = "OpenLive"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/skyxu/code/streamCore/coreProject_mobile/OpenLive/ViewController/HomeViewController.swift"
-                  timestampString = "541037458.469669"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "79"
-                  endingLineNumber = "79"
-                  offsetFromSymbolStart = "176">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "OpenLive/ViewController/HomeViewController.swift"
-            timestampString = "541037457.600209"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "OpenLive/ViewController/HomeViewController.swift"
-            timestampString = "541037457.600409"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "collectionView(_:numberOfItemsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
