@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-class Followee: NSObject {
+struct Followee: Codable {
     let username: String
     let streamName: String
     let profilePic: String

@@ -126,4 +126,14 @@ class SocketService: NSObject {
             completion(true, followees)
         }
     }
+    
+    func getUser(username: String, completion: @escaping (Bool, User) -> ()) {
+        socket.emit("get_user", username)
+        socket.on("get_user") { (data, ack) in
+            guard let json = data[0] as? Any else { return }
+            print("PRINTINGJSON\(json)")
+            let user = User(dict: json as! [String : Any])
+            completion(true, user)
+        }
+    }
 }
