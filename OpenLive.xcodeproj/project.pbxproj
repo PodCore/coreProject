@@ -34,6 +34,7 @@
 		21D85D8B202F9AE0001FEABA /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D85D8A202F9AE0001FEABA /* UserProfileViewController.swift */; };
 		21D85D8F202F9ECC001FEABA /* UserProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D85D8E202F9ECC001FEABA /* UserProfileCell.swift */; };
 		21D85D91202F9F65001FEABA /* SubscriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D85D90202F9F65001FEABA /* SubscriptionCell.swift */; };
+		49577B0D2040A9EA004235B6 /* OutlinedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49577B0C2040A9EA004235B6 /* OutlinedButton.swift */; };
 		9BD495C2E9E5B995DC49A798 /* Pods_OpenLive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A389B5D17B2C3222BF04AE0 /* Pods_OpenLive.framework */; };
 		F798436423339E6CEA04AF25 /* Pods_OpenLiveUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FED29D567E083B1BD7F0EE0 /* Pods_OpenLiveUITests.framework */; };
 		F93478F9203E4B6D00E4B0A9 /* CameraHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93478F8203E4B6D00E4B0A9 /* CameraHandler.swift */; };
@@ -113,6 +114,7 @@
 		21D85D90202F9F65001FEABA /* SubscriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionCell.swift; sourceTree = "<group>"; };
 		25B060A587D2D60173A933C4 /* Pods-OpenLiveUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenLiveUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OpenLiveUITests/Pods-OpenLiveUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3FED29D567E083B1BD7F0EE0 /* Pods_OpenLiveUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenLiveUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		49577B0C2040A9EA004235B6 /* OutlinedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlinedButton.swift; sourceTree = "<group>"; };
 		4A389B5D17B2C3222BF04AE0 /* Pods_OpenLive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenLive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50215475412EB07621262284 /* Pods-OpenLiveUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenLiveUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OpenLiveUITests/Pods-OpenLiveUITests.release.xcconfig"; sourceTree = "<group>"; };
 		67D0FE019758116E88F0DB1D /* Pods-OpenLive.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenLive.release.xcconfig"; path = "Pods/Target Support Files/Pods-OpenLive/Pods-OpenLive.release.xcconfig"; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 		078012EB1D1E57730093DE24 /* OpenLive */ = {
 			isa = PBXGroup;
 			children = (
+				49577B0C2040A9EA004235B6 /* OutlinedButton.swift */,
 				F96ACB64202F7B20001CA53F /* GoogleService-Info.plist */,
 				1F91232A20290D8D007E30C3 /* infoPlist.png */,
 				078012F81D1E57730093DE24 /* Info.plist */,
@@ -432,7 +435,7 @@
 				TargetAttributes = {
 					078012E81D1E57730093DE24 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = A3KV3V94JT;
+						DevelopmentTeam = YTYUD7N245;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -665,6 +668,7 @@
 				0790F1261D1E6450003F8C18 /* SettingsViewController.swift in Sources */,
 				21D85D91202F9F65001FEABA /* SubscriptionCell.swift in Sources */,
 				F96ACB78202F7BED001CA53F /* TableViewDatasource.swift in Sources */,
+				49577B0D2040A9EA004235B6 /* OutlinedButton.swift in Sources */,
 				21D85D8F202F9ECC001FEABA /* UserProfileCell.swift in Sources */,
 				F96ACB57202D1851001CA53F /* Poop.swift in Sources */,
 			);
@@ -807,7 +811,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Yuhua Gong (TH5SJ72C94)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = A3KV3V94JT;
+				DEVELOPMENT_TEAM = YTYUD7N245;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -838,7 +842,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Agora Lab, Inc. (48TB6ZZL5S)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = A3KV3V94JT;
+				DEVELOPMENT_TEAM = YTYUD7N245;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
