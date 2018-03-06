@@ -39,7 +39,7 @@ class OverlayViewController: UIViewController {
         SocketService.instance.getComments { (success, data) in
             print(data)
             self.comments.append(data.comment)
-//            self.tableView.reloadData()
+            self.tableView.reloadData()
         }
         
         tableViewDatasource.configureCell = {(tableView, indexPath) -> UITableViewCell in
