@@ -16,7 +16,7 @@ target 'OpenLive' do
   pod 'KeychainSwift', '~> 10.0'
   pod 'Google/SignIn'
   pod 'RNCryptor'
-
+  pod 'NVActivityIndicatorView'
   target 'OpenLiveUITests' do
     inherit! :search_paths
     # Pods for testing

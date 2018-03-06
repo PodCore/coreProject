@@ -20,8 +20,7 @@ class CollectionViewDatasource<Item>: NSObject, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("**** numberOfItemsInSection")
-        print(items.count)
+        
         if section == 0 {
             return 1
         } else {

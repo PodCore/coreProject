@@ -120,10 +120,10 @@
             </objects>
             <point key="canvasLocation" x="2509.5999999999999" y="326.98650674662673"/>
         </scene>
-        <!--Storyboard Reference-->
+        <!--Overlay-->
         <scene sceneID="qJe-TF-exX">
             <objects>
-                <viewControllerPlaceholder id="ySW-TQ-6lH" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Overlay" id="ySW-TQ-6lH" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xum-bi-27V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3784" y="632"/>

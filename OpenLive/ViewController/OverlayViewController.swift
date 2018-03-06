@@ -31,9 +31,7 @@ class OverlayViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableViewDatasource.items = comments
-        DispatchQueue.main.async {
-            self.tableView.dataSource = self.tableViewDatasource
-        }
+        self.tableView.dataSource = self.tableViewDatasource
         
         //  wait 1 s for socket to work and automtically roll comments
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(tick(_:)), userInfo: nil, repeats: true)

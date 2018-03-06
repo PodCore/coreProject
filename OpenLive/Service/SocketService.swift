@@ -30,7 +30,7 @@ class SocketService: NSObject {
     }
     
     func observeIfConnected(completion: @escaping NormalCallback){
-        socket.on(clientEvent: .disconnect, callback: completion)
+//        socket.on(clientEvent: .disconnect, callback: completion)
         socket.on(clientEvent: .connect, callback: completion)
     }
     
@@ -137,3 +137,4 @@ class SocketService: NSObject {
         }
     }
 }
+

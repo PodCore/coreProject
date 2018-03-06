@@ -12,27 +12,27 @@ import AgoraRtcEngineKit
 class CreateRoomViewController: UIViewController {
 
     @IBOutlet weak var roomNameTextField: UITextField!
-    @IBOutlet weak var roomImage: UIImageView!
     fileprivate var videoProfile = AgoraRtcVideoProfile._VideoProfile_360P
     var roomImgStr: String?
-    @IBAction func pickRoomTapped(_ sender: UIButton) {
-        CameraHandler.shared.showActionSheet(vc: self)
-        CameraHandler.shared.imagePickedBlock = { (image) in
-            self.roomImage.contentMode = .scaleAspectFill
-            self.roomImage.clipsToBounds = true
-            self.roomImage.image = image
-            let imgData: NSData = UIImagePNGRepresentation(image)! as NSData
-            self.roomImgStr = imgData.base64EncodedString(options: .lineLength64Characters)
-        }
-    }
-    
+//    @IBAction func pickRoomTapped(_ sender: UIButton) {
+//        CameraHandler.shared.showActionSheet(vc: self)
+//        CameraHandler.shared.imagePickedBlock = { (image) in
+//            self.roomImage.contentMode = .scaleAspectFill
+//            self.roomImage.clipsToBounds = true
+//            self.roomImage.image = image
+//            let imgData: NSData = UIImagePNGRepresentation(image)! as NSData
+//            self.roomImgStr = imgData.base64EncodedString(options: .lineLength64Characters)
+//        }
+//    }
+//
     @IBAction func createRoomTapped(_ sender: UIButton) {
+        self.roomImgStr = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2ggZKW9Cn6kVzXsRC_EeWzMq_wElFOvv1TYMbDfYyaKJxQWL3"
         join(withRole: .clientRole_Broadcaster)
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-//        imagePicker.delegate = self
+
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

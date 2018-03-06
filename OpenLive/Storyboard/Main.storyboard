@@ -33,7 +33,7 @@
         <!--Home View Controller-->
         <scene sceneID="Uaa-Bn-sLQ">
             <objects>
-                <viewController storyboardIdentifier="HomeVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="W1o-MO-Gl7" customClass="HomeViewController" customModule="OpenLive" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="homeVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="W1o-MO-Gl7" customClass="HomeViewController" customModule="OpenLive" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dlo-h2-tHk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
