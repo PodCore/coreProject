@@ -38,8 +38,6 @@ class CollectionViewDatasource<Item>: NSObject, UICollectionViewDataSource {
             precondition(false, "you didn't pass collectionCongigurecell")
         }
         
-        print("Cellfigure section:", indexPath.section)
-        
         return configureCell!(collectionView, indexPath)
     }
     

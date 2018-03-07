@@ -76,11 +76,11 @@ class HomeViewController: UIViewController {
             
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as! CollectionCell
             if self.popularVideos.count != 0 {
-                DispatchQueue.main.async {
+                DispatchQueue.main.async { [unowned self] in
                     cell.roomName.text = self.popularVideos[indexPath.row].name
 //                    let cellImg = self.convertBase64ToImgStr(encodedImgData: self.popularVideos[indexPath.row].image)
 //                    cell.img.image = cellImg
-                    cell.img.loadImageFromUrlString(urlString: "https://www.gettyimages.com/gi-resources/images/Embed/new/embed2.jpg")
+                    cell.img.loadImageFromUrlString(urlString: self.popularVideos[indexPath.row].image)
                 }
             }
             return cell

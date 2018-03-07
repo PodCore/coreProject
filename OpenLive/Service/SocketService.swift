@@ -13,10 +13,10 @@ import UIKit
 class SocketService: NSObject {
     static let instance = SocketService()
     
-    override init() {
-        super.init()
-    }
-    
+//    override init() {
+//        super.init()
+//    }
+//    
     let manager = SocketManager(
         socketURL: URL(string: Config.serverUrl)!,
         config: [.log(true), .compress, .reconnects(true)]
@@ -115,6 +115,9 @@ class SocketService: NSObject {
             completion(true, newComment)
         }
     }
+    //    send "emoji": send back "owner", "gifter", get back gifter
+    //    "upvote" : send back "owner": get back number of upvotes("likes")
+//    get emoji (
     
     func getFollowees(username: String, completion: @escaping (Bool, [Followee]) -> ()) {
         socket.emit("following", username)

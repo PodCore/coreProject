@@ -135,7 +135,7 @@ private extension WatchRoomViewController {
         if successCode == 0 {
             setIdleTimerActive(false)
             //  MARK: Join socket (also using observe NSNotif to get current username")
-            SocketService.instance.joinChannel(username: "current username", owner: "sky", completion: { (success) in
+            SocketService.instance.joinChannel(username: "current username", owner: "sky", completion: {[unowned self] (success) in
                 self.dismiss(animated: true, completion: nil)
             })
             

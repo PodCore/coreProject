@@ -181,7 +181,7 @@ private extension LiveRoomViewController {
             rtcEngine.setEnableSpeakerphone(true)
             
             //   MARK: sent room id and infos to socket (make sure roomId, roomImage not empty)
-            SocketService.instance.addChannel(id: roomId!, name: roomName, owner: "sky", topic: "shits and grits", viewCount: 100, likes: 0, viewers: [""], image: roomImage!,  completion: { (success) in
+            SocketService.instance.addChannel(id: roomId!, name: roomName, owner: "sky", topic: "shits and grits", viewCount: 100, likes: 0, viewers: [""], image: roomImage!,  completion: { [unowned self] (success) in
                 self.dismiss(animated: true, completion: nil)
             })
            

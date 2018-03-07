@@ -58,7 +58,7 @@ class RegisterViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDe
             print(error)
             return
         }
-        AuthService.instance.registerUser(username: user.profile.givenName, email: user.profile.email, password: "gmailpassword ", completion: { (username, userId) in
+        AuthService.instance.registerUser(username: user.profile.givenName, email: user.profile.email, password: "gmailpassword ", completion: {[unowned self] (username, userId) in
 //            print(username, userId)
             let storyBoard = UIStoryboard.init(name: "CreateRoom", bundle: nil)
             let createRoomVC = storyBoard.instantiateViewController(withIdentifier: "createRoomVC") as! CreateRoomViewController
@@ -78,7 +78,7 @@ class RegisterViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDe
             return
         }
         //  call Gmail uiDelegate and signindelegate
-        DispatchQueue.main.async {
+        DispatchQueue.main.async { [weak self] in
             GIDSignIn.sharedInstance().uiDelegate = self
             GIDSignIn.sharedInstance().delegate = self
         }
@@ -113,7 +113,7 @@ class RegisterViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDe
     
     func fbGraphRequest(completion: @escaping (Bool) -> ()) {
         let request = FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, gender, first_name, email"])
-        request?.start(completionHandler: { (connection, result, error) in
+        request?.start(completionHandler: { [unowned self] (connection, result, error) in
             guard let userInfo = result as? [String: Any] else { return }
             self.loginName = userInfo["first_name"]! as? String
             self.loginEmail = userInfo["email"]! as? String
@@ -153,7 +153,7 @@ class RegisterViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDe
     
     //    MARK: IBAction: fbLoginButton
     @IBAction func fbLoginTapped(_ sender: UIButton) {
-        fbManagerSuccess{ (success) in
+        fbManagerSuccess{ [unowned self] (success) in
             if success {
                 AuthService.instance.registerUser(username: self.loginName!, email: self.loginEmail!, password: "facebookpassword ", completion: { (username, userId) in
 //                    print(username, userId)

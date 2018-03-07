@@ -21,11 +21,16 @@ class OverlayViewController: UIViewController {
     let tableViewDatasource = TableViewDataSource(items: [])
     
     @IBAction func commentTapped(_ sender: UIButton) {
-        SocketService.instance.liveComment(comment: "yooooo", owner: "sky1", commenter: "sky2", roomId: roomId!) { (success) in
+        SocketService.instance.liveComment(comment: "yooooo", owner: "sky", commenter: "sky2", roomId: roomId!) { (success) in
             if success {
                 print("successfully commented")
             }
         }
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.contentInset.top = tableView.bounds.height
+        tableView.reloadData()
     }
     
     override func viewDidLoad() {
@@ -49,6 +54,14 @@ class OverlayViewController: UIViewController {
             }
             return cell
         }
+    }
+    
+    @objc func handleTap(_ gesture: UITapGestureRecognizer) {
+        guard gesture.state == .ended else {
+            return
+        }
+        
+        textField.resignFirstResponder()
     }
     
 //    for automatically scrolling tableView of comments
