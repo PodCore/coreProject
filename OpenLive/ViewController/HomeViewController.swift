@@ -9,8 +9,9 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-    
-    var popularVideos = [Room]() 
+ 
+    var allRooms = [Room]()
+    var popularVideos = [Room]()
     var newPopularVideos = [Room]() {
         didSet {
             self.collectionView.reloadData()
@@ -43,44 +44,29 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        // present alertVC when load the view
-//        let storyboard = UIStoryboard.init(name: "CustomAlertView", bundle: nil)
-//        let alertVC = storyboard.instantiateViewController(withIdentifier: "customAlertVC") as! CustomAlertView
-//        alertVC.modalPresentationStyle = .overCurrentContext
-//        alertVC.modalTransitionStyle = .crossDissolve
-//        self.present(alertVC, animated: false, completion: nil)
-        //  Hide the navigation bar on the this view controller
         self.navigationController?.setNavigationBarHidden(true, animated: true)
-        
-//        SocketService.instance.observeIfConnected { (payload, ack) in
-//            SocketService.instance.getChannel { (success, rooms) in
-//                if success {
-//                    self.popularVideos = rooms
-//                    DispatchQueue.main.async {
-//                        self.collectionView.reloadData()
-//                    }
-//                    // remove alertVC when connected to socket and got all rooms
-//                    alertVC.alertLogo.stopAnimating()
-//                    alertVC.dismiss(animated: true, completion: nil)
-//                }
-//            }
-//            
-//        }
         //        assign collectionView Dataspurce
         self.collectionViewDatasource.items = self.popularVideos + self.newPopularVideos
         self.collectionView.dataSource = self.collectionViewDatasource
         
+        SocketService.instance.getNewChannel { (success, newRoom) in
+            if success {
+                self.newPopularVideos.append(newRoom)
+                print(self.newPopularVideos)
+            }
+        }
+     
         //     update Cell UI vy calling configureCell call back function
-        collectionViewDatasource.configureCell = { (collectionView, indexPath) -> UICollectionViewCell in
+        collectionViewDatasource.configureCell = { [unowned self] (collectionView, indexPath) -> UICollectionViewCell in
             
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as! CollectionCell
-            if self.popularVideos.count != 0 {
-                DispatchQueue.main.async { [unowned self] in
-                    cell.roomName.text = self.popularVideos[indexPath.row].name
+            self.allRooms = self.popularVideos + self.newPopularVideos
+            if self.allRooms.count != 0 {
+                DispatchQueue.main.async {
+                    cell.roomName.text = self.allRooms[indexPath.row].name
 //                    let cellImg = self.convertBase64ToImgStr(encodedImgData: self.popularVideos[indexPath.row].image)
 //                    cell.img.image = cellImg
-                    cell.img.loadImageFromUrlString(urlString: self.popularVideos[indexPath.row].image)
+                    cell.img.loadImageFromUrlString(urlString: self.allRooms[indexPath.row].image)
                 }
             }
             return cell
@@ -103,8 +89,8 @@ extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyBoard = UIStoryboard.init(name: "WatchRoom", bundle: nil)
         let watchRoomVC = storyBoard.instantiateViewController(withIdentifier: "watchRoomVC") as! WatchRoomViewController
-        watchRoomVC.roomId = self.popularVideos[indexPath.row].id
-        watchRoomVC.roomName = self.popularVideos[indexPath.row].name
+        watchRoomVC.roomId = self.allRooms[indexPath.row].id
+        watchRoomVC.roomName = self.allRooms[indexPath.row].name
         self.navigationController?.pushViewController(watchRoomVC, animated: true)
     }
 }

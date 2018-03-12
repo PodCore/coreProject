@@ -25,7 +25,7 @@ class TableViewDataSource<Item>: NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
+        print(items.count)
         return items.count
     }
     

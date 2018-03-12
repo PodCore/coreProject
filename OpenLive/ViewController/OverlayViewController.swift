@@ -15,13 +15,23 @@ class OverlayViewController: UIViewController {
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     var roomId: String?
-    var comments: [String] = []
+    var comments: [String] = [] {
+        didSet {
+            self.tableViewDatasource.items = comments
+            self.tableView.dataSource = self.tableViewDatasource
+            self.tableView.reloadData()
+        }
+    }// call didset so that we can update datasource to tableview when it's changed?
     var commenter: String?
     var commentData = [NewComment]()
     let tableViewDatasource = TableViewDataSource(items: [])
     
     @IBAction func commentTapped(_ sender: UIButton) {
-        SocketService.instance.liveComment(comment: "yooooo", owner: "sky", commenter: "sky2", roomId: roomId!) { (success) in
+//        self.comments.insert(textField.text!, at: 0)
+//        self.comments.append(textField.text!)
+        
+//         self.tableView.reloadData()
+        SocketService.instance.liveComment(comment: textField.text!, owner: "sky", commenter: "sky2", roomId: roomId!) { (success) in
             if success {
                 print("successfully commented")
             }
@@ -50,7 +60,7 @@ class OverlayViewController: UIViewController {
         tableViewDatasource.configureCell = {(tableView, indexPath) -> UITableViewCell in
             let cell = self.tableView.dequeueReusableCell(withIdentifier: "cell") as! CommentCell
             if self.comments.count > 0 {
-                cell.comment.text = self.comments[indexPath.row]
+                cell.selfComment = self.comments[indexPath.row]
             }
             return cell
         }

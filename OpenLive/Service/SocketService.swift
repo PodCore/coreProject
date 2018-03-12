@@ -13,10 +13,6 @@ import UIKit
 class SocketService: NSObject {
     static let instance = SocketService()
     
-//    override init() {
-//        super.init()
-//    }
-//    
     let manager = SocketManager(
         socketURL: URL(string: Config.serverUrl)!,
         config: [.log(true), .compress, .reconnects(true)]
@@ -81,7 +77,7 @@ class SocketService: NSObject {
     //  MARK: get new rooms that just got created
     func getNewChannel(completion: @escaping (Bool, Room) -> ()) {
         socket.on("new_room") {(data, ack) in
-            print(data)
+          
             guard let json = data[0] as? Any else { return }
             let room = Room(dict: json as! [String: Any])
             completion(true, room)

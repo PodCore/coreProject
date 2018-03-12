@@ -79,8 +79,8 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <outlet property="comment" destination="7N1-9P-1cY" id="phu-9a-ShW"/>
                                             <outlet property="commentContainer" destination="0K7-gs-AAs" id="Efg-tx-zg9"/>
+                                            <outlet property="commentText" destination="7N1-9P-1cY" id="TD4-sv-wP7"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
