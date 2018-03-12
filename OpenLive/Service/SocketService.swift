@@ -77,7 +77,6 @@ class SocketService: NSObject {
     //  MARK: get new rooms that just got created
     func getNewChannel(completion: @escaping (Bool, Room) -> ()) {
         socket.on("new_room") {(data, ack) in
-          
             guard let json = data[0] as? Any else { return }
             let room = Room(dict: json as! [String: Any])
             completion(true, room)
@@ -87,7 +86,6 @@ class SocketService: NSObject {
     // MARK:  Follow Host
     func followHost(owner: String, completion: @escaping (Bool) -> ()) {
         let following = Following(dict: ["username": "sky" as AnyObject, "followingName": "james" as AnyObject])
-        
         self.socket.emit("new_follower", following.toDict())
         completion(true)
     }
@@ -105,15 +103,48 @@ class SocketService: NSObject {
 //    get all comments from socket
     func getComments(completion: @escaping (Bool, NewComment) -> ()) {
         socket.on("comment") { (data, ack) in
-            print(data)
             guard let json = data[0] as? Any else { return }
             let newComment = NewComment(dict: json as! [String : Any])
             completion(true, newComment)
         }
     }
-    //    send "emoji": send back "owner", "gifter", get back gifter
-    //    "upvote" : send back "owner": get back number of upvotes("likes")
-//    get emoji (
+    //    send "emoji": send back "owner", "gifter", get back gifter(a list of gifter?)"giferName", emojiNum, : "emojiNUm":"frequency of emoji")
+    func sendEmoji(emojier: String, emojiNum: String, owner: String, completion: @escaping (Bool) -> Void) {
+        let emoji = ["emojiNum": emojiNum as Any,
+                     "emojier": emojier as Any,
+                     "owner": owner as Any]
+        self.socket.emit("emoji", emoji)
+        completion(true)
+    }
+    
+    func getEmoji(completion: @escaping (Bool, String, Int) -> Void) {
+        socket.on("emoji") { (data, ack) in
+            guard let json = data[0] as? Any else { return }
+            let emoji = Emoji(dict: json as! [String: Any])
+            let emojier = emoji.emojier
+            let emojiNum = emoji.emojiNum
+            let emojiGram = emoji.emojiGram as! [String: Any]
+            let frequency = emojiGram[emojiNum] as! Int
+            
+            completion(true, emojier, frequency)
+        }
+    }
+    // send   "upvote" : send back "owner", "upvoter": get back number of upvotes("likes")
+    func sendUpvote(owner: String, upvoter: String, completion: @escaping (Bool) -> Void) {
+        let upvoteInfo = ["owner": owner as Any,
+                          "upvoter": upvoter as Any]
+        self.socket.emit("upvote", upvoteInfo)
+        completion(true)
+    }
+    
+//    get likes
+    func getUpvote(completion: @escaping (Bool, Upvote) -> Void) {
+        socket.on("upvote") { (data, ack) in
+            guard let json = data[0] as? Any else { return }
+            let upvote = Upvote(dict: json as! [String: Any])
+            completion(true, upvote)
+        }
+    }
     
     func getFollowees(username: String, completion: @escaping (Bool, [Followee]) -> ()) {
         socket.emit("following", username)

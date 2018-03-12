@@ -66,6 +66,11 @@
 		F97EE22B203F95F70090E088 /* Overlay.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F97EE22A203F95F70090E088 /* Overlay.storyboard */; };
 		F97EE22D203F96670090E088 /* WatchRoom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F97EE22C203F96660090E088 /* WatchRoom.storyboard */; };
 		F97EE22F203F970E0090E088 /* LiveRoom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F97EE22E203F970E0090E088 /* LiveRoom.storyboard */; };
+		F9A9F2D420564EC300FE2A6E /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A9F2D320564EC300FE2A6E /* Emoji.swift */; };
+		F9A9F2D62056F5F300FE2A6E /* Upvote.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A9F2D52056F5F300FE2A6E /* Upvote.swift */; };
+		F9A9F2D82056F90100FE2A6E /* DesignableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A9F2D72056F90100FE2A6E /* DesignableButton.swift */; };
+		F9A9F2DA2056FB6700FE2A6E /* WaveEmitterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A9F2D92056FB6700FE2A6E /* WaveEmitterView.swift */; };
+		F9A9F2DC205706FF00FE2A6E /* EmojiTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A9F2DB205706FF00FE2A6E /* EmojiTag.swift */; };
 		F9CC457D2036B079003CCD65 /* WatchRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CC457C2036B079003CCD65 /* WatchRoomViewController.swift */; };
 		F9CC457F2036C080003CCD65 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9CC457E2036C080003CCD65 /* Settings.storyboard */; };
 		F9CC45812037933E003CCD65 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CC45802037933E003CCD65 /* Comment.swift */; };
@@ -153,6 +158,11 @@
 		F97EE22A203F95F70090E088 /* Overlay.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Overlay.storyboard; sourceTree = "<group>"; };
 		F97EE22C203F96660090E088 /* WatchRoom.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WatchRoom.storyboard; sourceTree = "<group>"; };
 		F97EE22E203F970E0090E088 /* LiveRoom.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LiveRoom.storyboard; sourceTree = "<group>"; };
+		F9A9F2D320564EC300FE2A6E /* Emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Emoji.swift; path = OpenLive/Model/Emoji.swift; sourceTree = SOURCE_ROOT; };
+		F9A9F2D52056F5F300FE2A6E /* Upvote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Upvote.swift; sourceTree = "<group>"; };
+		F9A9F2D72056F90100FE2A6E /* DesignableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableButton.swift; sourceTree = "<group>"; };
+		F9A9F2D92056FB6700FE2A6E /* WaveEmitterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveEmitterView.swift; sourceTree = "<group>"; };
+		F9A9F2DB205706FF00FE2A6E /* EmojiTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiTag.swift; sourceTree = "<group>"; };
 		F9CC457C2036B079003CCD65 /* WatchRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WatchRoomViewController.swift; path = OpenLive/ViewController/WatchRoomViewController.swift; sourceTree = SOURCE_ROOT; };
 		F9CC457E2036C080003CCD65 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		F9CC45802037933E003CCD65 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
@@ -330,6 +340,8 @@
 				F9CC45802037933E003CCD65 /* Comment.swift */,
 				210B841D203E253B0030A760 /* Followee.swift */,
 				F9CC45E9203A3601003CCD65 /* NewComment.swift */,
+				F9A9F2D320564EC300FE2A6E /* Emoji.swift */,
+				F9A9F2D52056F5F300FE2A6E /* Upvote.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -372,6 +384,8 @@
 			isa = PBXGroup;
 			children = (
 				0790F1521D1E9781003F8C18 /* VideoViewLayouter.swift */,
+				F9A9F2D72056F90100FE2A6E /* DesignableButton.swift */,
+				F9A9F2D92056FB6700FE2A6E /* WaveEmitterView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -398,6 +412,7 @@
 				F91640DC204B486B001BEF4A /* AgoraEngine.swift */,
 				F91640DE204B4B86001BEF4A /* AgoraDelegate.swift */,
 				49577B0C2040A9EA004235B6 /* OutlinedButton.swift */,
+				F9A9F2DB205706FF00FE2A6E /* EmojiTag.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -663,6 +678,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0790F1691D1EEAB2003F8C18 /* ProfileCell.swift in Sources */,
+				F9A9F2D62056F5F300FE2A6E /* Upvote.swift in Sources */,
 				F96ACB89202FC6F5001CA53F /* Following.swift in Sources */,
 				F9CC457D2036B079003CCD65 /* WatchRoomViewController.swift in Sources */,
 				F9CC45812037933E003CCD65 /* Comment.swift in Sources */,
@@ -672,17 +688,21 @@
 				F91640DF204B4B86001BEF4A /* AgoraDelegate.swift in Sources */,
 				F96ACB5B202D829D001CA53F /* Room.swift in Sources */,
 				F96ACB55202D0261001CA53F /* Config.swift in Sources */,
+				F9A9F2D420564EC300FE2A6E /* Emoji.swift in Sources */,
 				F96ACB72202F7BC6001CA53F /* HomeViewController.swift in Sources */,
 				F96ACB68202F7B20001CA53F /* CollectionViewDatasource.swift in Sources */,
 				49087ECB2045EC6100F0B42D /* LoginAsGuestViewController.swift in Sources */,
 				078012EF1D1E57730093DE24 /* CreateRoomViewController.swift in Sources */,
 				078012ED1D1E57730093DE24 /* AppDelegate.swift in Sources */,
+				F9A9F2DC205706FF00FE2A6E /* EmojiTag.swift in Sources */,
 				F96ACB902032563B001CA53F /* Constant.swift in Sources */,
 				F93478F9203E4B6D00E4B0A9 /* CameraHandler.swift in Sources */,
 				F96ACB59202D74CD001CA53F /* SocketService.swift in Sources */,
 				07130E8A1D22928200CC85D8 /* KeyCenter.swift in Sources */,
 				F9CC45832037981C003CCD65 /* OverlayViewController.swift in Sources */,
 				F96ACB74202F7BC6001CA53F /* RegisterViewController.swift in Sources */,
+				F9A9F2D82056F90100FE2A6E /* DesignableButton.swift in Sources */,
+				F9A9F2DA2056FB6700FE2A6E /* WaveEmitterView.swift in Sources */,
 				0790F1531D1E9781003F8C18 /* VideoViewLayouter.swift in Sources */,
 				F96ACB6C202F7BB3001CA53F /* CollectionCell.swift in Sources */,
 				F96ACB8E20323EC5001CA53F /* UserdataService.swift in Sources */,

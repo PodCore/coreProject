@@ -14,6 +14,11 @@ class OverlayViewController: UIViewController {
     @IBOutlet weak var commentInputContainer: UIView!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var upvoteButton: DesignableButton!
+    @IBOutlet weak var likes: UILabel!
+    @IBOutlet weak var emojiCount: UILabel!
+    @IBOutlet weak var emojiButton: DesignableButton!
+    @IBOutlet weak var waveView: WaveEmitterView!
     var roomId: String?
     var comments: [String] = [] {
         didSet {
@@ -27,10 +32,6 @@ class OverlayViewController: UIViewController {
     let tableViewDatasource = TableViewDataSource(items: [])
     
     @IBAction func commentTapped(_ sender: UIButton) {
-//        self.comments.insert(textField.text!, at: 0)
-//        self.comments.append(textField.text!)
-        
-//         self.tableView.reloadData()
         SocketService.instance.liveComment(comment: textField.text!, owner: "sky", commenter: "sky2", roomId: roomId!) { (success) in
             if success {
                 print("successfully commented")
@@ -52,7 +53,6 @@ class OverlayViewController: UIViewController {
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(tick(_:)), userInfo: nil, repeats: true)
         
         SocketService.instance.getComments { (success, data) in
-            print(data)
             self.comments.append(data.comment)
             self.tableView.reloadData()
         }
@@ -63,6 +63,40 @@ class OverlayViewController: UIViewController {
                 cell.selfComment = self.comments[indexPath.row]
             }
             return cell
+        }
+        
+        SocketService.instance.getUpvote { (success, likes) in
+            if success {
+                let heart = UIImage(named: "heart")
+                self.waveView.emitImage(heart!)
+                self.likes.text = "\(likes.likes)"
+                
+            }
+        }
+        
+        SocketService.instance.getEmoji { (success, emojier, emojiCount)  in
+            if success {
+                self.emojiCount.text = "\(emojiCount)"
+                let emoji = UIImage(named: "gift-1")!
+                self.waveView.emitImage(emoji)
+            }
+        }
+    }
+    
+    @IBAction func emojiTapped(_ sender: DesignableButton) {
+        print(sender.tag)
+        SocketService.instance.sendEmoji(emojier: "tony", emojiNum: "\(sender.tag)", owner: "sky") { (success) in
+            if success {
+                print("emoji sent success")
+            }
+        }
+    }
+    
+    @IBAction func upvoteTapped(_ sender: DesignableButton) {
+        SocketService.instance.sendUpvote(owner: "sky", upvoter: "tony") { (success) in
+            if success {
+                print("upvote success")
+            }
         }
     }
     
