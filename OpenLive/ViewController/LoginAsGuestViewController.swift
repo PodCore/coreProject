@@ -14,11 +14,7 @@ class LoginAsGuestViewController: UIViewController {
     var alertVC: CustomAlertView!
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let storyboard = UIStoryboard.init(name: "CustomAlertView", bundle: nil)
-//        alertVC = storyboard.instantiateViewController(withIdentifier: "customAlertVC") as! CustomAlertView
-//        alertVC.modalPresentationStyle = .overCurrentContext
-//        alertVC.modalTransitionStyle = .crossDissolve
-        
+
         SocketService.instance.observeIfConnected { (payload, ack) in
             SocketService.instance.getChannel {  [unowned self] (success, rooms) in
                 if success {
@@ -34,7 +30,11 @@ class LoginAsGuestViewController: UIViewController {
     }
 
     @IBAction func signInAsGuest(_ sender: Any) {
+        guard let loadingView = Bundle.main.loadNibNamed("LoadingIndicatorView", owner: self, options: nil)![0] as? LoadingIndicatorView else { return }
+        loadingView.configureView(title: "setting up live room", at: view.center)
+        self.view.addSubview(loadingView)
         if self.socketSuccess == true {
+            loadingView.dismiss()
             self.navigationController?.pushViewController(vc, animated: true)
         }
         

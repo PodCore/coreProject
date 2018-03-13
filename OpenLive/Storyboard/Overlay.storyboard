@@ -140,60 +140,24 @@
                                     <constraint firstAttribute="width" constant="80" id="V78-rL-zfw"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ePM-Ld-91S" userLabel="Emojis Stack View">
-                                <rect key="frame" x="304" y="504" width="62" height="95"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ePM-Ld-91S" userLabel="Emojis Stack View">
+                                <rect key="frame" x="299" y="499" width="72" height="100"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="cB9-iM-Ahh">
-                                        <rect key="frame" x="0.0" y="0.0" width="62" height="40"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="0 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XRh-bB-jOs">
-                                                <rect key="frame" x="0.0" y="0.0" width="20" height="40"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="20" id="PsQ-cu-hx4"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RsS-80-A0q" customClass="DesignableButton" customModule="OpenLive" customModuleProvider="target">
-                                                <rect key="frame" x="22" y="0.0" width="40" height="40"/>
-                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="40" id="Kdh-qG-7t9"/>
-                                                    <constraint firstAttribute="height" constant="40" id="KrP-Oj-yl1"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="12"/>
-                                                <inset key="contentEdgeInsets" minX="0.0" minY="-1" maxX="0.0" maxY="0.0"/>
-                                                <state key="normal" image="gift-1"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="20"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="emojiTapped:" destination="Wbp-Lb-3U7" eventType="touchUpInside" id="e9f-NH-f0e"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="4w5-US-Oyg">
-                                        <rect key="frame" x="0.0" y="55" width="62" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="72" height="45"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="0 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHE-wX-P6O">
-                                                <rect key="frame" x="0.0" y="0.0" width="20" height="40"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="20" id="LS7-Wd-yC3"/>
-                                                </constraints>
+                                                <rect key="frame" x="0.0" y="0.0" width="25" height="45"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w2b-as-kbZ" customClass="DesignableButton" customModule="OpenLive" customModuleProvider="target">
-                                                <rect key="frame" x="22" y="0.0" width="40" height="40"/>
+                                                <rect key="frame" x="27" y="0.0" width="45" height="45"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="40" id="eHE-uK-nNl"/>
-                                                    <constraint firstAttribute="height" constant="40" id="zxu-gn-HSr"/>
+                                                    <constraint firstAttribute="width" constant="45" id="eHE-uK-nNl"/>
+                                                    <constraint firstAttribute="height" constant="45" id="zxu-gn-HSr"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="12"/>
                                                 <inset key="contentEdgeInsets" minX="0.0" minY="3" maxX="0.0" maxY="0.0"/>
@@ -209,14 +173,79 @@
                                             </button>
                                         </subviews>
                                     </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="cB9-iM-Ahh">
+                                        <rect key="frame" x="0.0" y="60" width="72" height="40"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Tap " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XRh-bB-jOs" userLabel="tap">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="30" id="PsQ-cu-hx4"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RsS-80-A0q" customClass="DesignableButton" customModule="OpenLive" customModuleProvider="target">
+                                                <rect key="frame" x="32" y="0.0" width="40" height="40"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="Kdh-qG-7t9"/>
+                                                    <constraint firstAttribute="height" constant="40" id="KrP-Oj-yl1"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="12"/>
+                                                <inset key="contentEdgeInsets" minX="0.0" minY="-1" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" image="emoji-1"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="emojiTapped:" destination="Wbp-Lb-3U7" eventType="touchUpInside" id="e9f-NH-f0e"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
+                            <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2hB-ab-6Qv" customClass="EmojiView" customModule="OpenLive" customModuleProvider="target">
+                                <rect key="frame" x="-360" y="545.5" width="295" height="50"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FCj-Gr-IrX">
+                                        <rect key="frame" x="0.0" y="0.0" width="295" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0fQ-RH-nkU">
+                                            <size key="itemSize" width="40" height="40"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="Wbp-Lb-3U7" id="1Lm-XK-Z9l"/>
+                                            <outlet property="delegate" destination="Wbp-Lb-3U7" id="LOW-Cu-IPR"/>
+                                        </connections>
+                                    </collectionView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.1471577325" green="0.18675638219999999" blue="0.28259835030000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="FCj-Gr-IrX" firstAttribute="leading" secondItem="2hB-ab-6Qv" secondAttribute="leading" id="3Yz-Jz-sAt"/>
+                                    <constraint firstAttribute="trailing" secondItem="FCj-Gr-IrX" secondAttribute="trailing" id="CSa-7h-M7r"/>
+                                    <constraint firstAttribute="width" constant="295" id="V8z-Dn-nAt"/>
+                                    <constraint firstItem="FCj-Gr-IrX" firstAttribute="top" secondItem="2hB-ab-6Qv" secondAttribute="top" id="cVM-AT-bC4"/>
+                                    <constraint firstAttribute="bottom" secondItem="FCj-Gr-IrX" secondAttribute="bottom" id="iNc-N6-3Gu"/>
+                                    <constraint firstAttribute="height" constant="50" id="k9y-WV-1dr"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="oKa-cJ-7CQ" firstAttribute="leading" secondItem="MTy-4P-47D" secondAttribute="leading" constant="10" id="0PJ-FV-cSf"/>
                             <constraint firstItem="ePM-Ld-91S" firstAttribute="centerX" secondItem="V79-ve-tl9" secondAttribute="centerX" id="2z8-7P-GYb"/>
                             <constraint firstItem="C0N-MP-Z2p" firstAttribute="top" secondItem="oKa-cJ-7CQ" secondAttribute="bottom" id="3oA-LZ-Wyy"/>
+                            <constraint firstItem="2hB-ab-6Qv" firstAttribute="centerX" secondItem="MTy-4P-47D" secondAttribute="centerX" constant="-400" id="424-19-1hP"/>
+                            <constraint firstItem="2hB-ab-6Qv" firstAttribute="bottom" secondItem="jQJ-0f-2OE" secondAttribute="top" constant="-10" id="6Bh-Jr-NVg"/>
+                            <constraint firstItem="C0N-MP-Z2p" firstAttribute="bottom" secondItem="2hB-ab-6Qv" secondAttribute="bottom" constant="50" id="8Kr-jp-iRb"/>
                             <constraint firstItem="Q9H-e5-0Py" firstAttribute="top" secondItem="oKa-cJ-7CQ" secondAttribute="bottom" constant="78" id="KK7-Tp-0jp"/>
                             <constraint firstItem="C0N-MP-Z2p" firstAttribute="leading" secondItem="M6O-Tt-XL7" secondAttribute="leading" id="LPX-cD-oBG"/>
                             <constraint firstItem="ePM-Ld-91S" firstAttribute="bottom" secondItem="V79-ve-tl9" secondAttribute="bottom" constant="20" id="ORb-Oy-aiO"/>
@@ -228,25 +257,33 @@
                             <constraint firstItem="oKa-cJ-7CQ" firstAttribute="top" secondItem="ea3-Mo-L7t" secondAttribute="bottom" constant="2" id="lWv-ZA-b5l"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="M6O-Tt-XL7"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="8Kr-jp-iRb"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="commentInputContainer" destination="khu-IX-vPS" id="IVZ-nv-6Lk"/>
                         <outlet property="emojiButton" destination="RsS-80-A0q" id="BIh-tt-eZ4"/>
+                        <outlet property="emojiCollectionView" destination="FCj-Gr-IrX" id="OYF-Ka-MSg"/>
                         <outlet property="emojiCount" destination="XRh-bB-jOs" id="aAD-8Q-48T"/>
+                        <outlet property="emojiStackView" destination="cB9-iM-Ahh" id="33O-3p-miN"/>
                         <outlet property="likes" destination="AHE-wX-P6O" id="yAe-zc-BMi"/>
                         <outlet property="tableView" destination="oKa-cJ-7CQ" id="YPm-36-Wvx"/>
                         <outlet property="textField" destination="jQJ-0f-2OE" id="JaS-79-Wil"/>
                         <outlet property="upvoteButton" destination="w2b-as-kbZ" id="O7A-A9-aZB"/>
                         <outlet property="waveView" destination="V79-ve-tl9" id="KiP-ve-F1W"/>
+                        <outlet property="xConstrint" destination="424-19-1hP" id="53K-Ho-ZOF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SCA-jm-Xv9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3316.8000000000002" y="326.53673163418296"/>
+            <point key="canvasLocation" x="3316" y="326.08695652173918"/>
         </scene>
     </scenes>
     <resources>
-        <image name="gift-1" width="64" height="64"/>
+        <image name="emoji-1" width="64" height="64"/>
         <image name="heart" width="32" height="32"/>
     </resources>
 </document>

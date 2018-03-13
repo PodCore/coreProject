@@ -71,6 +71,11 @@
 		F9A9F2D82056F90100FE2A6E /* DesignableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A9F2D72056F90100FE2A6E /* DesignableButton.swift */; };
 		F9A9F2DA2056FB6700FE2A6E /* WaveEmitterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A9F2D92056FB6700FE2A6E /* WaveEmitterView.swift */; };
 		F9A9F2DC205706FF00FE2A6E /* EmojiTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A9F2DB205706FF00FE2A6E /* EmojiTag.swift */; };
+		F9A9F2DE205722AD00FE2A6E /* EmojiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A9F2DD205722AD00FE2A6E /* EmojiView.swift */; };
+		F9A9F2E2205732EA00FE2A6E /* EmojiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A9F2E0205732EA00FE2A6E /* EmojiCollectionViewCell.swift */; };
+		F9A9F2E3205732EA00FE2A6E /* EmojiCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9A9F2E1205732EA00FE2A6E /* EmojiCollectionViewCell.xib */; };
+		F9A9F2E520577A3D00FE2A6E /* LoadingIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A9F2E420577A3D00FE2A6E /* LoadingIndicatorView.swift */; };
+		F9A9F2E7205798BF00FE2A6E /* LoadingIndicatorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9A9F2E6205798BF00FE2A6E /* LoadingIndicatorView.xib */; };
 		F9CC457D2036B079003CCD65 /* WatchRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CC457C2036B079003CCD65 /* WatchRoomViewController.swift */; };
 		F9CC457F2036C080003CCD65 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9CC457E2036C080003CCD65 /* Settings.storyboard */; };
 		F9CC45812037933E003CCD65 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CC45802037933E003CCD65 /* Comment.swift */; };
@@ -163,6 +168,11 @@
 		F9A9F2D72056F90100FE2A6E /* DesignableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableButton.swift; sourceTree = "<group>"; };
 		F9A9F2D92056FB6700FE2A6E /* WaveEmitterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveEmitterView.swift; sourceTree = "<group>"; };
 		F9A9F2DB205706FF00FE2A6E /* EmojiTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiTag.swift; sourceTree = "<group>"; };
+		F9A9F2DD205722AD00FE2A6E /* EmojiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiView.swift; sourceTree = "<group>"; };
+		F9A9F2E0205732EA00FE2A6E /* EmojiCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiCollectionViewCell.swift; sourceTree = "<group>"; };
+		F9A9F2E1205732EA00FE2A6E /* EmojiCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmojiCollectionViewCell.xib; sourceTree = "<group>"; };
+		F9A9F2E420577A3D00FE2A6E /* LoadingIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicatorView.swift; sourceTree = "<group>"; };
+		F9A9F2E6205798BF00FE2A6E /* LoadingIndicatorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingIndicatorView.xib; sourceTree = "<group>"; };
 		F9CC457C2036B079003CCD65 /* WatchRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WatchRoomViewController.swift; path = OpenLive/ViewController/WatchRoomViewController.swift; sourceTree = SOURCE_ROOT; };
 		F9CC457E2036C080003CCD65 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		F9CC45802037933E003CCD65 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
@@ -291,6 +301,8 @@
 				21D85D90202F9F65001FEABA /* SubscriptionCell.swift */,
 				F96ACB6B202F7BB3001CA53F /* CollectionCell.swift */,
 				0790F1681D1EEAB2003F8C18 /* ProfileCell.swift */,
+				F9A9F2E0205732EA00FE2A6E /* EmojiCollectionViewCell.swift */,
+				F9A9F2E1205732EA00FE2A6E /* EmojiCollectionViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -386,6 +398,9 @@
 				0790F1521D1E9781003F8C18 /* VideoViewLayouter.swift */,
 				F9A9F2D72056F90100FE2A6E /* DesignableButton.swift */,
 				F9A9F2D92056FB6700FE2A6E /* WaveEmitterView.swift */,
+				F9A9F2DD205722AD00FE2A6E /* EmojiView.swift */,
+				F9A9F2E420577A3D00FE2A6E /* LoadingIndicatorView.swift */,
+				F9A9F2E6205798BF00FE2A6E /* LoadingIndicatorView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -517,6 +532,7 @@
 				F9CC457F2036C080003CCD65 /* Settings.storyboard in Resources */,
 				F96ACB82202F803F001CA53F /* Register.storyboard in Resources */,
 				21D85D89202F995E001FEABA /* profile.storyboard in Resources */,
+				F9A9F2E3205732EA00FE2A6E /* EmojiCollectionViewCell.xib in Resources */,
 				F96ACB7D202F7C58001CA53F /* Main.storyboard in Resources */,
 				F96ACB67202F7B20001CA53F /* GoogleService-Info.plist in Resources */,
 				F97EE22F203F970E0090E088 /* LiveRoom.storyboard in Resources */,
@@ -524,6 +540,7 @@
 				078012F41D1E57730093DE24 /* Assets.xcassets in Resources */,
 				078012F21D1E57730093DE24 /* CreateRoom.storyboard in Resources */,
 				F97EE22D203F96670090E088 /* WatchRoom.storyboard in Resources */,
+				F9A9F2E7205798BF00FE2A6E /* LoadingIndicatorView.xib in Resources */,
 				F91640DB2049167B001BEF4A /* CustomAlertView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -682,6 +699,8 @@
 				F96ACB89202FC6F5001CA53F /* Following.swift in Sources */,
 				F9CC457D2036B079003CCD65 /* WatchRoomViewController.swift in Sources */,
 				F9CC45812037933E003CCD65 /* Comment.swift in Sources */,
+				F9A9F2E2205732EA00FE2A6E /* EmojiCollectionViewCell.swift in Sources */,
+				F9A9F2E520577A3D00FE2A6E /* LoadingIndicatorView.swift in Sources */,
 				F96ACB77202F7BED001CA53F /* UIImage&Cache.swift in Sources */,
 				0790F1511D1E9631003F8C18 /* VideoSession.swift in Sources */,
 				210B841E203E253B0030A760 /* Followee.swift in Sources */,
@@ -706,6 +725,7 @@
 				0790F1531D1E9781003F8C18 /* VideoViewLayouter.swift in Sources */,
 				F96ACB6C202F7BB3001CA53F /* CollectionCell.swift in Sources */,
 				F96ACB8E20323EC5001CA53F /* UserdataService.swift in Sources */,
+				F9A9F2DE205722AD00FE2A6E /* EmojiView.swift in Sources */,
 				F91640DD204B486B001BEF4A /* AgoraEngine.swift in Sources */,
 				F9CC45EC203B8474003CCD65 /* CommentCell.swift in Sources */,
 				F9EB62F5204DE35900F0B20E /* RoomdataService.swift in Sources */,

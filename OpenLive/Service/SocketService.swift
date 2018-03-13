@@ -117,7 +117,7 @@ class SocketService: NSObject {
         completion(true)
     }
     
-    func getEmoji(completion: @escaping (Bool, String, Int) -> Void) {
+    func getEmoji(completion: @escaping (Bool, String, Int, String) -> Void) {
         socket.on("emoji") { (data, ack) in
             guard let json = data[0] as? Any else { return }
             let emoji = Emoji(dict: json as! [String: Any])
@@ -126,7 +126,7 @@ class SocketService: NSObject {
             let emojiGram = emoji.emojiGram as! [String: Any]
             let frequency = emojiGram[emojiNum] as! Int
             
-            completion(true, emojier, frequency)
+            completion(true, emojier, frequency, emojiNum)
         }
     }
     // send   "upvote" : send back "owner", "upvoter": get back number of upvotes("likes")

@@ -19,6 +19,11 @@ class OverlayViewController: UIViewController {
     @IBOutlet weak var emojiCount: UILabel!
     @IBOutlet weak var emojiButton: DesignableButton!
     @IBOutlet weak var waveView: WaveEmitterView!
+    @IBOutlet weak var emojiStackView: UIStackView!
+    @IBOutlet weak var xConstrint: NSLayoutConstraint!
+    @IBOutlet weak var emojiCollectionView: UICollectionView!
+    
+    let emojiDataSource = CollectionViewDatasource(items: [0,1,2,3,4])
     var roomId: String?
     var comments: [String] = [] {
         didSet {
@@ -42,6 +47,19 @@ class OverlayViewController: UIViewController {
         super.viewWillAppear(animated)
         tableView.contentInset.top = tableView.bounds.height
         tableView.reloadData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.emojiCollectionView.dataSource = emojiDataSource
+        let emojiCell = UINib(nibName: "EmojiCollectionViewCell", bundle: Bundle.main)
+        emojiCollectionView.register(emojiCell, forCellWithReuseIdentifier: "cell")
+        emojiDataSource.configureCell = {(collectionView, indexPath) -> UICollectionViewCell in
+            let cell = self.emojiCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! EmojiCollectionViewCell
+            let btnImg = UIImage(named: "emoji-\(indexPath.row)")
+            cell.emoButton.setImage(btnImg, for: .normal)
+            
+            return cell
+        }
     }
     
     override func viewDidLoad() {
@@ -74,22 +92,18 @@ class OverlayViewController: UIViewController {
             }
         }
         
-        SocketService.instance.getEmoji { (success, emojier, emojiCount)  in
+        SocketService.instance.getEmoji { (success, emojier, emojiCount, emojiNum)  in
             if success {
-                self.emojiCount.text = "\(emojiCount)"
-                let emoji = UIImage(named: "gift-1")!
+//                self.emojiCount.text = "\(emojiCount)"
+                let emoji = UIImage(named: ("emoji-" + emojiNum ))!
                 self.waveView.emitImage(emoji)
             }
         }
     }
     
+    // MARK:   IBOutlets
     @IBAction func emojiTapped(_ sender: DesignableButton) {
-        print(sender.tag)
-        SocketService.instance.sendEmoji(emojier: "tony", emojiNum: "\(sender.tag)", owner: "sky") { (success) in
-            if success {
-                print("emoji sent success")
-            }
-        }
+        self.xConstrint.constant = 0
     }
     
     @IBAction func upvoteTapped(_ sender: DesignableButton) {
@@ -115,5 +129,15 @@ class OverlayViewController: UIViewController {
             tableView.contentInset.top = 0
         }
         tableView.scrollToRow(at: IndexPath(row: comments.count - 1, section: 0), at: UITableViewScrollPosition.bottom, animated: true)
+    }
+}
+
+extension OverlayViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        SocketService.instance.sendEmoji(emojier: "tony", emojiNum: "\(indexPath.row)", owner: "sky") { (success) in
+            if success {
+                print("emoji sent success")
+            }
+        }
     }
 }
