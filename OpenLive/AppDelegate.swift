@@ -14,17 +14,23 @@ import FBSDKLoginKit
 import Google
 import GoogleSignIn
 import SocketIO
+import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
+    var hostLocation: Location?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
+        GMSServices.provideAPIKey("AIzaSyBHgkQDzeLMYwL3l0p2OEf7nX57FRsUUHw")
         /* Facebook login */
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-        
+        LocationService.shared.convertToRegion { (location, success) in
+            if success {
+                self.hostLocation = location
+            }
+        }
         return true
     }
     

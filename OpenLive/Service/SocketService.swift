@@ -39,7 +39,8 @@ class SocketService: NSObject {
         completion(true)
     }
     
-    func addChannel(id: String, name: String, owner: String, topic: String, viewCount: Int, likes: Int, viewers: [String], image: String, completion: @escaping (Bool) -> ()) {
+    func addChannel(id: String, name: String, owner: String, topic: String, viewCount: Int, likes: Int, viewers: [String], image: String, location: Location, completion: @escaping (Bool) -> ()) {
+        let locationDict = location.toDict()
         let room = Room(dict: ["name": name as Any,
                                "id": id as Any,
                                "owner": owner as Any,
@@ -47,7 +48,8 @@ class SocketService: NSObject {
                                "viewCount": viewCount as Any,
                                "likes": likes as Any,
                                "viewers": viewers as [String],
-                               "image": image as String])
+                               "image": image as String,
+                               "location": locationDict as [String: Any]])
         socket.emit("create_room", room.toDict())
 
         completion(true)
@@ -166,5 +168,6 @@ class SocketService: NSObject {
             completion(true, user)
         }
     }
+    
 }
 

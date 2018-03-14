@@ -21,6 +21,7 @@ class LoginAsGuestViewController: UIViewController {
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                     self.vc = storyboard.instantiateViewController(withIdentifier: "homeVC") as! HomeViewController
                     self.vc.popularVideos = rooms
+                    let locations = LiveRoomData.instance.getRoomData(rooms: rooms)
                     self.socketSuccess = true
                     
                 }
@@ -35,7 +36,10 @@ class LoginAsGuestViewController: UIViewController {
         self.view.addSubview(loadingView)
         if self.socketSuccess == true {
             loadingView.dismiss()
-            self.navigationController?.pushViewController(vc, animated: true)
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+            let tabBarController = sb.instantiateViewController(withIdentifier: "mainTabBarController")
+            self.present(tabBarController, animated: true, completion: nil)
+
         }
         
     }

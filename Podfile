@@ -17,6 +17,8 @@ target 'OpenLive' do
   pod 'Google/SignIn'
   pod 'RNCryptor'
   pod 'NVActivityIndicatorView'
+  pod 'GoogleMaps', '= 2.3.0'
+#  pod 'Google-Maps-iOS-Utils'
   target 'OpenLiveUITests' do
     inherit! :search_paths
     # Pods for testing
