@@ -40,7 +40,7 @@ class RegisterViewController: UIViewController {
                 UserdataService.instance.setUserdata1(username: username, avatar: "avatar")
                 
                 let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
-                let tabBarVC = storyBoard.instantiateViewController(withIdentifier: "mainTabBar") 
+                let tabBarVC = storyBoard.instantiateViewController(withIdentifier: "mainTabBarVC") 
                 self.navigationController?.pushViewController(tabBarVC, animated: true)
             } else {
                 print("sign up failed")
