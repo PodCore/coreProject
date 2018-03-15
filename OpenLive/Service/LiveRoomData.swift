@@ -13,6 +13,7 @@ import MapKit
 class LiveRoomData {
     static let instance = LiveRoomData()
    
+//    other class can only access these properties if they've been set 
     public private(set) var locations = [CLLocationCoordinate2D]()
     public private(set) var rooms = [Room]()
     
@@ -29,6 +30,5 @@ class LiveRoomData {
     
     func setRoomsToAll(liveRooms: [Room]) {
         rooms = liveRooms
-        print(rooms)
     }
 }

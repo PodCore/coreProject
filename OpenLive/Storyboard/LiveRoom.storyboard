@@ -23,16 +23,23 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ca0-av-PZ7">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C5L-Gm-Vtd">
-                                        <rect key="frame" x="135" y="99" width="240" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C5L-Gm-Vtd">
+                                        <rect key="frame" x="90" y="75" width="250" height="592"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="250" id="eOH-NS-Y0P"/>
+                                        </constraints>
                                         <connections>
-                                            <segue destination="jcz-Up-lJL" kind="embed" id="gc6-CN-zBE"/>
+                                            <segue destination="Zkj-ZI-0JQ" kind="embed" id="z7f-t3-Dy9"/>
                                         </connections>
                                     </containerView>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="C5L-Gm-Vtd" secondAttribute="trailing" constant="35" id="0rH-ir-49R"/>
+                                    <constraint firstAttribute="bottom" secondItem="C5L-Gm-Vtd" secondAttribute="bottom" id="2ni-is-m4j"/>
+                                    <constraint firstItem="C5L-Gm-Vtd" firstAttribute="top" secondItem="Ca0-av-PZ7" secondAttribute="top" constant="75" id="qSM-G2-u5V"/>
+                                </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="BoC-bR-tMy" appends="YES" id="cnB-ZM-vSg"/>
                                 </connections>
@@ -127,20 +134,15 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2510" y="327"/>
+            <point key="canvasLocation" x="2509.5999999999999" y="326.98650674662673"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="23c-zy-y8U">
+        <!--Overlay-->
+        <scene sceneID="NaC-AR-uHD">
             <objects>
-                <viewController id="jcz-Up-lJL" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="1Dw-vg-sxQ">
-                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OOP-Om-TTJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Overlay" id="Zkj-ZI-0JQ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bmf-Zp-xWc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="3548" y="327"/>
         </scene>
     </scenes>
     <resources>
