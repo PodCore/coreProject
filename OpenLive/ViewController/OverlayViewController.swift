@@ -8,7 +8,8 @@
 
 import UIKit
 import SocketIO
-
+import IHKeyboardAvoiding
+ 
 class OverlayViewController: UIViewController {
     
     @IBOutlet weak var commentInputContainer: UIView!
@@ -57,6 +58,9 @@ class OverlayViewController: UIViewController {
         
         //  wait 1 s for socket to work and automtically roll comments
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(tick(_:)), userInfo: nil, repeats: true)
+        
+//        hide keyboard when type
+        KeyboardAvoiding.avoidingView = self.commentInputContainer
         
         SocketService.instance.getComments { (success, data) in
             self.comments.append(data.comment)

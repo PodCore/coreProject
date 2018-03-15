@@ -12,7 +12,7 @@ import FBSDKLoginKit
 import FBSDKCoreKit
 import GoogleSignIn
 import Google
-import RNCryptor
+//import RNCryptor
 
 class RegisterViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate  {
     

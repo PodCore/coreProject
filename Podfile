@@ -15,10 +15,9 @@ target 'OpenLive' do
   pod 'FacebookShare'
   pod 'KeychainSwift', '~> 10.0'
   pod 'Google/SignIn'
-  pod 'RNCryptor'
   pod 'NVActivityIndicatorView'
   pod 'GoogleMaps', '= 2.3.0'
-#  pod 'Google-Maps-iOS-Utils'
+  pod 'IHKeyboardAvoiding'
   target 'OpenLiveUITests' do
     inherit! :search_paths
     # Pods for testing
