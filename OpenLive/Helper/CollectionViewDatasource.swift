@@ -14,17 +14,16 @@ typealias CollectionCellCallback = (UICollectionView, IndexPath) -> UICollection
 class CollectionViewDatasource<Item>: NSObject, UICollectionViewDataSource {
     
     var configureCell: CollectionCellCallback?
-    var items: [Item]
+    var items: [Item]?
     init(items: [Item]) {
         self.items = items
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
         if section == 0 {
             return 1
         } else {
-            return (items.count - 1)
+            return (items!.count - 1)
         }
     }
     

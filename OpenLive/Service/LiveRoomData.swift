@@ -14,7 +14,8 @@ class LiveRoomData {
     static let instance = LiveRoomData()
    
     public private(set) var locations = [CLLocationCoordinate2D]()
-
+    public private(set) var rooms = [Room]()
+    
     func getRoomData(rooms: [Room]) -> [CLLocationCoordinate2D] {
        let cleanerLocation =  rooms.map { $0.location as! [String: Int]}
         for room in cleanerLocation {
@@ -24,5 +25,10 @@ class LiveRoomData {
             locations.append(location)
         }
        return locations
+    }
+    
+    func setRoomsToAll(liveRooms: [Room]) {
+        rooms = liveRooms
+        print(rooms)
     }
 }

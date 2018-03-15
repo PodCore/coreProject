@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, PassLiveRoomDelegate {
  
     var allRooms = [Room]()
     var popularVideos = [Room]()
@@ -44,6 +44,9 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.popularVideos = LiveRoomData.instance.rooms
+//        let previousVC = LoginAsGuestViewController()
+//        previousVC.delegate = self
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         //        assign collectionView Dataspurce
         self.collectionViewDatasource.items = self.popularVideos + self.newPopularVideos
@@ -71,6 +74,10 @@ class HomeViewController: UIViewController {
             }
             return cell
         }
+    }
+    
+    func getLiveRooms(_ rooms: [Room]) {
+        self.popularVideos = rooms
     }
     
     //    convert img data we fetched from server to UIImage

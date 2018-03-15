@@ -8,19 +8,22 @@
 
 import UIKit
 
+protocol PassLiveRoomDelegate: class {
+    func getLiveRooms(_ rooms: [Room])
+}
 class LoginAsGuestViewController: UIViewController {
     var socketSuccess = false
-    var vc: HomeViewController!
+//    var vc: HomeViewController!
     var alertVC: CustomAlertView!
+    weak var delegate: PassLiveRoomDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
 
         SocketService.instance.observeIfConnected { (payload, ack) in
             SocketService.instance.getChannel {  [unowned self] (success, rooms) in
                 if success {
-                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    self.vc = storyboard.instantiateViewController(withIdentifier: "homeVC") as! HomeViewController
-                    self.vc.popularVideos = rooms
+//                    self.delegate?.getLiveRooms(rooms)
+                    LiveRoomData.instance.setRoomsToAll(liveRooms: rooms)
                     let locations = LiveRoomData.instance.getRoomData(rooms: rooms)
                     self.socketSuccess = true
                     

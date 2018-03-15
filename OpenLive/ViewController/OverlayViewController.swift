@@ -23,7 +23,7 @@ class OverlayViewController: UIViewController {
     @IBOutlet weak var xConstrint: NSLayoutConstraint!
     @IBOutlet weak var emojiCollectionView: UICollectionView!
     
-    let emojiDataSource = CollectionViewDatasource(items: [0,1,2,3,4])
+    let emojiNum = 5
     var roomId: String?
     var comments: [String] = [] {
         didSet {
@@ -49,21 +49,9 @@ class OverlayViewController: UIViewController {
         tableView.reloadData()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        self.emojiCollectionView.dataSource = emojiDataSource
-        let emojiCell = UINib(nibName: "EmojiCollectionViewCell", bundle: Bundle.main)
-        emojiCollectionView.register(emojiCell, forCellWithReuseIdentifier: "cell")
-        emojiDataSource.configureCell = {(collectionView, indexPath) -> UICollectionViewCell in
-            let cell = self.emojiCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! EmojiCollectionViewCell
-            let btnImg = UIImage(named: "emoji-\(indexPath.row)")
-            cell.emoButton.setImage(btnImg, for: .normal)
-            
-            return cell
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.tableViewDatasource.items = comments
         self.tableView.dataSource = self.tableViewDatasource
         
@@ -140,4 +128,23 @@ extension OverlayViewController: UICollectionViewDelegate {
             }
         }
     }
+}
+
+extension OverlayViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+       return emojiNum
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let emojiCell = UINib(nibName: "EmojiCollectionViewCell", bundle: Bundle.main)
+        emojiCollectionView.register(emojiCell, forCellWithReuseIdentifier: "cell")
+        let cell = self.emojiCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! EmojiCollectionViewCell
+        let btnImg = UIImage(named: "emoji-\(indexPath.row)")
+        cell.emoButton.setImage(btnImg, for: .normal)
+
+        return cell
+    }
+    
+    
 }
