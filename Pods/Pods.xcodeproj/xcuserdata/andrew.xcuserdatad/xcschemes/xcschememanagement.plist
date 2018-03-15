@@ -59,35 +59,45 @@
 			<key>orderHint</key>
 			<integer>9</integer>
 		</dict>
-		<key>KeychainSwift.xcscheme</key>
+		<key>IHKeyboardAvoiding.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>12</integer>
 		</dict>
-		<key>Pods-OpenLive.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>13</integer>
-		</dict>
-		<key>Pods-OpenLiveUITests.xcscheme</key>
+		<key>KeychainSwift.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>14</integer>
 		</dict>
-		<key>RNCryptor.xcscheme</key>
+		<key>NVActivityIndicatorView.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>13</integer>
+		</dict>
+		<key>Pods-OpenLive.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>15</integer>
 		</dict>
-		<key>Socket.IO-Client-Swift.xcscheme</key>
+		<key>Pods-OpenLiveUITests.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>16</integer>
 		</dict>
-		<key>Starscream.xcscheme</key>
+		<key>RNCryptor.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>16</integer>
+		</dict>
+		<key>Socket.IO-Client-Swift.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>17</integer>
+		</dict>
+		<key>Starscream.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>18</integer>
 		</dict>
 	</dict>
 </dict>

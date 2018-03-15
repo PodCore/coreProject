@@ -92,7 +92,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="HP2-rJ-1AP" kind="show" id="YUE-5L-U4T"/>
+                                            <segue destination="HP2-rJ-1AP" kind="show" id="uTm-xB-a4x"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -100,14 +100,20 @@
                             <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" distribution="fillEqually" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="byp-SJ-8Pe">
                                 <rect key="frame" x="30" y="567" width="315" height="100"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="caZ-qD-h2a" customClass="GIDSignInButton">
-                                        <rect key="frame" x="0.0" y="25" width="141.5" height="50"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D8m-1l-YDr" customClass="FBSDKLoginButton">
-                                        <rect key="frame" x="173.5" y="20.5" width="141.5" height="59"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ap-wQ-kFd">
+                                        <rect key="frame" x="0.0" y="35" width="141.5" height="30"/>
+                                        <state key="normal" title="Google"/>
+                                        <connections>
+                                            <action selector="signUpWithGmailButton:" destination="wne-tx-KMA" eventType="touchUpInside" id="FWF-2b-w3q"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q4B-dU-278">
+                                        <rect key="frame" x="173.5" y="35" width="141.5" height="30"/>
+                                        <state key="normal" title="Facebook"/>
+                                        <connections>
+                                            <action selector="fbLoginTapped:" destination="wne-tx-KMA" eventType="touchUpInside" id="231-kj-LDb"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="1to-Vg-gab"/>
@@ -309,9 +315,9 @@
                         <viewLayoutGuide key="safeArea" id="wS3-k7-Jv0"/>
                     </view>
                     <connections>
-                        <outlet property="confirmPasswordTextField" destination="1YG-yE-JSC" id="06K-64-aL8"/>
-                        <outlet property="password" destination="M62-cb-G9Z" id="t6p-rP-tl3"/>
-                        <outlet property="username" destination="hW4-2O-LYE" id="0vz-AU-ZR0"/>
+                        <outlet property="emailTextField" destination="M62-cb-G9Z" id="wyD-SV-Zma"/>
+                        <outlet property="passwordTextField" destination="1YG-yE-JSC" id="VFj-Y1-Wj6"/>
+                        <outlet property="usernameTextField" destination="hW4-2O-LYE" id="6t2-Gy-NOc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hyv-Gv-pHq" userLabel="First Responder" sceneMemberID="firstResponder"/>
