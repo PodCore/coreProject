@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Register View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="xWu-n7-6MM">
             <objects>
-                <viewController storyboardIdentifier="registerVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wne-tx-KMA" customClass="RegisterViewController" customModule="OpenLive" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginVC" id="wne-tx-KMA" customClass="LoginViewController" customModule="OpenLive" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fCM-c5-S06">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -81,8 +81,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="logInButton:" destination="wne-tx-KMA" eventType="touchUpInside" id="5L4-GH-YPR"/>
-                                            <action selector="signupClicked:" destination="wne-tx-KMA" eventType="touchUpInside" id="KCX-Q8-0n4"/>
+                                            <action selector="loginClicked:" destination="wne-tx-KMA" eventType="touchUpInside" id="LEJ-vq-kx4"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aid-7e-f7c" userLabel="SignUp">
@@ -200,10 +199,10 @@
             </objects>
             <point key="canvasLocation" x="1576.8" y="-151.57421289355324"/>
         </scene>
-        <!--View Controller-->
+        <!--Register View Controller-->
         <scene sceneID="Eh6-Ae-Ww0">
             <objects>
-                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="HP2-rJ-1AP" sceneMemberID="viewController">
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="HP2-rJ-1AP" customClass="RegisterViewController" customModule="OpenLive" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ohT-Xy-NqZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -227,7 +226,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="315" height="51"/>
                                                 <color key="textColor" red="0.27948524749999998" green="0.27948524749999998" blue="0.27948524749999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="42"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" textContentType="username"/>
                                             </textField>
                                             <view alpha="0.10000000149011612" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wd4-YR-Y46">
                                                 <rect key="frame" x="0.0" y="52" width="315" height="1"/>
@@ -241,11 +240,11 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Tjm-VI-DSM" userLabel="Password Stack View">
                                         <rect key="frame" x="0.0" y="98" width="315" height="53"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M62-cb-G9Z">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M62-cb-G9Z">
                                                 <rect key="frame" x="0.0" y="0.0" width="315" height="51"/>
                                                 <color key="textColor" red="0.27948524749999998" green="0.27948524749999998" blue="0.27948524749999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="42"/>
-                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                                <textInputTraits key="textInputTraits" textContentType="email"/>
                                             </textField>
                                             <view alpha="0.10000000149011612" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="deN-dH-7vo">
                                                 <rect key="frame" x="0.0" y="52" width="315" height="1"/>
@@ -259,7 +258,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="bRP-Ds-YmC" userLabel="Confirm Password Stack View">
                                         <rect key="frame" x="0.0" y="196" width="315" height="53"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1YG-yE-JSC">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1YG-yE-JSC">
                                                 <rect key="frame" x="0.0" y="0.0" width="315" height="51"/>
                                                 <color key="textColor" red="0.27948524749999998" green="0.27948524749999998" blue="0.27948524749999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="42"/>
@@ -287,7 +286,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="signupClicked:" destination="wne-tx-KMA" eventType="touchUpInside" id="2QS-rL-bwx"/>
+                                    <action selector="signupClicked:" destination="HP2-rJ-1AP" eventType="touchUpInside" id="qHJ-rb-jVp"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -309,6 +308,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wS3-k7-Jv0"/>
                     </view>
+                    <connections>
+                        <outlet property="confirmPasswordTextField" destination="1YG-yE-JSC" id="06K-64-aL8"/>
+                        <outlet property="password" destination="M62-cb-G9Z" id="t6p-rP-tl3"/>
+                        <outlet property="username" destination="hW4-2O-LYE" id="0vz-AU-ZR0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hyv-Gv-pHq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
