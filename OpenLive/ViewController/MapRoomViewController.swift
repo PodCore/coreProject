@@ -1,4 +1,3 @@
-//
 //  MapRoomViewController.swift
 //  OpenLive
 //
@@ -9,21 +8,23 @@
 import UIKit
 import GoogleMaps
 
-class MapRoomViewController: UIViewController, GMSMapViewDelegate {
-    private var heatmapLayer: GMUHeatmapTileLayer!
+class MapRoomViewController: UIViewController, GMUClusterManagerDelegate, GMSMapViewDelegate {
+//    private var heatmapLayer: GMUHeatmapTileLayer!
+    private var clusterManager: GMUClusterManager!
     private var mapView: GMSMapView!
     
     private var gradientColors = [UIColor.green, UIColor.red]
     private var gradientStartPoints = [0.2, 1.0] as? [NSNumber]
     let locations = LiveRoomData.instance.locations
     let currentUserLocation = LocationService.shared.currentLocation
+    
     //    load base map first before add gradient layer on it
     override func loadView() {
 //        show the part that user's at first and allow them to zoom out 
         let camera = GMSCameraPosition.camera(withLatitude: (currentUserLocation?.coordinate.latitude)!, longitude: (currentUserLocation?.coordinate.longitude)!, zoom: 7)
         mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-        mapView.delegate = self
         self.view = mapView
+
         mapView.settings.tiltGestures = false
         mapView.settings.rotateGestures = false
         mapView.settings.zoomGestures = true
@@ -32,30 +33,53 @@ class MapRoomViewController: UIViewController, GMSMapViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let iconGenerator = GMUDefaultClusterIconGenerator()
+        let renderer = GMUDefaultClusterRenderer(mapView: mapView, clusterIconGenerator: iconGenerator)
+        clusterManager = GMUClusterManager(map: mapView, algorithm: GMUNonHierarchicalDistanceBasedAlgorithm(), renderer: renderer)
         
-        // Do any additional setup after loading the view, typically from a nib.
-        heatmapLayer = GMUHeatmapTileLayer()
-        //        we can change radius based on the ratio of liverom in this area/all liverooms( KEEP IT WITHIN 50)
-        heatmapLayer.radius = 55
-        heatmapLayer.opacity = 0.7
-        heatmapLayer.gradient = GMUGradient(colors: gradientColors,
-                                            startPoints: gradientStartPoints!,
-                                            colorMapSize: 256)
-        addHeatmap()
-        heatmapLayer.map = mapView
+        // Generate and add random items to the cluster manager.
+        generateClusterItems()
+
+        // Call cluster() after items have been added to perform the clustering
+        // and rendering on map.
+        clusterManager.cluster()
         
-        createAnnotatePoint(location: self.locations, superView: mapView)
+        //        REGISTER SELF TO LISTEN TO BOTH CLUSGER MANAGER AND GMAP MANAGER
+        clusterManager.setDelegate(self, mapDelegate: self)
     }
     
+//    cluster manager delegate
+//    private func clusterManager(clusterManager: GMUClusterManager, didTapCluster cluster: GMUCluster) {
+//        
+//         enterWatchRoom()
+//    }
+    func clusterManager(_ clusterManager: GMUClusterManager, didTap cluster: GMUCluster) -> Bool {
+//        let newCam = GMSCameraPosition.camera(withTarget: cluster.position, zoom: mapView.camera.zoom + 1)
+//        let update = GMSCameraUpdate.setCamera(newCam)
+//        mapView.moveCamera(update)
+
+        enterWatchRoom()
+        return true
+
+    }
     
-    func addHeatmap() {
-        var list = [GMUWeightedLatLng]()
-        for l in self.locations {
-            let coords = GMUWeightedLatLng(coordinate: l, intensity: 0.8)
-            list.append(coords)
+    // MARK: - GMUMapViewDelegate
+    
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        if let item = marker.userData as? ClusterItem {
+            enterWatchRoom()
+            NSLog("Did tap marker for cluster item \(item.name)")
+        } else {
+            NSLog("Did tap a normal marker")
         }
-        heatmapLayer.weightedData = list
-        
+        return false
+    }
+    
+    private func generateClusterItems() {
+         for l in self.locations {
+            let item = ClusterItem(position: l, name: "cluster")
+            clusterManager.add(item)
+        }
     }
     
     func convertLocationToPoint(location: [CLLocationCoordinate2D], completion: @escaping ([CGPoint], Bool) -> Void) {
@@ -80,7 +104,7 @@ class MapRoomViewController: UIViewController, GMSMapViewDelegate {
     }
     
     func enterWatchRoom() {
-        let storyBoard = UIStoryboard.init(name: "WatchRoom", bundle: nil)
+        let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
         let watchRoomVC = storyBoard.instantiateViewController(withIdentifier: "areaVC") as! AreaLiveRoomViewController
         let allRooms = LiveRoomData.instance.rooms
 //        watchRoomVC.roomId = allRooms[indexPath.row].id

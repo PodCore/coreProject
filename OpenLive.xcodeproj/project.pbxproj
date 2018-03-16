@@ -44,6 +44,7 @@
 		F91640DF204B4B86001BEF4A /* AgoraDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91640DE204B4B86001BEF4A /* AgoraDelegate.swift */; };
 		F93478F9203E4B6D00E4B0A9 /* CameraHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93478F8203E4B6D00E4B0A9 /* CameraHandler.swift */; };
 		F96241BA205B292D00688B41 /* AreaLiveRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96241B9205B292D00688B41 /* AreaLiveRoomViewController.swift */; };
+		F96241BC205B472D00688B41 /* ClusterItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96241BB205B472D00688B41 /* ClusterItem.swift */; };
 		F9687E8C2059C91000ED6E87 /* MapRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9687E8B2059C91000ED6E87 /* MapRoomViewController.swift */; };
 		F9687E8E2059CB3700ED6E87 /* LiveRoomData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9687E8D2059CB3700ED6E87 /* LiveRoomData.swift */; };
 		F9687ED62059DD2200ED6E87 /* GMUGridBasedClusterAlgorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = F9687E942059DD2000ED6E87 /* GMUGridBasedClusterAlgorithm.m */; };
@@ -170,6 +171,7 @@
 		F91640DE204B4B86001BEF4A /* AgoraDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgoraDelegate.swift; sourceTree = "<group>"; };
 		F93478F8203E4B6D00E4B0A9 /* CameraHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHandler.swift; sourceTree = "<group>"; };
 		F96241B9205B292D00688B41 /* AreaLiveRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaLiveRoomViewController.swift; sourceTree = "<group>"; };
+		F96241BB205B472D00688B41 /* ClusterItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClusterItem.swift; sourceTree = "<group>"; };
 		F9687E8B2059C91000ED6E87 /* MapRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRoomViewController.swift; sourceTree = "<group>"; };
 		F9687E8D2059CB3700ED6E87 /* LiveRoomData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveRoomData.swift; sourceTree = "<group>"; };
 		F9687E922059DD2000ED6E87 /* GMUClusterAlgorithm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMUClusterAlgorithm.h; sourceTree = "<group>"; };
@@ -583,6 +585,7 @@
 				F9A9F2D320564EC300FE2A6E /* Emoji.swift */,
 				F9A9F2D52056F5F300FE2A6E /* Upvote.swift */,
 				F9A9F2EA20585BC200FE2A6E /* Location.swift */,
+				F96241BB205B472D00688B41 /* ClusterItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -985,6 +988,7 @@
 				F96ACB6A202F7B5E001CA53F /* Authservice.swift in Sources */,
 				21D85D8B202F9AE0001FEABA /* UserProfileViewController.swift in Sources */,
 				0790F1281D1E645B003F8C18 /* LiveRoomViewController.swift in Sources */,
+				F96241BC205B472D00688B41 /* ClusterItem.swift in Sources */,
 				F9CC45EA203A3601003CCD65 /* NewComment.swift in Sources */,
 				0790F1261D1E6450003F8C18 /* SettingsViewController.swift in Sources */,
 				F9687EE42059DD2200ED6E87 /* GMUGeometryCollection.m in Sources */,

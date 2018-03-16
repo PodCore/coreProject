@@ -27,8 +27,8 @@ class LoadingIndicatorView: UIView {
     }
     
     func dismiss() {
-        indicatorView?.stopAnimating()
         self.removeFromSuperview()
+        indicatorView?.stopAnimating()
     }
     
     deinit {

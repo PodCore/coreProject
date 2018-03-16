@@ -250,7 +250,7 @@
         <!--Area Live Room View Controller-->
         <scene sceneID="Wcz-AI-tNx">
             <objects>
-                <viewController storyboardIdentifier="areaVC" id="dbT-Qj-xDD" customClass="AreaLiveRoomViewController" customModule="OpenLive" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="areaVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dbT-Qj-xDD" customClass="AreaLiveRoomViewController" customModule="OpenLive" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rBA-eF-3pp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
