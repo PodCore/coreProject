@@ -8,7 +8,8 @@
 import UIKit
 import GoogleMaps
 
-class MapRoomViewController: UIViewController, GMUClusterManagerDelegate, GMSMapViewDelegate {
+class MapRoomViewController: UIViewController, GMUClusterManagerDelegate, GMSMapViewDelegate, GMUClusterRendererDelegate {
+    
 //    private var heatmapLayer: GMUHeatmapTileLayer!
     private var clusterManager: GMUClusterManager!
     private var mapView: GMSMapView!
@@ -35,6 +36,8 @@ class MapRoomViewController: UIViewController, GMUClusterManagerDelegate, GMSMap
         super.viewDidLoad()
         let iconGenerator = GMUDefaultClusterIconGenerator()
         let renderer = GMUDefaultClusterRenderer(mapView: mapView, clusterIconGenerator: iconGenerator)
+//        conform to render delegate allows us to modify marker
+        renderer.delegate = self
         clusterManager = GMUClusterManager(map: mapView, algorithm: GMUNonHierarchicalDistanceBasedAlgorithm(), renderer: renderer)
         
         // Generate and add random items to the cluster manager.
@@ -49,25 +52,31 @@ class MapRoomViewController: UIViewController, GMUClusterManagerDelegate, GMSMap
     }
     
 //    cluster manager delegate
-//    private func clusterManager(clusterManager: GMUClusterManager, didTapCluster cluster: GMUCluster) {
-//        
-//         enterWatchRoom()
-//    }
     func clusterManager(_ clusterManager: GMUClusterManager, didTap cluster: GMUCluster) -> Bool {
-//        let newCam = GMSCameraPosition.camera(withTarget: cluster.position, zoom: mapView.camera.zoom + 1)
-//        let update = GMSCameraUpdate.setCamera(newCam)
-//        mapView.moveCamera(update)
+        let newCam = GMSCameraPosition.camera(withTarget: cluster.position, zoom: mapView.camera.zoom + 1)
+        let update = GMSCameraUpdate.setCamera(newCam)
+        mapView.moveCamera(update)
 
-        enterWatchRoom()
         return true
 
     }
     
-    // MARK: - GMUMapViewDelegate
+//    modify cluster marker icon
+    func renderer(_ renderer: GMUClusterRenderer, willRenderMarker marker: GMSMarker) {
+        if let item = marker.userData as? ClusterItem {
+            let iconImg = UIImage(named: "gift-1")
+//            iconImg?.size = CGSize(width: 45, height: 45)
+            marker.icon = iconImg
+        } else {
+            NSLog("render failed")
+        }
+    }
+    
+    // MARK: - GMUMapViewDelegate (enter live room table view)
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         if let item = marker.userData as? ClusterItem {
-            enterWatchRoom()
+            enterRoomsTable()
             NSLog("Did tap marker for cluster item \(item.name)")
         } else {
             NSLog("Did tap a normal marker")
@@ -103,12 +112,10 @@ class MapRoomViewController: UIViewController, GMUClusterManagerDelegate, GMSMap
         }
     }
     
-    func enterWatchRoom() {
+    func enterRoomsTable() {
         let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
-        let watchRoomVC = storyBoard.instantiateViewController(withIdentifier: "areaVC") as! AreaLiveRoomViewController
+        let vc = storyBoard.instantiateViewController(withIdentifier: "areaVC") as! AreaLiveRoomViewController
         let allRooms = LiveRoomData.instance.rooms
-//        watchRoomVC.roomId = allRooms[indexPath.row].id
-//        watchRoomVC.roomName = allRooms[indexPath.row].name
-        self.navigationController?.pushViewController(watchRoomVC, animated: true)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
