@@ -270,6 +270,7 @@
                         <outlet property="emojiCount" destination="XRh-bB-jOs" id="aAD-8Q-48T"/>
                         <outlet property="emojiStackView" destination="cB9-iM-Ahh" id="33O-3p-miN"/>
                         <outlet property="likes" destination="AHE-wX-P6O" id="yAe-zc-BMi"/>
+                        <outlet property="sendButton" destination="IhG-I0-hen" id="6Ce-Df-PQH"/>
                         <outlet property="tableView" destination="oKa-cJ-7CQ" id="YPm-36-Wvx"/>
                         <outlet property="textField" destination="jQJ-0f-2OE" id="JaS-79-Wil"/>
                         <outlet property="upvoteButton" destination="w2b-as-kbZ" id="O7A-A9-aZB"/>

@@ -32,11 +32,13 @@ class LiveRoomViewController: UIViewController {
     @IBOutlet weak var audioMuteButton: UIButton!
     
     let hostLocaiton = (UIApplication.shared.delegate as! AppDelegate).hostLocation
+    var overlayVC: OverlayViewController!
     var roomImage: String?
     // MARK: this is Channel ID , has to be unique
     var roomId: String?
     var roomName: String!
     var owner: String?
+//    audient is 2, host is 1
     var clientRole = AgoraRtcClientRole.clientRole_Audience {
         didSet {
             updateButtonsVisiablity()
@@ -92,7 +94,17 @@ class LiveRoomViewController: UIViewController {
         updateButtonsVisiablity()
         loadAgoraKit()
         owner = UserdataService.instance.username
-        print(owner)
+    }
+    
+    //  MARK: for showing live comments overlay
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "overlay" {
+            overlayVC = segue.destination as! OverlayViewController
+            //  send room info to overlay vc
+            overlayVC.roomId = self.roomId
+//            pass the client role to decide to hide comment button in overlay
+            overlayVC.clientRole = self.clientRole.rawValue
+        }
     }
     
     //MARK: - user action

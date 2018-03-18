@@ -82,6 +82,7 @@ class WatchRoomViewController: UIViewController {
             overlayVC = segue.destination as! OverlayViewController
             //  send room info to overlay vc
             overlayVC.roomId = self.roomId
+            overlayVC.clientRole = 2
         }
     }
     

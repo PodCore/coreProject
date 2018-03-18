@@ -23,7 +23,9 @@ class OverlayViewController: UIViewController {
     @IBOutlet weak var emojiStackView: UIStackView!
     @IBOutlet weak var xConstrint: NSLayoutConstraint!
     @IBOutlet weak var emojiCollectionView: UICollectionView!
+    @IBOutlet weak var sendButton: UIButton!
     
+    var clientRole: Int!
     let emojiNum = 5
     var roomId: String?
     var comments: [String] = [] {
@@ -52,7 +54,14 @@ class OverlayViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        if self.clientRole == 1 {
+            commentInputContainer.isHidden = true
+            textField.isHidden = true
+            self.emojiStackView.isHidden = true
+            self.emojiButton.isHidden = true
+            self.upvoteButton.isHidden = true
+            self.sendButton.isHidden = true
+        }
         self.tableViewDatasource.items = comments
         self.tableView.dataSource = self.tableViewDatasource
         
