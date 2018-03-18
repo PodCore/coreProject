@@ -46,6 +46,7 @@
 		F96241BA205B292D00688B41 /* AreaLiveRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96241B9205B292D00688B41 /* AreaLiveRoomViewController.swift */; };
 		F96241BC205B472D00688B41 /* ClusterItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96241BB205B472D00688B41 /* ClusterItem.swift */; };
 		F96241C0205E0C6700688B41 /* LocationLiveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96241BF205E0C6700688B41 /* LocationLiveTableViewCell.swift */; };
+		F96241C4205F0FC400688B41 /* UIImageFromVideoFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96241C3205F0FC400688B41 /* UIImageFromVideoFrame.swift */; };
 		F9687E8C2059C91000ED6E87 /* MapRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9687E8B2059C91000ED6E87 /* MapRoomViewController.swift */; };
 		F9687E8E2059CB3700ED6E87 /* LiveRoomData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9687E8D2059CB3700ED6E87 /* LiveRoomData.swift */; };
 		F9687ED62059DD2200ED6E87 /* GMUGridBasedClusterAlgorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = F9687E942059DD2000ED6E87 /* GMUGridBasedClusterAlgorithm.m */; };
@@ -174,6 +175,7 @@
 		F96241B9205B292D00688B41 /* AreaLiveRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaLiveRoomViewController.swift; sourceTree = "<group>"; };
 		F96241BB205B472D00688B41 /* ClusterItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClusterItem.swift; sourceTree = "<group>"; };
 		F96241BF205E0C6700688B41 /* LocationLiveTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationLiveTableViewCell.swift; sourceTree = "<group>"; };
+		F96241C3205F0FC400688B41 /* UIImageFromVideoFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageFromVideoFrame.swift; sourceTree = "<group>"; };
 		F9687E8B2059C91000ED6E87 /* MapRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRoomViewController.swift; sourceTree = "<group>"; };
 		F9687E8D2059CB3700ED6E87 /* LiveRoomData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveRoomData.swift; sourceTree = "<group>"; };
 		F9687E922059DD2000ED6E87 /* GMUClusterAlgorithm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMUClusterAlgorithm.h; sourceTree = "<group>"; };
@@ -665,6 +667,7 @@
 				F91640DE204B4B86001BEF4A /* AgoraDelegate.swift */,
 				49577B0C2040A9EA004235B6 /* OutlinedButton.swift */,
 				F9A9F2DB205706FF00FE2A6E /* EmojiTag.swift */,
+				F96241C3205F0FC400688B41 /* UIImageFromVideoFrame.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -952,6 +955,7 @@
 				F91640DF204B4B86001BEF4A /* AgoraDelegate.swift in Sources */,
 				F96ACB5B202D829D001CA53F /* Room.swift in Sources */,
 				F96ACB55202D0261001CA53F /* Config.swift in Sources */,
+				F96241C4205F0FC400688B41 /* UIImageFromVideoFrame.swift in Sources */,
 				F9A9F2D420564EC300FE2A6E /* Emoji.swift in Sources */,
 				F96ACB72202F7BC6001CA53F /* HomeViewController.swift in Sources */,
 				F96ACB68202F7B20001CA53F /* CollectionViewDatasource.swift in Sources */,
@@ -1160,7 +1164,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = sidtesting.9com.test.agora.open.live;
+				PRODUCT_BUNDLE_IDENTIFIER = podcore.com.sky;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1191,7 +1195,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = sidtesting.9com.test.agora.open.live;
+				PRODUCT_BUNDLE_IDENTIFIER = podcore.com.sky;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";

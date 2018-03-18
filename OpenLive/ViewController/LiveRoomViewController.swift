@@ -30,7 +30,7 @@ class LiveRoomViewController: UIViewController {
     //Array of UIButtons on the bottom left hand side
     
     @IBOutlet weak var audioMuteButton: UIButton!
-    
+//    var thumnNilFromView: UIView!
     let hostLocaiton = (UIApplication.shared.delegate as! AppDelegate).hostLocation
     var overlayVC: OverlayViewController!
     var roomImage: String?
@@ -117,21 +117,6 @@ class LiveRoomViewController: UIViewController {
         isMuted = !isMuted
     }
     
-    //  MARK:  switch client role
-    @IBAction func doBroadcastPressed(_ sender: UIButton) {
-        if isBroadcaster {
-            clientRole = .clientRole_Audience
-            if fullScreenSession?.uid == 0 {
-                fullScreenSession = nil
-            }
-        } else {
-            clientRole = .clientRole_Broadcaster
-        }
-        // Set client Role here based on the updated clientRole value
-        rtcEngine.setClientRole(clientRole, withKey: nil)
-        updateInterface(withAnimation :true)
-    }
-    
     @IBAction func doDoubleTapped(_ sender: UITapGestureRecognizer) {
         if fullScreenSession == nil {
             if let tappedSession = viewLayouter.responseSession(of: sender, inSessions: videoSessions, inContainerView: remoteContainerView) {
@@ -197,6 +182,8 @@ private extension LiveRoomViewController {
             SocketService.instance.addChannel(id: roomId!, name: roomName, owner: "sky", topic: "sunshine", viewCount: 100, likes: 0, viewers: [""], image: roomImage!, location: hostLocaiton!, completion: { [unowned self] (success) in
                 self.dismiss(animated: true, completion: nil)
             })
+            // MARK: fix me! update img to first frame of img
+            
            
          } else {
             DispatchQueue.main.async(execute: {
@@ -284,10 +271,18 @@ private extension LiveRoomViewController {
         if !isBroadcaster && !displaySessions.isEmpty {
             displaySessions.removeFirst()
         }
-        
+//        get thumbnil of first video frame view
+//        let thumbnil = getThumbnil(displaySessions[0])
         
         viewLayouter.layout(sessions: displaySessions, fullScreenSession: fullScreenSession, inContainer: remoteContainerView)
         setStreamType(forSessions: displaySessions, fullScreenSession: fullScreenSession)
+        
+    }
+    
+    func getThumbnil(_ videoSession: VideoSession) -> UIImage {
+        let view = videoSession.canvas.view!
+        let img = UIImage.convertViewToImg(view: view)
+        return img!
     }
     
     func setStreamType(forSessions sessions: [VideoSession], fullScreenSession: VideoSession?) {
@@ -344,6 +339,7 @@ extension LiveRoomViewController: AgoraRtcEngineDelegate {
     func rtcEngine(_ engine: AgoraRtcEngineKit, firstLocalVideoFrameWith size: CGSize, elapsed: Int) {
         if let _ = videoSessions.first {
             updateInterface(withAnimation: false)
+            //            Mark: fix me! send thumbnil of img to socket
         }
     }
     

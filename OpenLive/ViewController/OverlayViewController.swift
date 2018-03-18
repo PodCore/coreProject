@@ -12,6 +12,7 @@ import IHKeyboardAvoiding
  
 class OverlayViewController: UIViewController {
     
+    @IBOutlet weak var commentStackView: UIStackView!
     @IBOutlet weak var commentInputContainer: UIView!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var tableView: UITableView!
@@ -24,7 +25,10 @@ class OverlayViewController: UIViewController {
     @IBOutlet weak var xConstrint: NSLayoutConstraint!
     @IBOutlet weak var emojiCollectionView: UICollectionView!
     @IBOutlet weak var sendButton: UIButton!
+    @IBOutlet weak var upvoteStack: UIStackView!
+    @IBOutlet weak var emojiStackBottomConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var smilyAndTap: UIStackView!
     var clientRole: Int!
     let emojiNum = 5
     var roomId: String?
@@ -55,12 +59,9 @@ class OverlayViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if self.clientRole == 1 {
-            commentInputContainer.isHidden = true
-            textField.isHidden = true
-            self.emojiStackView.isHidden = true
-            self.emojiButton.isHidden = true
-            self.upvoteButton.isHidden = true
-            self.sendButton.isHidden = true
+            self.commentStackView.isHidden = true
+            self.upvoteStack.isHidden = true
+            self.smilyAndTap.isHidden = true
         }
         self.tableViewDatasource.items = comments
         self.tableView.dataSource = self.tableViewDatasource
