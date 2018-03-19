@@ -8,7 +8,6 @@
 
 import UIKit
 import AgoraRtcEngineKit
-//import Alamofire
 import SocketIO
 
 protocol LiveRoomVCDelegate: NSObjectProtocol {
@@ -30,6 +29,9 @@ class LiveRoomViewController: UIViewController {
     //Array of UIButtons on the bottom left hand side
     
     @IBOutlet weak var audioMuteButton: UIButton!
+    
+    var remoteUid: UInt?
+    var agoraMediaDataPlugin: AgoraMediaDataPlugin?
 //    var thumnNilFromView: UIView!
     let hostLocaiton = (UIApplication.shared.delegate as! AppDelegate).hostLocation
     var overlayVC: OverlayViewController!
@@ -94,6 +96,7 @@ class LiveRoomViewController: UIViewController {
         updateButtonsVisiablity()
         loadAgoraKit()
         owner = UserdataService.instance.username
+        
     }
     
     //  MARK: for showing live comments overlay
@@ -110,7 +113,14 @@ class LiveRoomViewController: UIViewController {
     //MARK: - user action
     @IBAction func doSwitchCameraPressed(_ sender: UIButton) {
         //Step 13 -> switch camera on button click
-        rtcEngine?.switchCamera()
+//        rtcEngine?.switchCamera()
+        self.agoraMediaDataPlugin?.screenShotDidCaptureLocal(image: { (img) in
+            print(img)
+            self.agoraMediaDataPlugin?.screenShotWillRender(withUid: (self.remoteUid)!, image: { (img) in
+                print(img)
+            })
+        })
+        
     }
     
     @IBAction func doMutePressed(_ sender: UIButton) {
@@ -159,6 +169,10 @@ private extension LiveRoomViewController {
         
         // Step 6 -> Set client role (using clientRole variable)
         rtcEngine.setClientRole(clientRole, withKey: nil)
+        
+        // MARK: for videodatamediapugin
+        self.agoraMediaDataPlugin = AgoraMediaDataPlugin(agoraKit: rtcEngine)
+        self.agoraMediaDataPlugin?.videoDelegate = self
         
         //  MARK: IMPORTANT TO UPDATE FRAME
 //        return 0 when this method is called successfully, or negative value when this method failed
@@ -305,6 +319,8 @@ private extension LiveRoomViewController {
         let localSession = VideoSession.localSession()
         videoSessions.append(localSession)
         rtcEngine.setupLocalVideo(localSession.canvas)
+//        rtcEngine.setExternalVideoSource(true, useTexture: true, pushMode: true)
+//        rtcEngine.setLocalRenderMode(.render_Adaptive)
     }
     
     func fetchSession(ofUid uid: Int64) -> VideoSession? {
@@ -334,12 +350,15 @@ extension LiveRoomViewController: AgoraRtcEngineDelegate {
         let userSession = videoSession(ofUid: Int64(uid))
         //  MARK:  Set remote video view in rtcEngine callback
         rtcEngine.setupRemoteVideo(userSession.canvas)
+        
     }
     
     func rtcEngine(_ engine: AgoraRtcEngineKit, firstLocalVideoFrameWith size: CGSize, elapsed: Int) {
-        if let _ = videoSessions.first {
+        if let firstSession = videoSessions.first {
             updateInterface(withAnimation: false)
-            //            Mark: fix me! send thumbnil of img to socket
+            //            MARK: get uid of first frame of canvas
+            self.remoteUid = firstSession.canvas.uid
+            
         }
     }
     
@@ -361,3 +380,16 @@ extension LiveRoomViewController: AgoraRtcEngineDelegate {
         }
     }
 }
+
+extension LiveRoomViewController: AgoraVideoDataPluginDelegate {
+    
+    func mediaDataPlugin(_ mediaDataPlugin: AgoraMediaDataPlugin!, didCapturedVideoRawData videoRawData: AgoraVideoRawData!) -> AgoraVideoRawData! {
+        return videoRawData
+    }
+    
+    func mediaDataPlugin(_ mediaDataPlugin: AgoraMediaDataPlugin!, willRenderVideoRawData videoRawData: AgoraVideoRawData!) -> AgoraVideoRawData! {
+        return videoRawData
+    }
+    
+}
+

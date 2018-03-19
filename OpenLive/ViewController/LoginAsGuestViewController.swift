@@ -22,12 +22,13 @@ class LoginAsGuestViewController: UIViewController {
         guard let loadingView = Bundle.main.loadNibNamed("LoadingIndicatorView", owner: self, options: nil)![0] as? LoadingIndicatorView else { return }
         self.loadingIndicator = loadingView
         loadingView.configureView(title: "setting up live room", at: view.center)
+        self.view.addSubview(loadingIndicator)
         
         SocketService.instance.observeIfConnected { (payload, ack) in
             SocketService.instance.getChannel {  [unowned self] (success, rooms) in
                 if success {
                     LiveRoomData.instance.setRoomsToAll(liveRooms: rooms)
-                    self.socketSuccess = true
+//                    self.socketSuccess = true
                     let locations = LiveRoomData.instance.getRoomData(rooms: rooms)
                     self.loadingIndicator.dismiss()
         
@@ -38,12 +39,8 @@ class LoginAsGuestViewController: UIViewController {
     }
 
     @IBAction func signInAsGuest(_ sender: Any) {
-        if self.socketSuccess == false {
-            self.view.addSubview(loadingIndicator)
-        } else {
             let sb = UIStoryboard(name: "Main", bundle: nil)
             let tabBarController = sb.instantiateViewController(withIdentifier: "mainTabBarController")
             self.present(tabBarController, animated: true, completion: nil)
-        }
     }
 }

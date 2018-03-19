@@ -10,4 +10,5 @@
 #define Headers_h
 #import "GMUMarkerClustering.h"
 #import "GMUHeatmapTileLayer.h"
+#import "AgoraMediaDataPlugin.h"
 #endif /* Headers_h */

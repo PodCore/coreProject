@@ -47,6 +47,9 @@
 		F96241BC205B472D00688B41 /* ClusterItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96241BB205B472D00688B41 /* ClusterItem.swift */; };
 		F96241C0205E0C6700688B41 /* LocationLiveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96241BF205E0C6700688B41 /* LocationLiveTableViewCell.swift */; };
 		F96241C4205F0FC400688B41 /* UIImageFromVideoFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96241C3205F0FC400688B41 /* UIImageFromVideoFrame.swift */; };
+		F96241EA205F883B00688B41 /* AgoraAudioRawData.m in Sources */ = {isa = PBXBuildFile; fileRef = F96241E5205F883B00688B41 /* AgoraAudioRawData.m */; };
+		F96241EB205F883B00688B41 /* AgoraMediaDataPlugin.mm in Sources */ = {isa = PBXBuildFile; fileRef = F96241E7205F883B00688B41 /* AgoraMediaDataPlugin.mm */; };
+		F96241EC205F883B00688B41 /* AgoraVideoRawData.m in Sources */ = {isa = PBXBuildFile; fileRef = F96241E9205F883B00688B41 /* AgoraVideoRawData.m */; };
 		F9687E8C2059C91000ED6E87 /* MapRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9687E8B2059C91000ED6E87 /* MapRoomViewController.swift */; };
 		F9687E8E2059CB3700ED6E87 /* LiveRoomData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9687E8D2059CB3700ED6E87 /* LiveRoomData.swift */; };
 		F9687ED62059DD2200ED6E87 /* GMUGridBasedClusterAlgorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = F9687E942059DD2000ED6E87 /* GMUGridBasedClusterAlgorithm.m */; };
@@ -176,6 +179,12 @@
 		F96241BB205B472D00688B41 /* ClusterItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClusterItem.swift; sourceTree = "<group>"; };
 		F96241BF205E0C6700688B41 /* LocationLiveTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationLiveTableViewCell.swift; sourceTree = "<group>"; };
 		F96241C3205F0FC400688B41 /* UIImageFromVideoFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageFromVideoFrame.swift; sourceTree = "<group>"; };
+		F96241E4205F883B00688B41 /* AgoraAudioRawData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgoraAudioRawData.h; sourceTree = "<group>"; };
+		F96241E5205F883B00688B41 /* AgoraAudioRawData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgoraAudioRawData.m; sourceTree = "<group>"; };
+		F96241E6205F883B00688B41 /* AgoraMediaDataPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgoraMediaDataPlugin.h; sourceTree = "<group>"; };
+		F96241E7205F883B00688B41 /* AgoraMediaDataPlugin.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AgoraMediaDataPlugin.mm; sourceTree = "<group>"; };
+		F96241E8205F883B00688B41 /* AgoraVideoRawData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgoraVideoRawData.h; sourceTree = "<group>"; };
+		F96241E9205F883B00688B41 /* AgoraVideoRawData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgoraVideoRawData.m; sourceTree = "<group>"; };
 		F9687E8B2059C91000ED6E87 /* MapRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRoomViewController.swift; sourceTree = "<group>"; };
 		F9687E8D2059CB3700ED6E87 /* LiveRoomData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveRoomData.swift; sourceTree = "<group>"; };
 		F9687E922059DD2000ED6E87 /* GMUClusterAlgorithm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMUClusterAlgorithm.h; sourceTree = "<group>"; };
@@ -355,6 +364,7 @@
 		078012EB1D1E57730093DE24 /* OpenLive */ = {
 			isa = PBXGroup;
 			children = (
+				F96241E3205F883B00688B41 /* raw-data-api-oc */,
 				F9687E8F2059DCFB00ED6E87 /* Google-Maps-iOS-Utils */,
 				F96ACB64202F7B20001CA53F /* GoogleService-Info.plist */,
 				078012F81D1E57730093DE24 /* Info.plist */,
@@ -431,6 +441,19 @@
 				50215475412EB07621262284 /* Pods-OpenLiveUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		F96241E3205F883B00688B41 /* raw-data-api-oc */ = {
+			isa = PBXGroup;
+			children = (
+				F96241E4205F883B00688B41 /* AgoraAudioRawData.h */,
+				F96241E5205F883B00688B41 /* AgoraAudioRawData.m */,
+				F96241E6205F883B00688B41 /* AgoraMediaDataPlugin.h */,
+				F96241E7205F883B00688B41 /* AgoraMediaDataPlugin.mm */,
+				F96241E8205F883B00688B41 /* AgoraVideoRawData.h */,
+				F96241E9205F883B00688B41 /* AgoraVideoRawData.m */,
+			);
+			path = "raw-data-api-oc";
 			sourceTree = "<group>";
 		};
 		F9687E8F2059DCFB00ED6E87 /* Google-Maps-iOS-Utils */ = {
@@ -944,6 +967,7 @@
 				F9687EDA2059DD2200ED6E87 /* GMUClusterManager.m in Sources */,
 				F9687EE62059DD2200ED6E87 /* GMULineString.m in Sources */,
 				F9CC45812037933E003CCD65 /* Comment.swift in Sources */,
+				F96241EB205F883B00688B41 /* AgoraMediaDataPlugin.mm in Sources */,
 				F9A9F2E2205732EA00FE2A6E /* EmojiCollectionViewCell.swift in Sources */,
 				F9A9F2E520577A3D00FE2A6E /* LoadingIndicatorView.swift in Sources */,
 				F9687E8E2059CB3700ED6E87 /* LiveRoomData.swift in Sources */,
@@ -1009,10 +1033,12 @@
 				21D85D8F202F9ECC001FEABA /* UserProfileCell.swift in Sources */,
 				F96ACB57202D1851001CA53F /* Poop.swift in Sources */,
 				F9687EE02059DD2200ED6E87 /* GMUGeoJSONParser.m in Sources */,
+				F96241EC205F883B00688B41 /* AgoraVideoRawData.m in Sources */,
 				21BAE41B203F29A200A74F2F /* User.swift in Sources */,
 				F9687EDF2059DD2200ED6E87 /* GQTPointQuadTreeChild.m in Sources */,
 				F9687EE52059DD2200ED6E87 /* GMUGroundOverlay.m in Sources */,
 				F9A9F2EB20585BC200FE2A6E /* Location.swift in Sources */,
+				F96241EA205F883B00688B41 /* AgoraAudioRawData.m in Sources */,
 				F9687EE12059DD2200ED6E87 /* GMUGeometryRenderer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
