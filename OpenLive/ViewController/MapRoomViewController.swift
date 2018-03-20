@@ -64,8 +64,7 @@ class MapRoomViewController: UIViewController, GMUClusterManagerDelegate, GMSMap
 //    modify cluster marker icon
     func renderer(_ renderer: GMUClusterRenderer, willRenderMarker marker: GMSMarker) {
         if let item = marker.userData as? ClusterItem {
-            let iconImg = UIImage(named: "gift-1")
-//            iconImg?.size = CGSize(width: 45, height: 45)
+            let iconImg = UIImage(named: "appPinIcon")
             marker.icon = iconImg
         } else {
             NSLog("render failed")

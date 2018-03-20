@@ -8,17 +8,14 @@
 
 import UIKit
 
-protocol PassLiveRoomDelegate: class {
-    func getLiveRooms(_ rooms: [Room])
-}
 class LoginAsGuestViewController: UIViewController {
     var socketSuccess = false
     var loadingIndicator: LoadingIndicatorView!
     var alertVC: CustomAlertView!
-    weak var delegate: PassLiveRoomDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationController?.isNavigationBarHidden = false
         guard let loadingView = Bundle.main.loadNibNamed("LoadingIndicatorView", owner: self, options: nil)![0] as? LoadingIndicatorView else { return }
         self.loadingIndicator = loadingView
         loadingView.configureView(title: "setting up live room", at: view.center)
@@ -28,7 +25,6 @@ class LoginAsGuestViewController: UIViewController {
             SocketService.instance.getChannel {  [unowned self] (success, rooms) in
                 if success {
                     LiveRoomData.instance.setRoomsToAll(liveRooms: rooms)
-//                    self.socketSuccess = true
                     let locations = LiveRoomData.instance.getRoomData(rooms: rooms)
                     self.loadingIndicator.dismiss()
         

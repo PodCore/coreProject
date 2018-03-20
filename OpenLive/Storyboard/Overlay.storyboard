@@ -266,17 +266,12 @@
                     <connections>
                         <outlet property="commentInputContainer" destination="khu-IX-vPS" id="IVZ-nv-6Lk"/>
                         <outlet property="commentStackView" destination="C0N-MP-Z2p" id="yKg-2X-wSD"/>
-                        <outlet property="emojiButton" destination="RsS-80-A0q" id="BIh-tt-eZ4"/>
-                        <outlet property="emojiCollectionView" destination="FCj-Gr-IrX" id="OYF-Ka-MSg"/>
+                        <outlet property="emojiCollectionView" destination="FCj-Gr-IrX" id="1KD-dh-7pN"/>
                         <outlet property="emojiCount" destination="XRh-bB-jOs" id="aAD-8Q-48T"/>
-                        <outlet property="emojiStackBottomConstraint" destination="6Bh-Jr-NVg" id="FHZ-i0-r8r"/>
-                        <outlet property="emojiStackView" destination="cB9-iM-Ahh" id="QbQ-qQ-Plr"/>
                         <outlet property="likes" destination="AHE-wX-P6O" id="yAe-zc-BMi"/>
-                        <outlet property="sendButton" destination="IhG-I0-hen" id="6Ce-Df-PQH"/>
                         <outlet property="smilyAndTap" destination="cB9-iM-Ahh" id="Nra-0l-lyT"/>
                         <outlet property="tableView" destination="oKa-cJ-7CQ" id="YPm-36-Wvx"/>
                         <outlet property="textField" destination="jQJ-0f-2OE" id="JaS-79-Wil"/>
-                        <outlet property="upvoteButton" destination="w2b-as-kbZ" id="O7A-A9-aZB"/>
                         <outlet property="upvoteStack" destination="4w5-US-Oyg" id="ejn-oq-IBU"/>
                         <outlet property="waveView" destination="V79-ve-tl9" id="KiP-ve-F1W"/>
                         <outlet property="xConstrint" destination="424-19-1hP" id="53K-Ho-ZOF"/>

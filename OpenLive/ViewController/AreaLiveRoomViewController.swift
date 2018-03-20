@@ -23,7 +23,8 @@ class AreaLiveRoomViewController: UIViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! LocationLiveTableViewCell
             if self.rooms.count != 0 {
                 DispatchQueue.main.async {
-                    cell.imgView.loadImageFromUrlString(urlString: self.rooms[indexPath.row].image)
+                    let cellImg = CameraHandler.shared.convertBase64ToImgStr(encodedImgData: self.rooms[indexPath.row].image)
+                    cell.imgView.image = cellImg
                     cell.topicLabel.text = self.rooms[indexPath.row].topic
                 }
             }
@@ -35,7 +36,7 @@ class AreaLiveRoomViewController: UIViewController {
 
 extension AreaLiveRoomViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard.init(name: "WatchRoom", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "watchRoomVC") as! WatchRoomViewController
         vc.roomId = self.rooms[indexPath.row].id
         vc.roomName = self.rooms[indexPath.row].name

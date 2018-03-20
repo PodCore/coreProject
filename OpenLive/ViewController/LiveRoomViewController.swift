@@ -90,6 +90,10 @@ class LiveRoomViewController: UIViewController {
     
     fileprivate let viewLayouter = VideoViewLayouter()
     
+    func snapshotCallback(image: UIImage?) {
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         roomNameLabel.text = roomName
@@ -114,12 +118,12 @@ class LiveRoomViewController: UIViewController {
     @IBAction func doSwitchCameraPressed(_ sender: UIButton) {
         //Step 13 -> switch camera on button click
 //        rtcEngine?.switchCamera()
-        self.agoraMediaDataPlugin?.screenShotDidCaptureLocal(image: { (img) in
-            print(img)
-            self.agoraMediaDataPlugin?.screenShotWillRender(withUid: (self.remoteUid)!, image: { (img) in
-                print(img)
-            })
-        })
+//        self.agoraMediaDataPlugin?
+//            .screenShotDidCaptureLocal(image: snapshotCallback)
+        
+//        self.agoraMediaDataPlugin?.screenShotWillRender(withUid: (self.remoteUid)!, image: { (img) in
+//            print(img)
+//        })
         
     }
     

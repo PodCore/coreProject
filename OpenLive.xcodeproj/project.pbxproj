@@ -50,6 +50,7 @@
 		F96241EA205F883B00688B41 /* AgoraAudioRawData.m in Sources */ = {isa = PBXBuildFile; fileRef = F96241E5205F883B00688B41 /* AgoraAudioRawData.m */; };
 		F96241EB205F883B00688B41 /* AgoraMediaDataPlugin.mm in Sources */ = {isa = PBXBuildFile; fileRef = F96241E7205F883B00688B41 /* AgoraMediaDataPlugin.mm */; };
 		F96241EC205F883B00688B41 /* AgoraVideoRawData.m in Sources */ = {isa = PBXBuildFile; fileRef = F96241E9205F883B00688B41 /* AgoraVideoRawData.m */; };
+		F962420E206071BF00688B41 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F962420D206071BF00688B41 /* AlertView.swift */; };
 		F9687E8C2059C91000ED6E87 /* MapRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9687E8B2059C91000ED6E87 /* MapRoomViewController.swift */; };
 		F9687E8E2059CB3700ED6E87 /* LiveRoomData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9687E8D2059CB3700ED6E87 /* LiveRoomData.swift */; };
 		F9687ED62059DD2200ED6E87 /* GMUGridBasedClusterAlgorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = F9687E942059DD2000ED6E87 /* GMUGridBasedClusterAlgorithm.m */; };
@@ -185,6 +186,7 @@
 		F96241E7205F883B00688B41 /* AgoraMediaDataPlugin.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AgoraMediaDataPlugin.mm; sourceTree = "<group>"; };
 		F96241E8205F883B00688B41 /* AgoraVideoRawData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgoraVideoRawData.h; sourceTree = "<group>"; };
 		F96241E9205F883B00688B41 /* AgoraVideoRawData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgoraVideoRawData.m; sourceTree = "<group>"; };
+		F962420D206071BF00688B41 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		F9687E8B2059C91000ED6E87 /* MapRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRoomViewController.swift; sourceTree = "<group>"; };
 		F9687E8D2059CB3700ED6E87 /* LiveRoomData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveRoomData.swift; sourceTree = "<group>"; };
 		F9687E922059DD2000ED6E87 /* GMUClusterAlgorithm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMUClusterAlgorithm.h; sourceTree = "<group>"; };
@@ -661,6 +663,7 @@
 				F9A9F2DD205722AD00FE2A6E /* EmojiView.swift */,
 				F9A9F2E420577A3D00FE2A6E /* LoadingIndicatorView.swift */,
 				F9A9F2E6205798BF00FE2A6E /* LoadingIndicatorView.xib */,
+				F962420D206071BF00688B41 /* AlertView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -684,13 +687,13 @@
 				F96ACB65202F7B20001CA53F /* CollectionViewDatasource.swift */,
 				F96ACB76202F7BED001CA53F /* TableViewDatasource.swift */,
 				F96ACB75202F7BED001CA53F /* UIImage&Cache.swift */,
+				F96241C3205F0FC400688B41 /* UIImageFromVideoFrame.swift */,
 				F96ACB8F2032563B001CA53F /* Constant.swift */,
 				F93478F8203E4B6D00E4B0A9 /* CameraHandler.swift */,
 				F91640DC204B486B001BEF4A /* AgoraEngine.swift */,
 				F91640DE204B4B86001BEF4A /* AgoraDelegate.swift */,
 				49577B0C2040A9EA004235B6 /* OutlinedButton.swift */,
 				F9A9F2DB205706FF00FE2A6E /* EmojiTag.swift */,
-				F96241C3205F0FC400688B41 /* UIImageFromVideoFrame.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -747,7 +750,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0800;
-				ORGANIZATIONNAME = Agora;
+				ORGANIZATIONNAME = Sky.com;
 				TargetAttributes = {
 					078012E81D1E57730093DE24 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -1039,6 +1042,7 @@
 				F9687EE52059DD2200ED6E87 /* GMUGroundOverlay.m in Sources */,
 				F9A9F2EB20585BC200FE2A6E /* Location.swift in Sources */,
 				F96241EA205F883B00688B41 /* AgoraAudioRawData.m in Sources */,
+				F962420E206071BF00688B41 /* AlertView.swift in Sources */,
 				F9687EE12059DD2200ED6E87 /* GMUGeometryRenderer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

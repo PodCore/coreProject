@@ -63,6 +63,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
                     let homeVC = storyBoard.instantiateViewController(withIdentifier: "homeVC") as! HomeViewController
                     homeVC.newPopularVideos.append(newRoom)
+                    LiveRoomData.instance.appendRoom(liveRoom: newRoom)
                 }
             }
         }

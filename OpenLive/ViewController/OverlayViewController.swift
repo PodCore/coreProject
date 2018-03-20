@@ -16,18 +16,12 @@ class OverlayViewController: UIViewController {
     @IBOutlet weak var commentInputContainer: UIView!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var upvoteButton: DesignableButton!
     @IBOutlet weak var likes: UILabel!
     @IBOutlet weak var emojiCount: UILabel!
-    @IBOutlet weak var emojiButton: DesignableButton!
     @IBOutlet weak var waveView: WaveEmitterView!
-    @IBOutlet weak var emojiStackView: UIStackView!
     @IBOutlet weak var xConstrint: NSLayoutConstraint!
     @IBOutlet weak var emojiCollectionView: UICollectionView!
-    @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var upvoteStack: UIStackView!
-    @IBOutlet weak var emojiStackBottomConstraint: NSLayoutConstraint!
-    
     @IBOutlet weak var smilyAndTap: UIStackView!
     var clientRole: Int!
     let emojiNum = 5

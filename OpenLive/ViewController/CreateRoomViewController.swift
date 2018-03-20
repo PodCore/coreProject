@@ -11,28 +11,44 @@ import AgoraRtcEngineKit
 
 class CreateRoomViewController: UIViewController {
 
+    @IBOutlet weak var upLoadImgLabel: UILabel!
+    @IBOutlet weak var roomImg: UIImageView!
     @IBOutlet weak var roomNameTextField: UITextField!
     fileprivate var videoProfile = AgoraRtcVideoProfile._VideoProfile_360P
     var roomImgStr: String?
-//    @IBAction func pickRoomTapped(_ sender: UIButton) {
-//        CameraHandler.shared.showActionSheet(vc: self)
-//        CameraHandler.shared.imagePickedBlock = { (image) in
-//            self.roomImage.contentMode = .scaleAspectFill
-//            self.roomImage.clipsToBounds = true
-//            self.roomImage.image = image
-//            let imgData: NSData = UIImagePNGRepresentation(image)! as NSData
-//            self.roomImgStr = imgData.base64EncodedString(options: .lineLength64Characters)
-//        }
-//    }
-//
+    
+    @objc func pickRoomTapped(_ gestureRecgonize: UITapGestureRecognizer) {
+        self.selectImg()
+    }
+
     @IBAction func createRoomTapped(_ sender: UIButton) {
-        self.roomImgStr = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2ggZKW9Cn6kVzXsRC_EeWzMq_wElFOvv1TYMbDfYyaKJxQWL3"
+        if self.roomImgStr == nil {
+            let alertView = AlertView(alertTitle: "photo empty alert", alertMsg: "Please select a photo for your live room")
+            alertView.delegate = self
+            alertView.configureView(proceedMsg: "Select image", cancelMsg: "Use default image")
+            self.present(alertView.alertController, animated: true, completion: nil)
+            
+        }
         join(withRole: .clientRole_Broadcaster)
+    }
+    
+    func selectImg() {
+        CameraHandler.shared.showActionSheet(vc: self)
+        CameraHandler.shared.imagePickedBlock = { (image) in
+            DispatchQueue.main.async {
+                self.roomImg.image = image
+                self.upLoadImgLabel.isHidden = true
+            }
+            let imgData: NSData = UIImagePNGRepresentation(image!)! as NSData
+            self.roomImgStr = imgData.base64EncodedString(options: .lineLength64Characters)
+        }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        roomImg.isUserInteractionEnabled = true
+        let tapped = UITapGestureRecognizer(target: self, action: #selector(pickRoomTapped(_:)))
+        roomImg.addGestureRecognizer(tapped)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -56,6 +72,19 @@ class CreateRoomViewController: UIViewController {
             liveVC.delegate = self
         default:
             break
+        }
+    }
+}
+
+extension CreateRoomViewController: PassAlertActionDelegate {
+    func alertActionForOk() {
+        self.selectImg()
+    }
+    
+    func alertActionForCancle() {
+        self.roomImgStr = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2ggZKW9Cn6kVzXsRC_EeWzMq_wElFOvv1TYMbDfYyaKJxQWL3"
+        DispatchQueue.main.async {
+            self.upLoadImgLabel.isHidden = true
         }
     }
 }

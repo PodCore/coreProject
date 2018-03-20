@@ -31,4 +31,8 @@ class LiveRoomData {
     func setRoomsToAll(liveRooms: [Room]) {
         rooms = liveRooms
     }
+    
+    func appendRoom(liveRoom: Room) {
+        rooms.append(liveRoom)
+    }
 }

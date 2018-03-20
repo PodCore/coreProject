@@ -16,7 +16,7 @@ class LoadingIndicatorView: UIView {
     @IBOutlet weak var title: UILabel!
     
     func configureView(title: String, at location: CGPoint) {
-        self.layer.cornerRadius = 16
+//        self.layer.cornerRadius = 16
         self.layer.borderWidth = 1
         self.layer.borderColor = UIColor.clear.cgColor
         self.backgroundColor = UIColor(red:0.95, green:0.47, blue:0.10, alpha:1.0)
