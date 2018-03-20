@@ -23,8 +23,13 @@ class AreaLiveRoomViewController: UIViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! LocationLiveTableViewCell
             if self.rooms.count != 0 {
                 DispatchQueue.main.async {
-                    let cellImg = CameraHandler.shared.convertBase64ToImgStr(encodedImgData: self.rooms[indexPath.row].image)
-                    cell.imgView.image = cellImg
+                    let roomImg = self.rooms[indexPath.row].image
+                    if roomImg == "empty" {
+                        cell.imgView.loadImageFromUrlString(urlString: "https://www.pixelstalk.net/wp-content/uploads/2016/11/Entertainment-Desktop-Wallpaper.jpg")
+                    } else {
+                        let cellImg = CameraHandler.shared.convertBase64ToImgStr(encodedImgData: roomImg)
+                        cell.imgView.image = cellImg
+                    }
                     cell.topicLabel.text = self.rooms[indexPath.row].topic
                 }
             }

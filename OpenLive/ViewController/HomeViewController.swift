@@ -65,8 +65,14 @@ class HomeViewController: UIViewController {
             if self.allRooms.count != 0 {
                 DispatchQueue.main.async {
                     cell.roomName.text = self.allRooms[indexPath.row].name
-                    let cellImg = CameraHandler.shared.convertBase64ToImgStr(encodedImgData: self.allRooms[indexPath.row].image)
-                    cell.img.image = cellImg
+                    let roomImg = self.allRooms[indexPath.row].image
+                    if roomImg == "empty"{
+                        cell.img.loadImageFromUrlString(urlString: "https://www.pixelstalk.net/wp-content/uploads/2016/11/Entertainment-Desktop-Wallpaper.jpg")
+                    } else {
+                        let cellImg = CameraHandler.shared.convertBase64ToImgStr(encodedImgData: roomImg)
+                        cell.img.image = cellImg
+                    }
+                    
                 }
             }
             return cell

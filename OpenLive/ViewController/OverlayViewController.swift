@@ -52,6 +52,7 @@ class OverlayViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tabBarController?.tabBar.isHidden = true
         if self.clientRole == 1 {
             self.commentStackView.isHidden = true
             self.upvoteStack.isHidden = true
@@ -70,8 +71,7 @@ class OverlayViewController: UIViewController {
             self.comments.append(data.comment)
             self.tableView.reloadData()
         }
-        
-        tableViewDatasource.configureCell = {(tableView, indexPath) -> UITableViewCell in
+                tableViewDatasource.configureCell = {(tableView, indexPath) -> UITableViewCell in
             let cell = self.tableView.dequeueReusableCell(withIdentifier: "cell") as! CommentCell
             if self.comments.count > 0 {
                 cell.selfComment = self.comments[indexPath.row]
@@ -84,7 +84,6 @@ class OverlayViewController: UIViewController {
                 let heart = UIImage(named: "heart")
                 self.waveView.emitImage(heart!)
                 self.likes.text = "\(likes.likes)"
-                
             }
         }
         

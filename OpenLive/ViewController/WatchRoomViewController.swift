@@ -72,6 +72,7 @@ class WatchRoomViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tabBarController?.tabBar.isHidden = true
         roomNameLabel.text = roomName
         loadAgoraKit()
     }

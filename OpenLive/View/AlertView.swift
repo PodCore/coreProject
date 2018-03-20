@@ -10,13 +10,13 @@ import Foundation
 import UIKit
 
 protocol PassAlertActionDelegate: class {
-    func alertActionForOk()
-     func alertActionForCancle()
+    func alertActionForOk(completion: @escaping (_ success: Bool) -> Void)
+    func alertActionForCancle(completion: @escaping (_ success: Bool) -> Void)
 }
 class AlertView {
     let alertTitle: String
     let alertMsg: String
-    
+    public private(set) var ifSelected = false
     init(alertTitle: String, alertMsg: String) {
         self.alertTitle = alertTitle
         self.alertMsg = alertMsg
@@ -28,13 +28,19 @@ class AlertView {
     func configureView(proceedMsg: String, cancelMsg: String) {
        
         alertController.addAction(UIAlertAction(title: proceedMsg, style: .default, handler: { (action: UIAlertAction!) in
-            self.delegate?.alertActionForOk()
-//            self.alertController.dismiss(animated: true, completion: nil)
+            self.delegate?.alertActionForOk(completion: { [unowned self] (success) in
+                if success {
+                    self.ifSelected = true
+                }
+            })
         }))
         
         alertController.addAction(UIAlertAction(title: cancelMsg, style: .cancel, handler: { (action: UIAlertAction!) in
-            self.delegate?.alertActionForCancle()
-//            self.alertController.dismiss(animated: true, completion: nil)
+            self.delegate?.alertActionForCancle(completion: { [unowned self] (success) in
+                if success {
+                    self.ifSelected = true
+                }
+            })
         }))
     }
     

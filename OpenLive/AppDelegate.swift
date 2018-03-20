@@ -46,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return GIDSignIn.sharedInstance().handle(url as URL!,
                                                  sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication.rawValue] as? String,
-                                                 annotation: options[UIApplicationOpenURLOptionsKey.annotation.rawValue])
+                                                 annotation: [UIApplicationOpenURLOptionsKey.annotation.rawValue])
     }
     
     // MARK:   connect to socket when first launch app
