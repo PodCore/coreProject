@@ -6,11 +6,11 @@
 //  Copyright © 2018 Agora. All rights reserved.
 import Foundation
 
-struct Rooms: Codable {
+struct Rooms {
     let rooms: [Room]
 }
 
-struct Room: Codable {
+struct Room {
     let name: String
     let id: String
     let owner: String
@@ -19,7 +19,8 @@ struct Room: Codable {
     let likes: Int
     let viewers: [String]
     let image: String
-
+    let location: [String: Any]
+    
     init(dict: [String: Any]) {
         name = dict["name"] as! String
         id = dict["id"] as! String
@@ -29,6 +30,7 @@ struct Room: Codable {
         likes = dict["likes"] as! Int
         viewers = dict["viewers"] as! [String]
         image = dict["image"] as! String
+        location = dict["location"] as! [String: Any]
     }
 
     func toDict() -> [String: Any] {
@@ -40,7 +42,8 @@ struct Room: Codable {
             "viewCount": viewCount as Any,
             "likes": likes as Any,
             "viewers": viewers as [String],
-            "image": image as String
+            "image": image as String,
+            "location": location as [String: Any]
         ]
     }
 }

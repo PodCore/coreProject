@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Custom Alert View-->
+        <scene sceneID="90c-4e-iQF">
+            <objects>
+                <viewController storyboardIdentifier="customAlertVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kKX-mo-w9o" customClass="CustomAlertView" customModule="OpenLive" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kg5-NT-GVa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="XOw-Ez-azc">
+                                <rect key="frame" x="68" y="155" width="240" height="357"/>
+                                <subviews>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Gr-4Z-3Kc" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="304.5"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Fetching Live Rooms " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mWI-Qw-dHX" userLabel="Fetching Live Rooms">
+                                        <rect key="frame" x="0.0" y="329.5" width="240" height="27.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                        <color key="textColor" red="0.052764118020304562" green="0.052764118020304562" blue="0.052764118020304562" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="5Gr-4Z-3Kc" firstAttribute="leading" secondItem="XOw-Ez-azc" secondAttribute="leading" id="a0u-eV-EnF"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.51813711032174603" blue="0.18025357181284185" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="XOw-Ez-azc" firstAttribute="top" secondItem="pEA-kZ-XW5" secondAttribute="top" constant="135" id="0UY-o0-DIx"/>
+                            <constraint firstItem="XOw-Ez-azc" firstAttribute="centerY" secondItem="kg5-NT-GVa" secondAttribute="centerY" id="O5q-TT-pVf"/>
+                            <constraint firstItem="XOw-Ez-azc" firstAttribute="centerX" secondItem="kg5-NT-GVa" secondAttribute="centerX" id="P2f-Su-U3M"/>
+                            <constraint firstItem="XOw-Ez-azc" firstAttribute="leading" secondItem="pEA-kZ-XW5" secondAttribute="leading" constant="68" id="XdY-D0-ZMR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pEA-kZ-XW5"/>
+                    </view>
+                    <connections>
+                        <outlet property="alertLogo" destination="5Gr-4Z-3Kc" id="zg6-EB-coV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QmS-bb-beI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-156" y="6"/>
+        </scene>
+    </scenes>
+</document>

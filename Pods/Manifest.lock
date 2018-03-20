@@ -39,6 +39,11 @@ PODS:
   - Google/SignIn (3.1.0):
     - Google/Core
     - GoogleSignIn (~> 4.0)
+  - GoogleMaps (2.3.0):
+    - GoogleMaps/Maps (= 2.3.0)
+  - GoogleMaps/Base (2.3.0)
+  - GoogleMaps/Maps (2.3.0):
+    - GoogleMaps/Base
   - GoogleSignIn (4.1.2):
     - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
     - GoogleToolboxForMac/NSString+URLArguments (~> 2.1)
@@ -61,8 +66,11 @@ PODS:
   - GTMSessionFetcher/Core (1.1.13)
   - GTMSessionFetcher/Full (1.1.13):
     - GTMSessionFetcher/Core (= 1.1.13)
+  - IHKeyboardAvoiding (4.2)
   - KeychainSwift (10.0.0)
-  - RNCryptor (5.0.2)
+  - NVActivityIndicatorView (4.1.1):
+    - NVActivityIndicatorView/Presenter (= 4.1.1)
+  - NVActivityIndicatorView/Presenter (4.1.1)
   - Socket.IO-Client-Swift (13.1.1):
     - Starscream (~> 3.0.2)
   - Starscream (3.0.4)
@@ -74,8 +82,10 @@ DEPENDENCIES:
   - FacebookLogin
   - FacebookShare
   - Google/SignIn
+  - GoogleMaps (= 2.3.0)
+  - IHKeyboardAvoiding
   - KeychainSwift (~> 10.0)
-  - RNCryptor
+  - NVActivityIndicatorView
   - Socket.IO-Client-Swift (~> 13.1.0)
 
 SPEC CHECKSUMS:
@@ -92,15 +102,17 @@ SPEC CHECKSUMS:
   FirebaseCore: 9691ee2ade70c098d7cf92440f4303f16d83ca75
   FirebaseInstanceID: b9eedd6846fb5e1f0f7279e1deaa7a7e4cf8392e
   Google: 98da4b1a60ed0beb80a290387a28333406a1eb90
+  GoogleMaps: 340a6a0bebd17c2db8abcd3921976c7c53c86cb8
   GoogleSignIn: d9ef55b10f0aa401a5de2747f59b725e4b9732ac
   GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
   GTMOAuth2: c77fe325e4acd453837e72d91e3b5f13116857b2
   GTMSessionFetcher: 5bb1eae636127de695590f50e7d248483eb891e6
+  IHKeyboardAvoiding: 9fbf816b7c3c84911964802ff110d12caf40ebef
   KeychainSwift: f9f7910449a0c0fd2cabc889121530dd2c477c33
-  RNCryptor: 59b9f92e9fa8a1af74c32dc6b1af5e30ff5e1b64
+  NVActivityIndicatorView: 60109b9bf46efc2e71ab81453196ccdfdfeea870
   Socket.IO-Client-Swift: f22222913f29801e30ae0df712db663ec096edc2
   Starscream: f5da93fe6984c77b694366bf7299b7dc63a76f26
 
-PODFILE CHECKSUM: f23d029e185584f5340e5b4b337ada687219b927
+PODFILE CHECKSUM: ad1a85e07de8df0159e2348dc3fa38846b84f163
 
 COCOAPODS: 1.4.0

@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key></key>
+	<string></string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -35,6 +37,10 @@
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>for live streaming</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>For get available live room at your location</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>For get available live room at your location</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>for live streaming</string>
 	<key>UIBackgroundModes</key>

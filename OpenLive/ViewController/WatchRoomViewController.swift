@@ -48,13 +48,7 @@ class WatchRoomViewController: UIViewController {
             rtcEngine?.muteLocalAudioStream(isMuted)
         }
     }
-    
-//    var videoSession: VideoSession?{
-//        didSet {
-//            guard remoteContainerView != nil else {return}
-//        }
-//    }
-    
+ 
     fileprivate var videoSessions = [VideoSession]() {
         didSet {
             guard remoteContainerView != nil else {
@@ -135,8 +129,10 @@ private extension WatchRoomViewController {
         if successCode == 0 {
             setIdleTimerActive(false)
             //  MARK: Join socket (also using observe NSNotif to get current username")
-            SocketService.instance.joinChannel(username: "current username", owner: "sky", completion: { (success) in
-                self.dismiss(animated: true, completion: nil)
+            SocketService.instance.joinChannel(username: "current username", owner: "sky", completion: {[unowned self] (success) in
+                print("__________")
+                print("success joined channel")
+//                self.dismiss(animated: true, completion: nil)
             })
             
         } else {

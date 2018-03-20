@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="LoadingIndicatorView" customModule="OpenLive" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="208-kS-Yvo" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
+                    <rect key="frame" x="87" y="258.5" width="200" height="150"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="150" id="Nbf-HX-0uq"/>
+                        <constraint firstAttribute="width" constant="200" id="uet-6R-pDr"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qbD-xd-mAe">
+                    <rect key="frame" x="10" y="458.5" width="355" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="ju8-96-wcj"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="208-kS-Yvo" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="L7P-ra-YmV"/>
+                <constraint firstItem="qbD-xd-mAe" firstAttribute="top" secondItem="208-kS-Yvo" secondAttribute="bottom" constant="50" id="PCz-pA-hlC"/>
+                <constraint firstItem="208-kS-Yvo" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="VGV-GB-HpD"/>
+                <constraint firstItem="qbD-xd-mAe" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="gGp-Ye-jFO"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="qbD-xd-mAe" secondAttribute="trailing" constant="10" id="lRQ-SJ-wgS"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="indicatorView" destination="208-kS-Yvo" id="5Cw-fp-t8F"/>
+                <outlet property="title" destination="qbD-xd-mAe" id="rCC-Ww-MCH"/>
+            </connections>
+            <point key="canvasLocation" x="-36" y="42"/>
+        </view>
+    </objects>
+</document>

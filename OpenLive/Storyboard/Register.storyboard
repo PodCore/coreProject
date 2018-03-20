@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Register View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="xWu-n7-6MM">
             <objects>
-                <viewController storyboardIdentifier="registerVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wne-tx-KMA" customClass="RegisterViewController" customModule="OpenLive" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginVC" id="wne-tx-KMA" customClass="LoginViewController" customModule="OpenLive" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fCM-c5-S06">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -81,8 +81,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="logInButton:" destination="wne-tx-KMA" eventType="touchUpInside" id="5L4-GH-YPR"/>
-                                            <action selector="signupClicked:" destination="wne-tx-KMA" eventType="touchUpInside" id="KCX-Q8-0n4"/>
+                                            <action selector="loginClicked:" destination="wne-tx-KMA" eventType="touchUpInside" id="LEJ-vq-kx4"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aid-7e-f7c" userLabel="SignUp">
@@ -93,7 +92,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="HP2-rJ-1AP" kind="show" id="YUE-5L-U4T"/>
+                                            <segue destination="HP2-rJ-1AP" kind="show" id="uTm-xB-a4x"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -101,14 +100,20 @@
                             <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" distribution="fillEqually" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="byp-SJ-8Pe">
                                 <rect key="frame" x="30" y="567" width="315" height="100"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="caZ-qD-h2a" customClass="GIDSignInButton">
-                                        <rect key="frame" x="0.0" y="25" width="141.5" height="50"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D8m-1l-YDr" customClass="FBSDKLoginButton">
-                                        <rect key="frame" x="173.5" y="20.5" width="141.5" height="59"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ap-wQ-kFd">
+                                        <rect key="frame" x="0.0" y="35" width="141.5" height="30"/>
+                                        <state key="normal" title="Google"/>
+                                        <connections>
+                                            <action selector="signUpWithGmailButton:" destination="wne-tx-KMA" eventType="touchUpInside" id="FWF-2b-w3q"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q4B-dU-278">
+                                        <rect key="frame" x="173.5" y="35" width="141.5" height="30"/>
+                                        <state key="normal" title="Facebook"/>
+                                        <connections>
+                                            <action selector="fbLoginTapped:" destination="wne-tx-KMA" eventType="touchUpInside" id="231-kj-LDb"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="1to-Vg-gab"/>
@@ -141,10 +146,10 @@
             </objects>
             <point key="canvasLocation" x="2516" y="-152.47376311844079"/>
         </scene>
-        <!--View Controller-->
+        <!--Login As Guest View Controller-->
         <scene sceneID="0FO-Va-iLA">
             <objects>
-                <viewController id="OUa-1t-3iT" sceneMemberID="viewController">
+                <viewController id="OUa-1t-3iT" customClass="LoginAsGuestViewController" customModule="OpenLive" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="A4Y-Kh-h4d">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -161,6 +166,9 @@
                                 <state key="normal" title="Sign In as Guest">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="signInAsGuest:" destination="OUa-1t-3iT" eventType="touchUpInside" id="17f-cS-myd"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WgB-8O-lUb">
                                 <rect key="frame" x="30" y="550" width="315" height="70"/>
@@ -197,10 +205,10 @@
             </objects>
             <point key="canvasLocation" x="1576.8" y="-151.57421289355324"/>
         </scene>
-        <!--View Controller-->
+        <!--Register View Controller-->
         <scene sceneID="Eh6-Ae-Ww0">
             <objects>
-                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="HP2-rJ-1AP" sceneMemberID="viewController">
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="HP2-rJ-1AP" customClass="RegisterViewController" customModule="OpenLive" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ohT-Xy-NqZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -224,7 +232,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="315" height="51"/>
                                                 <color key="textColor" red="0.27948524749999998" green="0.27948524749999998" blue="0.27948524749999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="42"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" textContentType="username"/>
                                             </textField>
                                             <view alpha="0.10000000149011612" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wd4-YR-Y46">
                                                 <rect key="frame" x="0.0" y="52" width="315" height="1"/>
@@ -238,11 +246,11 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Tjm-VI-DSM" userLabel="Password Stack View">
                                         <rect key="frame" x="0.0" y="98" width="315" height="53"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M62-cb-G9Z">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M62-cb-G9Z">
                                                 <rect key="frame" x="0.0" y="0.0" width="315" height="51"/>
                                                 <color key="textColor" red="0.27948524749999998" green="0.27948524749999998" blue="0.27948524749999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="42"/>
-                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                                <textInputTraits key="textInputTraits" textContentType="email"/>
                                             </textField>
                                             <view alpha="0.10000000149011612" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="deN-dH-7vo">
                                                 <rect key="frame" x="0.0" y="52" width="315" height="1"/>
@@ -256,7 +264,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="bRP-Ds-YmC" userLabel="Confirm Password Stack View">
                                         <rect key="frame" x="0.0" y="196" width="315" height="53"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1YG-yE-JSC">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1YG-yE-JSC">
                                                 <rect key="frame" x="0.0" y="0.0" width="315" height="51"/>
                                                 <color key="textColor" red="0.27948524749999998" green="0.27948524749999998" blue="0.27948524749999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="42"/>
@@ -284,7 +292,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="signupClicked:" destination="wne-tx-KMA" eventType="touchUpInside" id="2QS-rL-bwx"/>
+                                    <action selector="signupClicked:" destination="HP2-rJ-1AP" eventType="touchUpInside" id="qHJ-rb-jVp"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -306,10 +314,23 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wS3-k7-Jv0"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="M62-cb-G9Z" id="wyD-SV-Zma"/>
+                        <outlet property="passwordTextField" destination="1YG-yE-JSC" id="VFj-Y1-Wj6"/>
+                        <outlet property="usernameTextField" destination="hW4-2O-LYE" id="6t2-Gy-NOc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hyv-Gv-pHq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3319" y="-152"/>
+        </scene>
+        <!--Storyboard Reference-->
+        <scene sceneID="Gxd-fa-xpe">
+            <objects>
+                <viewControllerPlaceholder id="5iF-Lo-EOV" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xkg-d7-bPt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4450" y="-63"/>
         </scene>
     </scenes>
     <resources>

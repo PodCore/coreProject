@@ -8,29 +8,34 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
-    
-//    reload data when fetch rooms from server
+class HomeViewController: UIViewController, PassLiveRoomDelegate {
+ 
+    var allRooms = [Room]()
     var popularVideos = [Room]()
+    var newPopularVideos = [Room]() {
+        didSet {
+            self.collectionView.reloadData()
+        }
+    }
     
     let collectionViewDatasource = CollectionViewDatasource(items: [])
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBAction func hostButtonTapped(_ sender: UIButton) {
-//        if AuthService.instance.isLoggedIn {
-//            print("CREATE ROOM")
-            let storyBoard = UIStoryboard.init(name: "CreateRoom", bundle: nil)
-            let createRoomVC = storyBoard.instantiateViewController(withIdentifier: "createRoomVC") as! CreateRoomViewController
-            self.navigationController?.pushViewController(createRoomVC, animated: true)
-//        } else {
-//            print("REGISTER")
-//            let storyBoard = UIStoryboard.init(name: "Register", bundle: nil)
-//            let registerVC = storyBoard.instantiateViewController(withIdentifier: "registerVC") as! RegisterViewController
-//            self.navigationController?.pushViewController(registerVC, animated: true)
-//        }
+        //        if AuthService.instance.isLoggedIn {
+        //            print("CREATE ROOM")
+        let storyBoard = UIStoryboard.init(name: "CreateRoom", bundle: nil)
+        let createRoomVC = storyBoard.instantiateViewController(withIdentifier: "createRoomVC") as! CreateRoomViewController
+        self.navigationController?.pushViewController(createRoomVC, animated: true)
+        //        } else {
+        //            print("REGISTER")
+        //            let storyBoard = UIStoryboard.init(name: "Register", bundle: nil)
+        //            let registerVC = storyBoard.instantiateViewController(withIdentifier: "registerVC") as! RegisterViewController
+        //            self.navigationController?.pushViewController(registerVC, animated: true)
+        //        }
     }
     
- 
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         //  trigger collecionViewFlowlayout delegate
@@ -39,54 +44,60 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Hide the navigation bar on the this view controller
+        self.popularVideos = LiveRoomData.instance.rooms
+//        let previousVC = LoginAsGuestViewController()
+//        previousVC.delegate = self
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+        //        assign collectionView Dataspurce
+        self.collectionViewDatasource.items = self.popularVideos + self.newPopularVideos
+        self.collectionView.dataSource = self.collectionViewDatasource
         
-        SocketService.instance.observeIfConnected { (payload, ack) in
-//            it keeps being called, maybe that's why only one text is displayed on view?
-            SocketService.instance.getChannel { (success, rooms) in
-                if success {
-                    self.popularVideos = rooms
-                    self.collectionViewDatasource.items = self.popularVideos
-                    self.collectionView.dataSource = self.collectionViewDatasource
-                    
-                    DispatchQueue.main.async {
-                        self.collectionView.reloadData()
-                    }
-                }
-            }
-        }
-        //        MARK: get new rooms after we load this VC!
         SocketService.instance.getNewChannel { (success, newRoom) in
-            self.popularVideos.append(newRoom)
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
+            if success {
+                self.newPopularVideos.append(newRoom)
+                print(self.newPopularVideos)
             }
         }
-        
+     
         //     update Cell UI vy calling configureCell call back function
-        collectionViewDatasource.configureCell = { (collectionView, indexPath) -> UICollectionViewCell in
+        collectionViewDatasource.configureCell = { [unowned self] (collectionView, indexPath) -> UICollectionViewCell in
             
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as! CollectionCell
-            if self.popularVideos.count != 0 {
+            self.allRooms = self.popularVideos + self.newPopularVideos
+            if self.allRooms.count != 0 {
                 DispatchQueue.main.async {
-                    cell.roomName.text = self.popularVideos[indexPath.row].name
-                    cell.img.loadImageFromUrlString(urlString: self.popularVideos[indexPath.row].image)
+                    cell.roomName.text = self.allRooms[indexPath.row].name
+//                    let cellImg = self.convertBase64ToImgStr(encodedImgData: self.popularVideos[indexPath.row].image)
+//                    cell.img.image = cellImg
+                    cell.img.loadImageFromUrlString(urlString: self.allRooms[indexPath.row].image)
                 }
             }
-            
             return cell
         }
+    }
+    
+    func getLiveRooms(_ rooms: [Room]) {
+        self.popularVideos = rooms
+    }
+    
+    //    convert img data we fetched from server to UIImage
+    func convertBase64ToImgStr(encodedImgData: String) -> UIImage {
+        let imgData = NSData(base64Encoded: encodedImgData, options: .ignoreUnknownCharacters) as Data?
+        var image: UIImage!
+        if let imgData = imgData {
+            image = UIImage(data: imgData)
+        }
+        return image!
     }
 }
 
 extension HomeViewController: UICollectionViewDelegate {
-//    go to watch VC when click on the cell
+    //    go to watch VC when click on the cell
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyBoard = UIStoryboard.init(name: "WatchRoom", bundle: nil)
         let watchRoomVC = storyBoard.instantiateViewController(withIdentifier: "watchRoomVC") as! WatchRoomViewController
-        watchRoomVC.roomId = self.popularVideos[indexPath.row].id
-        watchRoomVC.roomName = self.popularVideos[indexPath.row].name
+        watchRoomVC.roomId = self.allRooms[indexPath.row].id
+        watchRoomVC.roomName = self.allRooms[indexPath.row].name
         self.navigationController?.pushViewController(watchRoomVC, animated: true)
     }
 }

@@ -31,6 +31,7 @@ class LiveRoomViewController: UIViewController {
     
     @IBOutlet weak var audioMuteButton: UIButton!
     
+    let hostLocaiton = (UIApplication.shared.delegate as! AppDelegate).hostLocation
     var roomImage: String?
     // MARK: this is Channel ID , has to be unique
     var roomId: String?
@@ -180,10 +181,10 @@ private extension LiveRoomViewController {
             //Step 10 -> Enable Speakerphone by passing in true value for setEnableSpeakerphone()
             rtcEngine.setEnableSpeakerphone(true)
             
-            //   MARK: sent room id and infos to socket
-//            SocketService.instance.addChannel(id: roomId!, name: roomName, owner: "sky", topic: "shits and grits", viewCount: 100, likes: 0, viewers: [""], image: roomImage!,  completion: { (success) in
-//                self.dismiss(animated: true, completion: nil)
-//            })
+            //   MARK: sent room id and infos to socket (make sure roomId, roomImage not empty)
+            SocketService.instance.addChannel(id: roomId!, name: roomName, owner: "sky", topic: "sunshine", viewCount: 100, likes: 0, viewers: [""], image: roomImage!, location: hostLocaiton!, completion: { [unowned self] (success) in
+                self.dismiss(animated: true, completion: nil)
+            })
            
          } else {
             DispatchQueue.main.async(execute: {

@@ -11,20 +11,21 @@ import UIKit
 class CommentCell: UITableViewCell {
     
     @IBOutlet weak var commentContainer: UIView!
-    @IBOutlet weak var comment: UILabel!
-//    var selfComment: String? {
-//        didSet {
-//            updateUI()
-//        }
-//    }
+    
+    @IBOutlet weak var commentText: UILabel!
+    var selfComment: String? {
+        didSet {
+            updateUI()
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         commentContainer.layer.cornerRadius = 3
     }
-//
-//    func updateUI() {
-//        comment.text = selfComment!
-//    }
+
+    func updateUI() {
+        commentText.text = selfComment!
+    }
 
 }
