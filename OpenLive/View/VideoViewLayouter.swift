@@ -3,7 +3,7 @@
 //  OpenLive
 //
 //  Created by GongYuhua on 6/25/16.
-//  Copyright © 2016 Agora. All rights reserved.
+//  Copyright © 2018 Sky.com. All rights reserved.
 //
 
 import UIKit

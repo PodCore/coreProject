@@ -11,7 +11,11 @@ import UIKit
 class AreaLiveRoomViewController: UIViewController {
     
     var roomTableDatasource = TableViewDataSource(items: [])
-    let rooms = LiveRoomData.instance.rooms
+    var rooms = LiveRoomData.instance.rooms {
+        didSet {
+            self.tableView.reloadData()
+        }
+    }
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {

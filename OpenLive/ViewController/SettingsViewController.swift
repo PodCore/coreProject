@@ -49,6 +49,8 @@ extension SettingsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedProfile = profiles[(indexPath as NSIndexPath).row]
         videoProfile = selectedProfile
+        let confirmView = AlertView.init(alertTitle: "Video Profile Setting", alertMsg: "Successfully finished setting")
+        self.present(confirmView.alertController, animated: true, completion: nil)
     }
 }
 

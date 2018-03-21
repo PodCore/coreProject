@@ -12,9 +12,16 @@ class LocationLiveTableViewCell: UITableViewCell {
 
     @IBOutlet weak var topicLabel: UILabel!
     @IBOutlet weak var imgView: CustomImageView!
+    @IBOutlet weak var byusername: UILabel!
+    @IBOutlet weak var userImgView: CustomImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
+    
+//    override func layoutSubviews() {
+//        
+//    }
 
 }

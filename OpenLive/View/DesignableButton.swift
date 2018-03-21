@@ -3,7 +3,7 @@
 //  OpenLive
 //
 //  Created by Sky Xu on 3/12/18.
-//  Copyright © 2018 Agora. All rights reserved.
+//  Copyright © 2018 Sky.com. All rights reserved.
 //
 
 import Foundation

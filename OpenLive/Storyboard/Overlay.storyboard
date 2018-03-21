@@ -93,10 +93,10 @@
                                 <rect key="frame" x="0.0" y="589" width="375" height="73"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="khu-IX-vPS">
-                                        <rect key="frame" x="0.0" y="1.5" width="232" height="70"/>
+                                        <rect key="frame" x="0.0" y="10" width="232" height="53"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Chat here..." adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="jQJ-0f-2OE">
-                                                <rect key="frame" x="10" y="15" width="212" height="40"/>
+                                                <rect key="frame" x="10" y="15" width="212" height="23"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -105,7 +105,6 @@
                                         </subviews>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="70" id="4EX-XV-RRG"/>
                                             <constraint firstItem="jQJ-0f-2OE" firstAttribute="top" secondItem="khu-IX-vPS" secondAttribute="top" constant="15" id="7QX-Cc-x3O"/>
                                             <constraint firstAttribute="bottom" secondItem="jQJ-0f-2OE" secondAttribute="bottom" constant="15" id="Dqi-o6-pIH"/>
                                             <constraint firstAttribute="trailing" secondItem="jQJ-0f-2OE" secondAttribute="trailing" constant="10" id="qU9-9g-sSZ"/>
@@ -113,7 +112,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IhG-I0-hen" userLabel="Send">
-                                        <rect key="frame" x="232" y="16.5" width="143" height="40"/>
+                                        <rect key="frame" x="232" y="25" width="143" height="23"/>
                                         <color key="backgroundColor" red="0.90000000000000002" green="0.097641509429999995" blue="0.40521226420000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="17"/>
                                         <inset key="contentEdgeInsets" minX="0.0" minY="-1" maxX="0.0" maxY="0.0"/>
@@ -209,7 +208,7 @@
                                 </subviews>
                             </stackView>
                             <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2hB-ab-6Qv" customClass="EmojiView" customModule="OpenLive" customModuleProvider="target">
-                                <rect key="frame" x="-360" y="545.5" width="295" height="50"/>
+                                <rect key="frame" x="-360" y="554" width="295" height="50"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FCj-Gr-IrX">
                                         <rect key="frame" x="0.0" y="0.0" width="295" height="50"/>
@@ -255,6 +254,7 @@
                             <constraint firstItem="Q9H-e5-0Py" firstAttribute="top" secondItem="C0N-MP-Z2p" secondAttribute="bottom" constant="5" id="aBE-yh-D7v"/>
                             <constraint firstItem="C0N-MP-Z2p" firstAttribute="top" secondItem="V79-ve-tl9" secondAttribute="bottom" constant="10" id="gQm-9F-DdP"/>
                             <constraint firstItem="oKa-cJ-7CQ" firstAttribute="top" secondItem="ea3-Mo-L7t" secondAttribute="bottom" constant="2" id="lWv-ZA-b5l"/>
+                            <constraint firstItem="2hB-ab-6Qv" firstAttribute="centerY" secondItem="cB9-iM-Ahh" secondAttribute="centerY" id="wbE-A6-J77"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="M6O-Tt-XL7"/>
                         <variation key="default">

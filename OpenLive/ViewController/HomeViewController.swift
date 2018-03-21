@@ -68,6 +68,7 @@ class HomeViewController: UIViewController {
                     let roomImg = self.allRooms[indexPath.row].image
                     if roomImg == "empty"{
                         cell.img.loadImageFromUrlString(urlString: "https://www.pixelstalk.net/wp-content/uploads/2016/11/Entertainment-Desktop-Wallpaper.jpg")
+                        print(cell.img.image)
                     } else {
                         let cellImg = CameraHandler.shared.convertBase64ToImgStr(encodedImgData: roomImg)
                         cell.img.image = cellImg
