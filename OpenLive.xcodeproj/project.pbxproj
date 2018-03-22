@@ -52,6 +52,7 @@
 		F96241EC205F883B00688B41 /* AgoraVideoRawData.m in Sources */ = {isa = PBXBuildFile; fileRef = F96241E9205F883B00688B41 /* AgoraVideoRawData.m */; };
 		F962420E206071BF00688B41 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F962420D206071BF00688B41 /* AlertView.swift */; };
 		F96242132061B2A700688B41 /* UIColor&Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96242122061B2A600688B41 /* UIColor&Extension.swift */; };
+		F96242152062337C00688B41 /* QuadTreeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96242142062337C00688B41 /* QuadTreeItem.swift */; };
 		F9687E8C2059C91000ED6E87 /* MapRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9687E8B2059C91000ED6E87 /* MapRoomViewController.swift */; };
 		F9687E8E2059CB3700ED6E87 /* LiveRoomData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9687E8D2059CB3700ED6E87 /* LiveRoomData.swift */; };
 		F9687ED62059DD2200ED6E87 /* GMUGridBasedClusterAlgorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = F9687E942059DD2000ED6E87 /* GMUGridBasedClusterAlgorithm.m */; };
@@ -189,6 +190,7 @@
 		F96241E9205F883B00688B41 /* AgoraVideoRawData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgoraVideoRawData.m; sourceTree = "<group>"; };
 		F962420D206071BF00688B41 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		F96242122061B2A600688B41 /* UIColor&Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor&Extension.swift"; sourceTree = "<group>"; };
+		F96242142062337C00688B41 /* QuadTreeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuadTreeItem.swift; sourceTree = "<group>"; };
 		F9687E8B2059C91000ED6E87 /* MapRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRoomViewController.swift; sourceTree = "<group>"; };
 		F9687E8D2059CB3700ED6E87 /* LiveRoomData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveRoomData.swift; sourceTree = "<group>"; };
 		F9687E922059DD2000ED6E87 /* GMUClusterAlgorithm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMUClusterAlgorithm.h; sourceTree = "<group>"; };
@@ -666,6 +668,7 @@
 				F9A9F2E420577A3D00FE2A6E /* LoadingIndicatorView.swift */,
 				F9A9F2E6205798BF00FE2A6E /* LoadingIndicatorView.xib */,
 				F962420D206071BF00688B41 /* AlertView.swift */,
+				F96242142062337C00688B41 /* QuadTreeItem.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1012,6 +1015,7 @@
 				F9687EE22059DD2200ED6E87 /* GMUKMLParser.m in Sources */,
 				F9A9F2D82056F90100FE2A6E /* DesignableButton.swift in Sources */,
 				F9687ED72059DD2200ED6E87 /* GMUNonHierarchicalDistanceBasedAlgorithm.m in Sources */,
+				F96242152062337C00688B41 /* QuadTreeItem.swift in Sources */,
 				F9687EE82059DD2200ED6E87 /* GMUPoint.m in Sources */,
 				F9A9F2DA2056FB6700FE2A6E /* WaveEmitterView.swift in Sources */,
 				0790F1531D1E9781003F8C18 /* VideoViewLayouter.swift in Sources */,

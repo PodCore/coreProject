@@ -104,6 +104,12 @@ class MapRoomViewController: UIViewController, GMUClusterManagerDelegate, GMSMap
                     view.frame.size = CGSize(width: 45, height: 45)
                     view.center = loca
                     DispatchQueue.main.async {
+                        let roomNumRect = CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height)
+                        let roomNumView = UILabel(frame: roomNumRect)
+                        roomNumView.text = "\(self.locations.count)"
+                        roomNumView.backgroundColor = UIColor.red
+                        roomNumView.center = view.center
+                        view.addSubview(roomNumView)
                         superView.addSubview(view)
                     }
                 }
