@@ -37,7 +37,7 @@ class RegisterViewController: UIViewController {
         
         AuthService.instance.registerUser(username: usernameText, email: emailText, password: passwordText) { (username, userId) in
             if username != nil, userId != nil {
-                UserdataService.instance.setUserdata1(username: username, avatar: "avatar")
+//                UserdataService.instance.setUserdata1(username: username, avatar: "avatar")
                 
                 let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
                 let tabBarVC = storyBoard.instantiateViewController(withIdentifier: "mainTabBarController") 
