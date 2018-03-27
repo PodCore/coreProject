@@ -36,6 +36,7 @@
 		21D85D91202F9F65001FEABA /* SubscriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D85D90202F9F65001FEABA /* SubscriptionCell.swift */; };
 		49087ECB2045EC6100F0B42D /* LoginAsGuestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49087ECA2045EC6100F0B42D /* LoginAsGuestViewController.swift */; };
 		49577B0D2040A9EA004235B6 /* OutlinedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49577B0C2040A9EA004235B6 /* OutlinedButton.swift */; };
+		49F1290C206AE85400B881CD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F1290B206AE85400B881CD /* LoginViewController.swift */; };
 		9BD495C2E9E5B995DC49A798 /* Pods_OpenLive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A389B5D17B2C3222BF04AE0 /* Pods_OpenLive.framework */; };
 		F798436423339E6CEA04AF25 /* Pods_OpenLiveUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FED29D567E083B1BD7F0EE0 /* Pods_OpenLiveUITests.framework */; };
 		F91640D92048D4AE001BEF4A /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91640D82048D4AE001BEF4A /* AlertViewController.swift */; };
@@ -169,6 +170,7 @@
 		3FED29D567E083B1BD7F0EE0 /* Pods_OpenLiveUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenLiveUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49087ECA2045EC6100F0B42D /* LoginAsGuestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAsGuestViewController.swift; sourceTree = "<group>"; };
 		49577B0C2040A9EA004235B6 /* OutlinedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlinedButton.swift; sourceTree = "<group>"; };
+		49F1290B206AE85400B881CD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4A389B5D17B2C3222BF04AE0 /* Pods_OpenLive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenLive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50215475412EB07621262284 /* Pods-OpenLiveUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenLiveUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OpenLiveUITests/Pods-OpenLiveUITests.release.xcconfig"; sourceTree = "<group>"; };
 		67D0FE019758116E88F0DB1D /* Pods-OpenLive.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenLive.release.xcconfig"; path = "Pods/Target Support Files/Pods-OpenLive/Pods-OpenLive.release.xcconfig"; sourceTree = "<group>"; };
@@ -603,6 +605,7 @@
 				F91640D82048D4AE001BEF4A /* AlertViewController.swift */,
 				F9687E8B2059C91000ED6E87 /* MapRoomViewController.swift */,
 				F96241B9205B292D00688B41 /* AreaLiveRoomViewController.swift */,
+				49F1290B206AE85400B881CD /* LoginViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1001,6 +1004,7 @@
 				F96241BA205B292D00688B41 /* AreaLiveRoomViewController.swift in Sources */,
 				F9A9F2DC205706FF00FE2A6E /* EmojiTag.swift in Sources */,
 				F96ACB902032563B001CA53F /* Constant.swift in Sources */,
+				49F1290C206AE85400B881CD /* LoginViewController.swift in Sources */,
 				F9687E8C2059C91000ED6E87 /* MapRoomViewController.swift in Sources */,
 				F9687ED62059DD2200ED6E87 /* GMUGridBasedClusterAlgorithm.m in Sources */,
 				F93478F9203E4B6D00E4B0A9 /* CameraHandler.swift in Sources */,
