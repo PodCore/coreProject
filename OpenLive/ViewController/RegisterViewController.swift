@@ -34,23 +34,10 @@ class RegisterViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDe
         
     }
     
-    //    notifi application notification center about user info if registered!
+    // Notify application notification center about user info if registered!
     func updateUserStatus() {
         NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
     }
-    
-    //    MARK: put these into view did load of profile VC
-    //     NotificationCenter.default.addObserver(self, selector: #selector(ProfileViewController.userDataDidChange(_:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
-    //
-    //    @objc func userDataDidChange(_ notif: Notification) {
-    //        if AuthService.instance.isLoggedIn {
-    ////            update userinfo if user is logged in
-    //            let username = UserdataService.instance.username
-    //            let avatar = UserdataService.instance.avatar
-    //        } else {
-    ////            set UI to be default value
-    //        }
-    //    }
     
     
     //   MARK: (helper) main func to call google Signin
@@ -60,13 +47,10 @@ class RegisterViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDe
             return
         }
         AuthService.instance.registerUser(username: user.profile.givenName, email: user.profile.email, password: "gmailpassword ", completion: { (username, userId) in
-            //            print(username, userId)
-            let storyBoard = UIStoryboard.init(name: "CreateRoom", bundle: nil)
-            let createRoomVC = storyBoard.instantiateViewController(withIdentifier: "createRoomVC") as! CreateRoomViewController
-            //            let storyBoard = UIStoryboard.init(name: "LiveRoom", bundle: nil)
-            //            let createRoomVC = storyBoard.instantiateViewController(withIdentifier: "liveRoomVC") as! LiveRoomViewController
-            UserdataService.instance.setUserdata1(username: username, avatar: "avatar")
-            self.navigationController?.pushViewController(createRoomVC, animated: true)
+            let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+            let mainVC = storyBoard.instantiateViewController(withIdentifier: "mainTabBarController") as! CreateRoomViewController
+
+            self.navigationController?.pushViewController(mainVC, animated: true)
         })
     }
     
@@ -131,17 +115,16 @@ class RegisterViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDe
     //    MARK: IBAction: RegularSignupButton
     
     @IBAction func signupClicked(_ sender: UIButton) {
-        //        guard let usernametxt = usernameTextField.text, let emailtxt = emailTextField.text, let passwordtxt = passwordTextField.text,
-        //        !usernametxt.isEmpty, !emailtxt.isEmpty, !passwordtxt.isEmpty else { return }
+        guard let usernametxt = usernameTextField.text, let emailtxt = emailTextField.text, let passwordtxt = passwordTextField.text,
+                !usernametxt.isEmpty, !emailtxt.isEmpty, !passwordtxt.isEmpty else { return }
         
-        AuthService.instance.registerUser(username: "bob", email: "bob@mail.com", password: "passwordtxt") { (username, userId) in
+        AuthService.instance.registerUser(username: "bob", email: "bob@mail.com", password: "passwordtxt") { (username, userId) in  //username and userID from authservice
             if username != nil, userId != nil {
-                //                UserdataService.instance.setUserdata1(username: username, avatar: "avatar")
-                
-                let storyBoard = UIStoryboard.init(name: "CreateRoom", bundle: nil)
-                let createRoomVC = storyBoard.instantiateViewController(withIdentifier: "createRoomVC") as! CreateRoomViewController
-                self.navigationController?.pushViewController(createRoomVC, animated: true)
+                let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+                let mainVC = storyBoard.instantiateViewController(withIdentifier: "mainTabBarController")
+                self.navigationController?.pushViewController(mainVC, animated: true)
             } else {
+                // MARK: Handled in Authservice-- should it be in here instead? Ask Sky or E
                 print("sign up failed")
             }
         }
@@ -152,10 +135,9 @@ class RegisterViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDe
         fbManagerSuccess{ (success) in
             if success {
                 AuthService.instance.registerUser(username: self.loginName!, email: self.loginEmail!, password: "facebookpassword ", completion: { (username, userId) in
-                    //                    print(username, userId)
-                    let storyBoard = UIStoryboard.init(name: "CreateRoom", bundle: nil)
-                    let createRoomVC = storyBoard.instantiateViewController(withIdentifier: "createRoomVC") as! CreateRoomViewController
-                    self.navigationController?.pushViewController(createRoomVC, animated: true)
+                    let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+                    let mainVC = storyBoard.instantiateViewController(withIdentifier: "mainTabBarController")
+                    self.navigationController?.pushViewController(mainVC, animated: true)
                 })
             }
         }
