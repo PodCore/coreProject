@@ -39,7 +39,7 @@ class RegisterViewController: PassAlertViewController {
             if username != nil, userId != nil {
                 let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
                 let mainVC = storyBoard.instantiateViewController(withIdentifier: "mainTabBarController")
-                self.navigationController?.pushViewController(mainVC, animated: true)
+                self.present(mainVC, animated: true)
             } else {
                 self.showAlertView(title: "Error", message: "Your account could not be created because: ")
             }
