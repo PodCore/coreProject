@@ -31,6 +31,7 @@ class RegisterViewController: PassAlertViewController {
     
     //    MARK: IBAction: RegularSignupButton
     @IBAction func signupClicked(_ sender: UIButton) {
+        
         guard let usernametxt = usernameTextField.text, let emailtxt = emailTextField.text, let passwordtxt = passwordTextField.text,
                 !usernametxt.isEmpty, !emailtxt.isEmpty, !passwordtxt.isEmpty else { return }
         
