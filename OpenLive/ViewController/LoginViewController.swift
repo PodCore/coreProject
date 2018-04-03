@@ -39,18 +39,23 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
         
     }
     
+    // Notify application notification center about user info if registered!
+    func updateUserStatus() {
+        NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
+    }
+    
+    
     //   MARK: (helper) main func to call google Signin
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if error != nil {
             print(error)
             return
         }
-        AuthService.instance.registerUser(username: user.profile.givenName, email: user.profile.email, password: "gmailpassword ", completion: {[unowned self] (username, userId) in
-            //print(username, userId)
+        AuthService.instance.registerUser(username: user.profile.givenName, email: user.profile.email, password: "gmailpassword", completion: { (username, userId) in
             let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
-            let tabBarVC = storyBoard.instantiateViewController(withIdentifier: "tabBarVC")
-            UserdataService.instance.setUserdata1(username: username, avatar: "avatar")
-            self.navigationController?.pushViewController(tabBarVC, animated: true)
+            let mainVC = storyBoard.instantiateViewController(withIdentifier: "mainTabBarController") as! CreateRoomViewController
+            
+            self.navigationController?.pushViewController(mainVC, animated: true)
         })
     }
     
@@ -63,7 +68,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
             return
         }
         //  call Gmail uiDelegate and signindelegate
-        DispatchQueue.main.async { [weak self] in
+        DispatchQueue.main.async {
             GIDSignIn.sharedInstance().uiDelegate = self
             GIDSignIn.sharedInstance().delegate = self
         }
@@ -98,7 +103,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
     
     func fbGraphRequest(completion: @escaping (Bool) -> ()) {
         let request = FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, gender, first_name, email"])
-        request?.start(completionHandler: { [unowned self] (connection, result, error) in
+        request?.start(completionHandler: { (connection, result, error) in
             guard let userInfo = result as? [String: Any] else { return }
             self.loginName = userInfo["first_name"]! as? String
             self.loginEmail = userInfo["email"]! as? String
@@ -107,33 +112,22 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
     }
     
     //    MARK: IBAction: GmailLoginButton
-    
     @IBAction func signUpWithGmailButton(_ sender: Any) {
         GIDSignIn.sharedInstance().signIn()
     }
     
     //    MARK: IBAction: fbLoginButton
     @IBAction func fbLoginTapped(_ sender: UIButton) {
-        fbManagerSuccess{ [unowned self] (success) in
+        fbManagerSuccess{ (success) in
             if success {
                 AuthService.instance.registerUser(username: self.loginName!, email: self.loginEmail!, password: "facebookpassword ", completion: { (username, userId) in
-                    //                    print(username, userId)
                     let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
-                    let createRoomVC = storyBoard.instantiateViewController(withIdentifier: "tabBarVC")
-                    self.navigationController?.pushViewController(createRoomVC, animated: true)
+                    let mainVC = storyBoard.instantiateViewController(withIdentifier: "mainTabBarController")
+                    self.navigationController?.pushViewController(mainVC, animated: true)
                 })
             }
         }
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+
     
 }
