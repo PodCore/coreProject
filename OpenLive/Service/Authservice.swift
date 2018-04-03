@@ -78,6 +78,7 @@ class AuthService {
                 self.username = name as! String
                 completion(name as? String, userId as? String)
             } else {
+                // TODO: Popup to alert user of error
                 completion(nil, nil)
                 debugPrint(response.result.error as Any)
             }

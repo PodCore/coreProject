@@ -36,6 +36,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
     }
     
     @IBAction func loginClicked(_ sender: Any) {
+        
     }
     
     //   MARK: (helper) main func to call google Signin
