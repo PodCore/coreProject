@@ -15,7 +15,6 @@ class LoginAsGuestViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.isNavigationBarHidden = false
         guard let loadingView = Bundle.main.loadNibNamed("LoadingIndicatorView", owner: self, options: nil)![0] as? LoadingIndicatorView else { return }
         self.loadingIndicator = loadingView
         loadingView.configureView(title: "setting up live room", at: view.center)
@@ -27,10 +26,10 @@ class LoginAsGuestViewController: UIViewController {
                     LiveRoomData.instance.setRoomsToAll(liveRooms: rooms)
                     let locations = LiveRoomData.instance.getRoomData(rooms: rooms)
                     self.loadingIndicator.dismiss()
-        
+
                 }
             }
-            
+
         }
     }
 

@@ -45,6 +45,9 @@ class RegisterViewController: PassAlertViewController {
             }
         }
     }
+    @IBAction func backPressed(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
     
 }
 
