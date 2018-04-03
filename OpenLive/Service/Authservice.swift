@@ -67,9 +67,8 @@ class AuthService {
        
    
         Alamofire.request(BASE_URL, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseJSON{ (response) in
-            if response.result.error == nil {
+            if response.response?.statusCode == 200 {
                 guard let json = response.result.value as? [String: Any] else { return }
-                print(json)
                 guard let name = json["username"],
                     let userId = json["_id"] else { return }
                 //   update userdata so we can use notification center to notify profile page update

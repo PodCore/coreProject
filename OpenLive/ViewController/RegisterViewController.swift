@@ -134,11 +134,6 @@ class RegisterViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDe
         //        guard let usernametxt = usernameTextField.text, let emailtxt = emailTextField.text, let passwordtxt = passwordTextField.text,
         //        !usernametxt.isEmpty, !emailtxt.isEmpty, !passwordtxt.isEmpty else { return }
         
-        //        // Encryption
-        //        let data = Data()
-        //        let ciphertext = RNCryptor.encrypt(data: data, withPassword: passwordtxt)
-        //        print(ciphertext)
-        
         AuthService.instance.registerUser(username: "bob", email: "bob@mail.com", password: "passwordtxt") { (username, userId) in
             if username != nil, userId != nil {
                 //                UserdataService.instance.setUserdata1(username: username, avatar: "avatar")
