@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-typealias CompletionHandler = (_ username: String?, _ userId: String?) -> ()
+typealias CompletionHandler = (_ username: String?, _ userId: String?, _ error: String?) -> ()
 
 class AuthService {
     
@@ -76,10 +76,10 @@ class AuthService {
                 // MARK: update userdefault of isloggIn
                 self.isLoggedIn = true
                 self.username = name as! String
-                completion(name as? String, userId as? String)
+                completion(name as? String, userId as? String, String(describing: response.response?.statusCode))
             } else {
                 // TODO: Popup to alert user of error
-                completion(nil, nil)
+                completion(nil, nil, String(describing: response.response?.statusCode))
                 debugPrint(response.result.error as Any)
             }
         }

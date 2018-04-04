@@ -35,7 +35,7 @@ class RegisterViewController: PassAlertViewController {
         guard let usernametxt = usernameTextField.text, let emailtxt = emailTextField.text, let passwordtxt = passwordTextField.text,
                 !usernametxt.isEmpty, !emailtxt.isEmpty, !passwordtxt.isEmpty else { return }
         
-        AuthService.instance.registerUser(username: usernametxt, email: emailtxt, password: passwordtxt) { (username, userId) in  //username and userID from authservice
+        AuthService.instance.registerUser(username: usernametxt, email: emailtxt, password: passwordtxt) { (username, userId, error)  in  //username and userID from authservice
             if username != nil, userId != nil {
                 let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
                 let mainVC = storyBoard.instantiateViewController(withIdentifier: "mainTabBarController")

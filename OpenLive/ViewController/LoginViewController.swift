@@ -51,7 +51,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
             print(error)
             return
         }
-        AuthService.instance.registerUser(username: user.profile.givenName, email: user.profile.email, password: "gmailpassword", completion: { (username, userId) in
+        AuthService.instance.registerUser(username: user.profile.givenName, email: user.profile.email, password: "gmailpassword", completion: { (username, userId, error) in
             let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
             let mainVC = storyBoard.instantiateViewController(withIdentifier: "mainTabBarController") as! CreateRoomViewController
             
@@ -120,7 +120,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
     @IBAction func fbLoginTapped(_ sender: UIButton) {
         fbManagerSuccess{ (success) in
             if success {
-                AuthService.instance.registerUser(username: self.loginName!, email: self.loginEmail!, password: "facebookpassword ", completion: { (username, userId) in
+                AuthService.instance.registerUser(username: self.loginName!, email: self.loginEmail!, password: "facebookpassword ", completion: { (username, userId, error) in
                     let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
                     let mainVC = storyBoard.instantiateViewController(withIdentifier: "mainTabBarController")
                     self.navigationController?.pushViewController(mainVC, animated: true)
