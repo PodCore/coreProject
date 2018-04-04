@@ -81,7 +81,9 @@ class AuthService {
                 // Pass error to controller to alert user
                 guard let json = response.result.value as? [String: Any] else { return }
                 if let error = json["err"] as? String {
-                  completion(nil, nil, error)
+                    completion(nil, nil, error)
+                } else {
+                    completion(nil, nil, String(describing: response.response?.statusCode))
                 }
                 
             }
