@@ -78,9 +78,12 @@ class AuthService {
                 self.username = name as! String
                 completion(name as? String, userId as? String, String(describing: response.response?.statusCode))
             } else {
-                // TODO: Popup to alert user of error
-                completion(nil, nil, String(describing: response.response?.statusCode))
-                debugPrint(response.result.error as Any)
+                // Pass error to controller to alert user
+                guard let json = response.result.value as? [String: Any] else { return }
+                if let error = json["err"] as? String {
+                  completion(nil, nil, error)
+                }
+                
             }
         }
     }

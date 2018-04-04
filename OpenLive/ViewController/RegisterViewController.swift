@@ -41,7 +41,7 @@ class RegisterViewController: PassAlertViewController {
                 let mainVC = storyBoard.instantiateViewController(withIdentifier: "mainTabBarController")
                 self.present(mainVC, animated: true)
             } else {
-                self.showAlertView(title: "Error", message: "Your account could not be created because: \(error)")
+                self.showAlertView(title: "Error", message: "Your account could not be created: \(error!)")
             }
         }
     }
