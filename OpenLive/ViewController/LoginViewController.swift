@@ -6,6 +6,7 @@
 //  Copyright © 2018 Agora. All rights reserved.
 // TODO: Connect to storyboard
 // TODO: Add popup
+// TODO: Fnish VC
 
 import UIKit
 import FacebookLogin
@@ -53,7 +54,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
         }
         AuthService.instance.registerUser(username: user.profile.givenName, email: user.profile.email, password: "gmailpassword", completion: { (username, userId, error) in
             let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
-            let mainVC = storyBoard.instantiateViewController(withIdentifier: "mainTabBarController") as! CreateRoomViewController
+            let mainVC = storyBoard.instantiateViewController(withIdentifier: "mainTabBarController")
             
             self.navigationController?.pushViewController(mainVC, animated: true)
         })
