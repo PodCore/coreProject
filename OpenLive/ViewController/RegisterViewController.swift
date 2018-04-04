@@ -4,8 +4,6 @@
 //
 //  Created by Sky Xu on 1/23/18.
 //  Copyright © 2018 Sky Xu. All rights reserved.
-// TODO: Delete login stuff after connecting SB to LoginVC
-// TODO: Add popup view when same username
 
 
 import UIKit
