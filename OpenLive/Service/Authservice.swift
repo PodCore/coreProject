@@ -71,9 +71,7 @@ class AuthService {
                 guard let json = response.result.value as? [String: Any] else { return }
                 guard let name = json["username"],
                     let userId = json["_id"] else { return }
-                //   update userdata so we can use notification center to notify profile page update
-//                self.setUserInfo(json: json)
-                // MARK: update userdefault of isloggIn
+                // MARK: update userdefault of isloggedIn
                 self.isLoggedIn = true
                 self.username = name as! String
                 completion(name as? String, userId as? String, String(describing: response.response?.statusCode))
@@ -90,18 +88,46 @@ class AuthService {
         }
     }
     
-//    find user by username caz username is unique
+    // Find user by username bc username is unique
     func getUserByUsername(completion: @escaping (Bool) -> Void) {
         
         let BASE_URL = Config.serverUrl + "/username"
         
-        Alamofire.request(BASE_URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON{ (response) in
+        Alamofire.request(BASE_URL, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON{ (response) in
             if response.result.error == nil {
                 guard let data = response.result.value as? [String: Any] else { return }
 //                self.setUserFollowInfo(json: data)
                 completion(true)
             } else {
                 completion(false)
+            }
+        }
+    }
+    
+    // Login User
+    func loginUser(username: String, password: String, completion: @escaping (String) -> Void) {
+
+        let body: [String: Any] = [
+            "username": username,
+            "password": password
+        ]
+        let BASE_URL = Config.serverUrl + "/login"
+        let HEADER = [
+            "Content-Type": "application/json"
+        ]
+        
+        Alamofire.request(BASE_URL, method: .get, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseJSON{ (response) in
+            if response.response?.statusCode == 200 {
+                guard let data = response.result.value as? [String: Any] else { return }
+                completion("")
+            } else {
+                // Pass error to controller to alert user
+                guard let json = response.result.value as? [String: Any] else { return }
+                if let error = json["err"] as? String {
+                    completion(error)
+                } else {
+                    completion(String(describing: response.response?.statusCode))
+                }
             }
         }
     }
