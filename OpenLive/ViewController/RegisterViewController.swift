@@ -15,12 +15,10 @@ import Google
 
 class RegisterViewController: PassAlertViewController {
     
-    var loginName: String?
-    var loginEmail: String?
-    let defaults = UserDefaults.standard
     
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
+    
     @IBOutlet weak var passwordTextField: UITextField!
     
     override func viewDidLoad() {
