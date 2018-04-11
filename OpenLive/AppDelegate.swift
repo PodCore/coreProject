@@ -31,6 +31,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 self.hostLocation = location
             }
         }
+        
+        UIApplication.shared.statusBarStyle = .lightContent
+        UITabBar.appearance().unselectedItemTintColor = UIColor(red:1.00, green:0.76, blue:0.76, alpha:1.0)
         return true
     }
     
