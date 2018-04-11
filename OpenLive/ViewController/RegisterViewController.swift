@@ -15,11 +15,9 @@ import Google
 
 class RegisterViewController: PassAlertViewController {
     
-    @IBOutlet weak var usernameTextField: UITextField!
     
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
     
     @IBOutlet weak var passwordTextField: UITextField!
     

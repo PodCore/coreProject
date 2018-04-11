@@ -959,6 +959,7 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -977,7 +978,6 @@
 				F9687EED2059DD2200ED6E87 /* GMUWeightedLatLng.m in Sources */,
 				0790F1691D1EEAB2003F8C18 /* ProfileCell.swift in Sources */,
 				F9A9F2D62056F5F300FE2A6E /* Upvote.swift in Sources */,
-				497DF901205AD434000B592F /* LoginViewController.swift in Sources */,
 				F96ACB89202FC6F5001CA53F /* Following.swift in Sources */,
 				F9CC457D2036B079003CCD65 /* WatchRoomViewController.swift in Sources */,
 				F9687EDA2059DD2200ED6E87 /* GMUClusterManager.m in Sources */,

@@ -10,11 +10,34 @@ import Foundation
 import UIKit
 
 class UserProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    @IBOutlet weak var guestView: UIView!
     @IBOutlet weak var tableView: UITableView!
     //    TODO: Add loading icon to images. Reload tableview when images are loaded
     let subscriptionCount = 0
-    var username = "__guest__"
+    var username = "__guest__" {
+        didSet {
+            if username != "__guest__" {
+                 guestView.isHidden = true
+            }
+        }
+    }
     var user: User?
+    
+    @IBAction func signUpButton(_ sender: Any) {
+        print("YES")
+        let storyboard = UIStoryboard(name: "Register", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "registerVC") as! RegisterViewController
+        present(vc, animated: true, completion: nil)
+    }
+    
+    @IBAction func loginButton(_ sender: Any) {
+        print("YESYES")
+        let storyboard = UIStoryboard(name: "Register", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "loginVC") as! LoginViewController
+        present(vc, animated: true, completion: nil)
+    }
+
+    
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
@@ -92,6 +115,9 @@ class UserProfileViewController: UIViewController, UITableViewDataSource, UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        guestView.isHidden = false
+        tableView.isHidden = true
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
