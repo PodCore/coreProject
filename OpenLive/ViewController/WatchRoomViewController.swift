@@ -72,6 +72,7 @@ class WatchRoomViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tabBarController?.tabBar.isHidden = true
         roomNameLabel.text = roomName
         loadAgoraKit()
     }
@@ -82,6 +83,7 @@ class WatchRoomViewController: UIViewController {
             overlayVC = segue.destination as! OverlayViewController
             //  send room info to overlay vc
             overlayVC.roomId = self.roomId
+            overlayVC.clientRole = 2
         }
     }
     

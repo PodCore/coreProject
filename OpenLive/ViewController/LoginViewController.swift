@@ -4,7 +4,9 @@
 //
 //  Created by Andrew Tsukuda on 3/15/18.
 //  Copyright © 2018 Agora. All rights reserved.
-//
+// TODO: Connect to storyboard
+// TODO: Add popup
+// TODO: Fnish VC
 
 import UIKit
 import FacebookLogin
@@ -21,21 +23,28 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
     
     @IBOutlet weak var fbButton: UIButton!
     @IBOutlet weak var gmailButton: UIButton!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         setUpGoogleSignIn()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     @IBAction func loginClicked(_ sender: Any) {
+        
     }
+    
+    // Notify application notification center about user info if registered!
+    func updateUserStatus() {
+        NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
+    }
+    
     
     //   MARK: (helper) main func to call google Signin
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
@@ -43,12 +52,11 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
             print(error)
             return
         }
-        AuthService.instance.registerUser(username: user.profile.givenName, email: user.profile.email, password: "gmailpassword ", completion: {[unowned self] (username, userId) in
-            //print(username, userId)
+        AuthService.instance.registerUser(username: user.profile.givenName, email: user.profile.email, password: "gmailpassword", completion: { (username, userId, error) in
             let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
-            let tabBarVC = storyBoard.instantiateViewController(withIdentifier: "tabBarVC")
-            UserdataService.instance.setUserdata1(username: username, avatar: "avatar")
-            self.navigationController?.pushViewController(tabBarVC, animated: true)
+            let mainVC = storyBoard.instantiateViewController(withIdentifier: "mainTabBarController")
+            
+            self.navigationController?.pushViewController(mainVC, animated: true)
         })
     }
     
@@ -61,7 +69,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
             return
         }
         //  call Gmail uiDelegate and signindelegate
-        DispatchQueue.main.async { [weak self] in
+        DispatchQueue.main.async {
             GIDSignIn.sharedInstance().uiDelegate = self
             GIDSignIn.sharedInstance().delegate = self
         }
@@ -96,7 +104,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
     
     func fbGraphRequest(completion: @escaping (Bool) -> ()) {
         let request = FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, gender, first_name, email"])
-        request?.start(completionHandler: { [unowned self] (connection, result, error) in
+        request?.start(completionHandler: { (connection, result, error) in
             guard let userInfo = result as? [String: Any] else { return }
             self.loginName = userInfo["first_name"]! as? String
             self.loginEmail = userInfo["email"]! as? String
@@ -105,33 +113,25 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
     }
     
     //    MARK: IBAction: GmailLoginButton
-    
     @IBAction func signUpWithGmailButton(_ sender: Any) {
         GIDSignIn.sharedInstance().signIn()
     }
     
     //    MARK: IBAction: fbLoginButton
     @IBAction func fbLoginTapped(_ sender: UIButton) {
-        fbManagerSuccess{ [unowned self] (success) in
+        fbManagerSuccess{ (success) in
             if success {
-                AuthService.instance.registerUser(username: self.loginName!, email: self.loginEmail!, password: "facebookpassword ", completion: { (username, userId) in
-                    //                    print(username, userId)
+                AuthService.instance.registerUser(username: self.loginName!, email: self.loginEmail!, password: "facebookpassword ", completion: { (username, userId, error) in
                     let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
-                    let createRoomVC = storyBoard.instantiateViewController(withIdentifier: "tabBarVC")
-                    self.navigationController?.pushViewController(createRoomVC, animated: true)
+                    let mainVC = storyBoard.instantiateViewController(withIdentifier: "mainTabBarController")
+                    self.navigationController?.pushViewController(mainVC, animated: true)
                 })
             }
         }
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func backPressed(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
-    */
-
+    
+    
 }

@@ -31,6 +31,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 self.hostLocation = location
             }
         }
+        
+        UIApplication.shared.statusBarStyle = .lightContent
+        UITabBar.appearance().unselectedItemTintColor = UIColor(red:1.00, green:0.76, blue:0.76, alpha:1.0)
         return true
     }
     
@@ -46,7 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return GIDSignIn.sharedInstance().handle(url as URL!,
                                                  sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication.rawValue] as? String,
-                                                 annotation: options[UIApplicationOpenURLOptionsKey.annotation.rawValue])
+                                                 annotation: [UIApplicationOpenURLOptionsKey.annotation.rawValue])
     }
     
     // MARK:   connect to socket when first launch app
@@ -63,6 +66,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
                     let homeVC = storyBoard.instantiateViewController(withIdentifier: "homeVC") as! HomeViewController
                     homeVC.newPopularVideos.append(newRoom)
+                    LiveRoomData.instance.appendRoom(liveRoom: newRoom)
                 }
             }
         }

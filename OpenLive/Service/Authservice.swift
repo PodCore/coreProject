@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-typealias CompletionHandler = (_ username: String?, _ userId: String?) -> ()
+typealias CompletionHandler = (_ username: String?, _ userId: String?, _ error: String?) -> ()
 
 class AuthService {
     
@@ -67,9 +67,8 @@ class AuthService {
        
    
         Alamofire.request(BASE_URL, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseJSON{ (response) in
-            if response.result.error == nil {
+            if response.response?.statusCode == 200 {
                 guard let json = response.result.value as? [String: Any] else { return }
-                print(json)
                 guard let name = json["username"],
                     let userId = json["_id"] else { return }
                 //   update userdata so we can use notification center to notify profile page update
@@ -77,10 +76,16 @@ class AuthService {
                 // MARK: update userdefault of isloggIn
                 self.isLoggedIn = true
                 self.username = name as! String
-                completion(name as? String, userId as? String)
+                completion(name as? String, userId as? String, String(describing: response.response?.statusCode))
             } else {
-                completion(nil, nil)
-                debugPrint(response.result.error as Any)
+                // Pass error to controller to alert user
+                guard let json = response.result.value as? [String: Any] else { return }
+                if let error = json["err"] as? String {
+                    completion(nil, nil, error)
+                } else {
+                    completion(nil, nil, String(describing: response.response?.statusCode))
+                }
+                
             }
         }
     }

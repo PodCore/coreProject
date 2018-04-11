@@ -14,7 +14,18 @@ class CameraHandler: NSObject {
     static let shared = CameraHandler()
     fileprivate var currentVC: UIViewController!
     
-    var imagePickedBlock: ((UIImage) -> Void)?
+    var imagePickedBlock: ((UIImage?) -> Void)?
+    
+    //    convert img data we fetched from server to UIImage
+    func convertBase64ToImgStr(encodedImgData: String) -> UIImage {
+        let imgData = NSData(base64Encoded: encodedImgData, options: .ignoreUnknownCharacters) as Data?
+        var image: UIImage!
+        if let imgData = imgData {
+            image = UIImage(data: imgData)
+        }
+        return image!
+    }
+    
 //    pick from camera view
     func camera() {
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
@@ -66,3 +77,5 @@ extension CameraHandler: UIImagePickerControllerDelegate, UINavigationController
         currentVC.dismiss(animated: true, completion: nil)
     }
 }
+
+

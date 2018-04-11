@@ -65,14 +65,31 @@
 			<integer>12</integer>
 		</dict>
 		<key>KeychainSwift.xcscheme</key>
+<<<<<<< HEAD
 		<dict>
 			<key>orderHint</key>
 			<integer>14</integer>
 		</dict>
 		<key>NVActivityIndicatorView.xcscheme</key>
+=======
+>>>>>>> 5108843ad279ce4e3791a08b355a65f69b887338
 		<dict>
 			<key>orderHint</key>
 			<integer>13</integer>
+		</dict>
+<<<<<<< HEAD
+		<key>Pods-OpenLive.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>15</integer>
+		</dict>
+		<key>Pods-OpenLiveUITests.xcscheme</key>
+=======
+		<key>NVActivityIndicatorView.xcscheme</key>
+>>>>>>> 5108843ad279ce4e3791a08b355a65f69b887338
+		<dict>
+			<key>orderHint</key>
+			<integer>16</integer>
 		</dict>
 		<key>Pods-OpenLive.xcscheme</key>
 		<dict>

@@ -10,7 +10,7 @@ import UIKit
 import AgoraRtcEngineKit
 
 class ProfileCell: UITableViewCell {
-    let instance = ProfileCell()
+//    let instance = ProfileCell()
     @IBOutlet weak var resLabel: UILabel!
     @IBOutlet weak var frameLabel: UILabel!
     @IBOutlet weak var bitRateLabel: UILabel!

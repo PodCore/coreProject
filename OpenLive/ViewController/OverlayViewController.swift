@@ -12,18 +12,18 @@ import IHKeyboardAvoiding
  
 class OverlayViewController: UIViewController {
     
+    @IBOutlet weak var commentStackView: UIStackView!
     @IBOutlet weak var commentInputContainer: UIView!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var upvoteButton: DesignableButton!
     @IBOutlet weak var likes: UILabel!
     @IBOutlet weak var emojiCount: UILabel!
-    @IBOutlet weak var emojiButton: DesignableButton!
     @IBOutlet weak var waveView: WaveEmitterView!
-    @IBOutlet weak var emojiStackView: UIStackView!
     @IBOutlet weak var xConstrint: NSLayoutConstraint!
     @IBOutlet weak var emojiCollectionView: UICollectionView!
-    
+    @IBOutlet weak var upvoteStack: UIStackView!
+    @IBOutlet weak var smilyAndTap: UIStackView!
+    var clientRole: Int!
     let emojiNum = 5
     var roomId: String?
     var comments: [String] = [] {
@@ -52,7 +52,12 @@ class OverlayViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.tabBarController?.tabBar.isHidden = true
+        if self.clientRole == 1 {
+            self.commentStackView.isHidden = true
+            self.upvoteStack.isHidden = true
+            self.smilyAndTap.isHidden = true
+        }
         self.tableViewDatasource.items = comments
         self.tableView.dataSource = self.tableViewDatasource
         
@@ -66,8 +71,7 @@ class OverlayViewController: UIViewController {
             self.comments.append(data.comment)
             self.tableView.reloadData()
         }
-        
-        tableViewDatasource.configureCell = {(tableView, indexPath) -> UITableViewCell in
+                tableViewDatasource.configureCell = {(tableView, indexPath) -> UITableViewCell in
             let cell = self.tableView.dequeueReusableCell(withIdentifier: "cell") as! CommentCell
             if self.comments.count > 0 {
                 cell.selfComment = self.comments[indexPath.row]
@@ -80,7 +84,6 @@ class OverlayViewController: UIViewController {
                 let heart = UIImage(named: "heart")
                 self.waveView.emitImage(heart!)
                 self.likes.text = "\(likes.likes)"
-                
             }
         }
         

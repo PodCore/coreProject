@@ -18,7 +18,7 @@ class LocationService: NSObject {
     }
     static let shared = LocationService()
     let manager = CLLocationManager()
-    var  currentLocaiton: CLLocation!
+    public private(set) var currentLocation: CLLocation!
     let authStatus = CLLocationManager.authorizationStatus()
     let inUse = CLAuthorizationStatus.authorizedWhenInUse
     let always = CLAuthorizationStatus.authorizedAlways
@@ -26,9 +26,9 @@ class LocationService: NSObject {
    private func getAddress(completion: @escaping(_ address: CLLocation?, _ success: Bool) -> Void) {
         self.manager.requestWhenInUseAuthorization()
         if self.authStatus == inUse || self.authStatus == always {
-            self.currentLocaiton = manager.location
+            self.currentLocation = manager.location
             let geoCoder = CLGeocoder()
-            geoCoder.reverseGeocodeLocation(self.currentLocaiton, completionHandler: { (placeMark, err) in
+            geoCoder.reverseGeocodeLocation(self.currentLocation, completionHandler: { (placeMark, err) in
                 if let e = err {
                     completion(nil, false)
                 } else {

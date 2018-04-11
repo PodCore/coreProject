@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, PassLiveRoomDelegate {
+class HomeViewController: UIViewController {
  
     var allRooms = [Room]()
     var popularVideos = [Room]()
@@ -45,8 +45,6 @@ class HomeViewController: UIViewController, PassLiveRoomDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.popularVideos = LiveRoomData.instance.rooms
-//        let previousVC = LoginAsGuestViewController()
-//        previousVC.delegate = self
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         //        assign collectionView Dataspurce
         self.collectionViewDatasource.items = self.popularVideos + self.newPopularVideos
@@ -67,28 +65,21 @@ class HomeViewController: UIViewController, PassLiveRoomDelegate {
             if self.allRooms.count != 0 {
                 DispatchQueue.main.async {
                     cell.roomName.text = self.allRooms[indexPath.row].name
-//                    let cellImg = self.convertBase64ToImgStr(encodedImgData: self.popularVideos[indexPath.row].image)
-//                    cell.img.image = cellImg
-                    cell.img.loadImageFromUrlString(urlString: self.allRooms[indexPath.row].image)
+                    let roomImg = self.allRooms[indexPath.row].image
+                    if roomImg == "empty"{
+                        cell.img.loadImageFromUrlString(urlString: "https://www.pixelstalk.net/wp-content/uploads/2016/11/Entertainment-Desktop-Wallpaper.jpg")
+                        print(cell.img.image)
+                    } else {
+                        let cellImg = CameraHandler.shared.convertBase64ToImgStr(encodedImgData: roomImg)
+                        cell.img.image = cellImg
+                    }
+                    
                 }
             }
             return cell
         }
     }
     
-    func getLiveRooms(_ rooms: [Room]) {
-        self.popularVideos = rooms
-    }
-    
-    //    convert img data we fetched from server to UIImage
-    func convertBase64ToImgStr(encodedImgData: String) -> UIImage {
-        let imgData = NSData(base64Encoded: encodedImgData, options: .ignoreUnknownCharacters) as Data?
-        var image: UIImage!
-        if let imgData = imgData {
-            image = UIImage(data: imgData)
-        }
-        return image!
-    }
 }
 
 extension HomeViewController: UICollectionViewDelegate {

@@ -4,17 +4,22 @@
 //
 //  Created by Sky Xu on 1/23/18.
 //  Copyright © 2018 Sky Xu. All rights reserved.
-//
+
 
 import UIKit
+import FacebookLogin
+import FBSDKLoginKit
+import FBSDKCoreKit
+import GoogleSignIn
+import Google
 
-//import RNCryptor
-
-class RegisterViewController: UIViewController {
+class RegisterViewController: PassAlertViewController {
     
     @IBOutlet weak var usernameTextField: UITextField!
     
+    @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     
     @IBOutlet weak var passwordTextField: UITextField!
     
@@ -22,32 +27,25 @@ class RegisterViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    // notify application notification center about user info if registered!
-    func updateUserStatus() {
-        NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
-    }
-    
+    //    MARK: IBAction: RegularSignupButton
     @IBAction func signupClicked(_ sender: UIButton) {
-        guard let usernameText = usernameTextField.text, let passwordText = passwordTextField.text, let emailText = emailTextField.text, !usernameText.isEmpty, !passwordText.isEmpty, !emailText.isEmpty else { return }
         
-//            // Encryption
-//            let data = Data()
-//            let ciphertext = RNCryptor.encrypt(data: data, withPassword: passwordText)
-//            print(ciphertext)
+        guard let usernametxt = usernameTextField.text, let emailtxt = emailTextField.text, let passwordtxt = passwordTextField.text,
+                !usernametxt.isEmpty, !emailtxt.isEmpty, !passwordtxt.isEmpty else { return }
         
-        AuthService.instance.registerUser(username: usernameText, email: emailText, password: passwordText) { (username, userId) in
+        AuthService.instance.registerUser(username: usernametxt, email: emailtxt, password: passwordtxt) { (username, userId, error)  in  //username and userID from authservice
             if username != nil, userId != nil {
-                UserdataService.instance.setUserdata1(username: username, avatar: "avatar")
-                
                 let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
-                let tabBarVC = storyBoard.instantiateViewController(withIdentifier: "mainTabBar") 
-                self.navigationController?.pushViewController(tabBarVC, animated: true)
+                let mainVC = storyBoard.instantiateViewController(withIdentifier: "mainTabBarController")
+                self.present(mainVC, animated: true)
             } else {
-                print("sign up failed")
+                self.showAlertView(title: "Error Creating Account", message: "Your account could not be created: \(error!)")
             }
         }
     }
+    @IBAction func backPressed(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
     
 }
-
 
