@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "HostButtonImage.png",
+      "filename" : "Camera.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "HostButtonImage@2x.png",
+      "filename" : "Camera@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "HostButtonImage@3x.png",
+      "filename" : "Camera@3x.png",
       "scale" : "3x"
     }
   ],

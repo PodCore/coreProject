@@ -24,7 +24,8 @@ class LoginAsGuestViewController: UIViewController {
             SocketService.instance.getChannel {  [unowned self] (success, rooms) in
                 if success {
                     LiveRoomData.instance.setRoomsToAll(liveRooms: rooms)
-                    let locations = LiveRoomData.instance.getRoomData(rooms: rooms)
+//                    set available live room to location in instance
+                    LiveRoomData.instance.setRoomLocationsData(rooms: rooms)
                     self.loadingIndicator.dismiss()
 
                 }

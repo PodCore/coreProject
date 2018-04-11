@@ -17,15 +17,14 @@ class LiveRoomData {
     public private(set) var locations = [CLLocationCoordinate2D]()
     public private(set) var rooms = [Room]()
     
-    func getRoomData(rooms: [Room]) -> [CLLocationCoordinate2D] {
+    func setRoomLocationsData(rooms: [Room]){
        let cleanerLocation =  rooms.map { $0.location as! [String: Int]}
         for room in cleanerLocation {
             let lat = room["lat"]
             let long = room["long"]
             let location = CLLocationCoordinate2D(latitude: Double(lat!), longitude: Double(long!))
-            locations.append(location)
+            self.locations.append(location)
         }
-       return locations
     }
     
     func setRoomsToAll(liveRooms: [Room]) {

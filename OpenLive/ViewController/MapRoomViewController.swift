@@ -34,21 +34,25 @@ class MapRoomViewController: UIViewController, GMUClusterManagerDelegate, GMSMap
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(self.locations)
         let iconGenerator = GMUDefaultClusterIconGenerator()
         let renderer = GMUDefaultClusterRenderer(mapView: mapView, clusterIconGenerator: iconGenerator)
 //        conform to render delegate allows us to modify marker
         renderer.delegate = self
         clusterManager = GMUClusterManager(map: mapView, algorithm: GMUNonHierarchicalDistanceBasedAlgorithm(), renderer: renderer)
         
-        // Generate and add random items to the cluster manager.
-        generateClusterItems()
-
-        // Call cluster() after items have been added to perform the clustering
-        // and rendering on map.
-        clusterManager.cluster()
-        
         //        REGISTER SELF TO LISTEN TO BOTH CLUSGER MANAGER AND GMAP MANAGER
         clusterManager.setDelegate(self, mapDelegate: self)
+        
+        if self.locations.count != 0 {
+            // Generate and add random items to the cluster manager.
+            generateClusterItems()
+            
+            // Call cluster() after items have been added to perform the clustering
+            // and rendering on map.
+            clusterManager.cluster()
+            
+        }
     }
     
 //    cluster manager delegate
