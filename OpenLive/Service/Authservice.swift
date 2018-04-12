@@ -105,7 +105,7 @@ class AuthService {
     }
     
     // Login User
-    func loginUser(username: String, password: String, completion: @escaping (String) -> Void) {
+    func loginUser(username: String, password: String, completion: @escaping (Bool, String) -> Void) {
 
         let body: [String: Any] = [
             "username": username,
@@ -119,14 +119,14 @@ class AuthService {
         Alamofire.request(BASE_URL, method: .get, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseJSON{ (response) in
             if response.response?.statusCode == 200 {
                 guard let data = response.result.value as? [String: Any] else { return }
-                completion("")
+                completion(true, "")
             } else {
                 // Pass error to controller to alert user
                 guard let json = response.result.value as? [String: Any] else { return }
                 if let error = json["err"] as? String {
-                    completion(error)
+                    completion(false, error)
                 } else {
-                    completion(String(describing: response.response?.statusCode))
+                    completion(false, String(describing: response.response?.statusCode))
                 }
             }
         }
