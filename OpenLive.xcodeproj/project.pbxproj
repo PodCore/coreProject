@@ -596,6 +596,8 @@
 			isa = PBXGroup;
 			children = (
 				F96ACB6E202F7BC5001CA53F /* HomeViewController.swift */,
+				49F1290B206AE85400B881CD /* LoginViewController.swift */,
+				49087ECA2045EC6100F0B42D /* LoginAsGuestViewController.swift */,
 				F96ACB70202F7BC6001CA53F /* RegisterViewController.swift */,
 				4908E1EC20740858003E4A4A /* PassAlertViewController.swift */,
 				078012EE1D1E57730093DE24 /* CreateRoomViewController.swift */,
@@ -604,11 +606,9 @@
 				F9CC457C2036B079003CCD65 /* WatchRoomViewController.swift */,
 				F9CC45822037981C003CCD65 /* OverlayViewController.swift */,
 				21D85D8A202F9AE0001FEABA /* UserProfileViewController.swift */,
-				49087ECA2045EC6100F0B42D /* LoginAsGuestViewController.swift */,
 				F91640D82048D4AE001BEF4A /* AlertViewController.swift */,
 				F9687E8B2059C91000ED6E87 /* MapRoomViewController.swift */,
 				F96241B9205B292D00688B41 /* AreaLiveRoomViewController.swift */,
-				49F1290B206AE85400B881CD /* LoginViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -766,7 +766,7 @@
 				TargetAttributes = {
 					078012E81D1E57730093DE24 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = JDYWQEVARC;
+						DevelopmentTeam = A3KV3V94JT;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -1201,7 +1201,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Yuhua Gong (TH5SJ72C94)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JDYWQEVARC;
+				DEVELOPMENT_TEAM = A3KV3V94JT;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1232,7 +1232,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Agora Lab, Inc. (48TB6ZZL5S)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JDYWQEVARC;
+				DEVELOPMENT_TEAM = A3KV3V94JT;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

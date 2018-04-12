@@ -75,6 +75,8 @@ class AuthService {
                 // MARK: update userdefault of isloggedIn
                 self.isLoggedIn = true
                 self.username = name as! String
+                let keychain = KeychainSwift()
+                keychain.set(username, forKey: "currentUser")
                 completion(name as? String, userId as? String, String(describing: response.response?.statusCode))
             } else {
                 // Pass error to controller to alert user

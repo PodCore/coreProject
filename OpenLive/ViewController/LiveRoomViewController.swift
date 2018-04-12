@@ -9,6 +9,7 @@
 import UIKit
 import AgoraRtcEngineKit
 import SocketIO
+import KeychainSwift
 
 protocol LiveRoomVCDelegate: NSObjectProtocol {
     func liveVCNeedClose(_ liveVC: LiveRoomViewController)
@@ -39,7 +40,7 @@ class LiveRoomViewController: UIViewController {
     // MARK: this is Channel ID , has to be unique
     var roomId: String?
     var roomName: String!
-    var owner: String?
+    var owner = KeychainSwift().get("currentUser") ?? ""
 //    audient is 2, host is 1
     var clientRole = AgoraRtcClientRole.clientRole_Audience {
         didSet {
@@ -142,10 +143,12 @@ class LiveRoomViewController: UIViewController {
     } //Gesture Recognizer for Double Tap, Full session
     
     @IBAction func doLeavePressed(_ sender: UIButton) {
-        leaveChannel()
-        SocketService.instance.exitRoom(roomname: roomName, owner: owner!) { (success) in
-            print("EXIT success")
+//        owner!
+        print(self.owner)
+        SocketService.instance.exitRoom(roomname: roomName, owner: self.owner) { (success, owner) in
+            print(owner)
         }
+        leaveChannel()
     } //Leave channel when X is clicked
 }
 

@@ -34,9 +34,16 @@ class SocketService: NSObject {
         socket.disconnect()
     }
 //    exit out of room
-    func exitRoom(roomname: String, owner: String, completion: @escaping (Bool) -> ()) {
+    func exitRoom(roomname: String, owner: String, completion: @escaping (Bool, String) -> ()) {
         socket.emit("close_room", ["name": roomname, "owner": owner])
-        completion(true)
+        socket.on("remove_room") { (data, ack) in
+            //            the owner is unique, name is anything; so we get back unique ID of the room which is 
+            guard let json = data[0] as? [String: Any]
+                else {return}
+            let owner = json["owner"] as! String
+            
+            completion(true, owner)
+        }
     }
     
     func addChannel(id: String, name: String, owner: String, topic: String, viewCount: Int, likes: Int, viewers: [String], image: String, location: Location, completion: @escaping (Bool) -> ()) {

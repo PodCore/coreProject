@@ -12,6 +12,7 @@ import FBSDKLoginKit
 import FBSDKCoreKit
 import GoogleSignIn
 import Google
+import IHKeyboardAvoiding
 
 class RegisterViewController: PassAlertViewController {
     
@@ -19,15 +20,22 @@ class RegisterViewController: PassAlertViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     
+    @IBOutlet weak var signUpBtn: UIButton!
     @IBOutlet weak var passwordTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        KeyboardAvoiding.avoidingView = self.passwordTextField
+        KeyboardAvoiding.avoidingView = self.signUpBtn
+    }
+    
+    func dismissKeyboard() {
+        passwordTextField.resignFirstResponder()
     }
     
     //    MARK: IBAction: RegularSignupButton
     @IBAction func signupClicked(_ sender: UIButton) {
-        
+        self.dismissKeyboard()
         guard let usernametxt = usernameTextField.text, let emailtxt = emailTextField.text, let passwordtxt = passwordTextField.text,
                 !usernametxt.isEmpty, !emailtxt.isEmpty, !passwordtxt.isEmpty else { return }
         
@@ -47,3 +55,10 @@ class RegisterViewController: PassAlertViewController {
     
 }
 
+extension RegisterViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        
+        return true
+    }
+}

@@ -14,6 +14,7 @@ import FBSDKLoginKit
 import FBSDKCoreKit
 import GoogleSignIn
 import Google
+import IHKeyboardAvoiding
 
 class LoginViewController: PassAlertViewController, GIDSignInUIDelegate, GIDSignInDelegate {
     
@@ -21,6 +22,7 @@ class LoginViewController: PassAlertViewController, GIDSignInUIDelegate, GIDSign
     var loginEmail: String?
     let defaults = UserDefaults.standard
     
+    @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var fbButton: UIButton!
@@ -28,7 +30,7 @@ class LoginViewController: PassAlertViewController, GIDSignInUIDelegate, GIDSign
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        KeyboardAvoiding.avoidingView = self.loginBtn
         // Do any additional setup after loading the view.
         setUpGoogleSignIn()
     }
@@ -38,6 +40,10 @@ class LoginViewController: PassAlertViewController, GIDSignInUIDelegate, GIDSign
         // Dispose of any resources that can be recreated.
     }
     
+    func dismissKeyboard() {
+        passwordTextField.resignFirstResponder()
+    }
+
     @IBAction func loginClicked(_ sender: Any) {
         /* Unwrap optional text then check if empty before proceeding */
         if let username = usernameTextField.text, let password = passwordTextField.text {
@@ -152,5 +158,12 @@ class LoginViewController: PassAlertViewController, GIDSignInUIDelegate, GIDSign
         self.navigationController?.popViewController(animated: true)
     }
     
-    
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        
+        return true
+    }
 }
