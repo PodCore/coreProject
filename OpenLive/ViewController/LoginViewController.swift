@@ -15,12 +15,14 @@ import FBSDKCoreKit
 import GoogleSignIn
 import Google
 
-class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
+class LoginViewController: PassAlertViewController, GIDSignInUIDelegate, GIDSignInDelegate {
     
     var loginName: String?
     var loginEmail: String?
     let defaults = UserDefaults.standard
     
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var fbButton: UIButton!
     @IBOutlet weak var gmailButton: UIButton!
     
@@ -37,7 +39,24 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
     }
     
     @IBAction func loginClicked(_ sender: Any) {
-        
+        /* Unwrap optional text then check if empty before proceeding */
+        if let username = usernameTextField.text, let password = passwordTextField.text {
+            if !username.isEmpty && !password.isEmpty {
+                AuthService.instance.loginUser(username: username, password: password, completion: { (succeeded, error) in
+                    if succeeded {
+                        // Show main page
+                        let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+                        let mainVC = storyBoard.instantiateViewController(withIdentifier: "mainTabBarController")
+                        self.navigationController?.pushViewController(mainVC, animated: true)
+                    } else {
+                        self.showAlertView(title: "Error", message: "Something went wrong: \(error)")
+                    }
+                })
+            } else {
+                // Tell user to input data
+                self.showAlertView(title: "Error", message: "You must enter both a username and password")
+            }
+        }
     }
     
     // Notify application notification center about user info if registered!

@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import KeychainSwift
 
 typealias CompletionHandler = (_ username: String?, _ userId: String?, _ error: String?) -> ()
 
@@ -116,13 +117,41 @@ class AuthService {
             "Content-Type": "application/json"
         ]
         
-        Alamofire.request(BASE_URL, method: .get, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseJSON{ (response) in
+//        Alamofire.request(BASE_URL, method: .get, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseJSON{ (response) in
+//            if response.response?.statusCode == 200 {
+//
+//                let keychain = KeychainSwift()
+//                keychain.set(username, forKey: "currentUser")
+//                // Set user in keychain
+//                completion(true, "")
+//            } else {
+//                // Pass error to controller to alert user
+//                guard let json = response.result.value as? [String: Any] else {
+//                    print("sadf :\(response.result.debugDescription)")
+//                    return
+//                }
+//
+//                if let error = json["err"] as? String {
+//                    completion(false, error)
+//                } else {
+//                    completion(false, String(describing: response.response?.statusCode))
+//                }
+//            }
+//        }
+        Alamofire.request(BASE_URL, method: .get, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseString{ (response) in
             if response.response?.statusCode == 200 {
-                guard let data = response.result.value as? [String: Any] else { return }
+                
+                let keychain = KeychainSwift()
+                keychain.set(username, forKey: "currentUser")
+                // Set user in keychain
                 completion(true, "")
             } else {
                 // Pass error to controller to alert user
-                guard let json = response.result.value as? [String: Any] else { return }
+                guard let json = response.result.value as? [String: Any] else {
+                    print("sadf :\(response.result.debugDescription)")
+                    return
+                }
+                
                 if let error = json["err"] as? String {
                     completion(false, error)
                 } else {
