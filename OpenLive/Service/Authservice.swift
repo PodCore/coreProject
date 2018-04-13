@@ -140,7 +140,7 @@ class AuthService {
 //                }
 //            }
 //        }
-        Alamofire.request(BASE_URL, method: .get, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseString{ (response) in
+        Alamofire.request(BASE_URL, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseString{ (response) in
             if response.response?.statusCode == 200 {
                 
                 let keychain = KeychainSwift()
